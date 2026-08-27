@@ -2,73 +2,114 @@ const express = require("express");
 const OpenAI = require("openai");
 
 const app = express();
-app.use(express.json({ limit: "20mb" }));
+
+app.use(
+  express.json({
+    limit: "20mb"
+  })
+);
+
+app.use(express.static("public"));
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
 
-app.use(express.static("public"));
-
 app.post("/ask", async (req, res) => {
   try {
-    const { question, image } = req.body;
+    const { question, image } = req.body || {};
 
     if (!question && !image) {
-  return res.status(400).json({
-    error: "Please provide a question or image."
-  });
-}
+      return res.status(400).json({
+        error: "اكتب سؤالاً أو اختر صورة أولاً."
+      });
+    }
+
+    if (!process.env.OPENAI_API_KEY) {
+      return res.status(500).json({
+        error: "مفتاح OpenAI غير موجود في إعدادات الخادم."
+      });
+    }
+
+    const content = [];
+
+    // إضافة تعليمات السؤال
+    content.push({
+      type: "input_text",
+      text: question
+        ? `
+أنت مساعد دراسي للطلاب.
+
+حل السؤال التالي بطريقة صحيحة وواضحة ومناسبة للطالب.
+
+المطلوب:
+- اقرأ السؤال بعناية.
+- إذا كان السؤال رياضياً، وضح خطوات الحل.
+- إذا كانت هناك صورة، اقرأ محتواها وحدد السؤال الموجود فيها.
+- أجب باللغة المناسبة للسؤال.
+- إذا كانت الصورة تحتوي عدة أجزاء مثل Part A وPart B، أجب عن جميع الأجزاء.
+- لا تخترع معلومات غير ظاهرة في السؤال أو الصورة.
+- اجعل الإجابة منظمة وسهلة الفهم.
+
+السؤال المكتوب:
+${question}
+`
+        : `
+أنت مساعد دراسي للطلاب.
+
+اقرأ الصورة المرفقة بعناية وحدد السؤال أو الأسئلة الموجودة فيها.
+
+المطلوب:
+- حل جميع الأسئلة الظاهرة في الصورة.
+- إذا كان السؤال رياضياً، وضح خطوات الحل.
+- إذا كانت هناك أجزاء مثل Part A وPart B وReflect، تعامل معها بوضوح.
+- أجب باللغة المناسبة لمحتوى السؤال.
+- لا تخترع معلومات غير ظاهرة في الصورة.
+- اجعل الإجابة منظمة وسهلة الفهم.
+`
+    });
+
+    // إضافة الصورة إذا كانت موجودة
+    if (image) {
+      content.push({
+        type: "input_image",
+        image_url: image
+      });
+    }
 
     const response = await openai.responses.create({
       model: "gpt-5-mini",
       input: [
         {
           role: "user",
-          content: [
-  {
-    type: "input_text",
-    text:
-      "You are ONE Study, a professional AI educational assistant for students. " +
-      "Always respond in the same language as the student's question. " +
-      "Give accurate, clear, age-appropriate answers. " +
-      "For mathematics, physics, chemistry, and other problem-solving questions, explain the solution step by step. " +
-      "If an image is provided, carefully analyze the image and answer the student's question about it. " +
-      "If the image contains an exercise, equation, diagram, or educational question, explain it clearly. " +
-      "Do not invent information. If something in the image is unclear, say so. " +
-      (question || "Please analyze this image and explain it.")
-  },
-
-  ...(image
-    ? [
-        {
-          type: "input_image",
-          image_url: image
-        }
-      ]
-    : [])
-]
+          content: content
         }
       ]
     });
 
-    res.json({
-      answer: response.output_text
+    const answer =
+      response.output_text ||
+      "تمت معالجة السؤال ولكن لم تصل إجابة نصية.";
+
+    return res.json({
+      answer: answer
     });
   } catch (error) {
-  console.error("OPENAI ERROR:", error);
+    console.error("OPENAI ERROR:", error);
 
-  res.status(500).json({
-    error:
+    const message =
       error?.error?.message ||
       error?.message ||
-      "Unable to process the question."
-  });
-}
+      "حدث خطأ غير معروف أثناء معالجة السؤال.";
+
+    return res.status(500).json({
+      error: message
+    });
+  }
 });
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, "0.0.0.0", () => {
+app.listen(PORT, () => {
   console.log(`ONE Study server running on port ${PORT}`);
 });
