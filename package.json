@@ -1,0 +1,16 @@
+{
+  "name": "one-study",
+  "version": "1.0.0",
+  "description": "AI-powered study assistant for solving questions from text and images",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "openai": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
