@@ -76,7 +76,6 @@
 
     textarea:focus {
       border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
     }
 
     .image-box {
@@ -91,7 +90,7 @@
     .image-title {
       font-size: 17px;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     input[type="file"] {
@@ -111,10 +110,10 @@
 
     .image-status {
       display: none;
-      margin-top: 10px;
-      font-size: 14px;
-      color: #166534;
-      font-weight: 600;
+      margin-top: 12px;
+      color: #15803d;
+      font-weight: 700;
+      font-size: 15px;
     }
 
     button {
@@ -130,10 +129,6 @@
       cursor: pointer;
     }
 
-    button:active {
-      transform: scale(0.99);
-    }
-
     button:disabled {
       opacity: 0.55;
       cursor: not-allowed;
@@ -144,7 +139,8 @@
       text-align: center;
       padding: 22px 10px;
       color: #475569;
-      font-size: 16px;
+      font-size: 17px;
+      font-weight: 600;
     }
 
     .answer {
@@ -163,7 +159,7 @@
       overflow-wrap: anywhere;
     }
 
-    .error {
+    .answer.error {
       background: #fff1f2;
       border-color: #fecdd3;
       color: #9f1239;
@@ -211,10 +207,7 @@
 
     <div class="card">
 
-      <h2>
-        ما السؤال الذي تريد حله؟
-      </h2>
-
+      <h2>ما السؤال الذي تريد حله؟</h2>
 
       <textarea
         id="question"
@@ -262,7 +255,7 @@
         id="loading"
         class="loading"
       >
-        جاري تحليل السؤال والصورة...
+        جاري تحليل السؤال...
       </div>
 
 
@@ -282,67 +275,57 @@
 
 
 <script>
+(function () {
 
-const API_URL = "/ask";
+  "use strict";
+
+  var API_URL = "/ask";
+
+  var questionInput =
+    document.getElementById("question");
+
+  var imageInput =
+    document.getElementById("imageInput");
+
+  var preview =
+    document.getElementById("preview");
+
+  var imageStatus =
+    document.getElementById("imageStatus");
+
+  var askButton =
+    document.getElementById("askButton");
+
+  var loading =
+    document.getElementById("loading");
+
+  var answer =
+    document.getElementById("answer");
 
 
-const questionInput =
-  document.getElementById("question");
+  /*
+   * تحويل الصورة إلى Base64 بدون FileReader.
+   * نستخدم Blob + fetch + ArrayBuffer.
+   */
+  async function fileToDataURL(file) {
 
-const imageInput =
-  document.getElementById("imageInput");
-
-const preview =
-  document.getElementById("preview");
-
-const imageStatus =
-  document.getElementById("imageStatus");
-
-const askButton =
-  document.getElementById("askButton");
-
-const loading =
-  document.getElementById("loading");
-
-const answer =
-  document.getElementById("answer");
-
-
-/*
-  تحويل ملف الصورة إلى Data URL.
-
-  هذه الدالة لا تعتمد على متغير selectedImage
-  قد لا يكون جاهزاً.
-
-  بل تنتظر فعلياً حتى ينتهي FileReader.
-*/
-
-async function fileToDataURL(file) {
-
-  if (!file) {
-    return null;
-  }
-
-  try {
-
-    const buffer =
+    var buffer =
       await file.arrayBuffer();
 
-    const bytes =
+    var bytes =
       new Uint8Array(buffer);
 
-    const chunkSize =
-      0x8000;
+    var binary = "";
 
-    let binary = "";
+    var chunkSize = 0x8000;
 
     for (
-      let i = 0;
+      var i = 0;
       i < bytes.length;
       i += chunkSize
     ) {
 
-      const chunk =
+      var chunk =
         bytes.subarray(
           i,
           Math.min(
@@ -358,418 +341,353 @@ async function fileToDataURL(file) {
         );
     }
 
-    const base64 =
+    var base64 =
       btoa(binary);
+
+    var mimeType =
+      file.type || "image/jpeg";
 
     return (
       "data:" +
-      (file.type || "image/jpeg") +
+      mimeType +
       ";base64," +
       base64
     );
-
-  } catch (error) {
-
-    console.error(
-      "IMAGE READ ERROR:",
-      error
-    );
-
-    throw new Error(
-      "تعذر تجهيز الصورة للإرسال."
-    );
-  }
-}.
-
-  هذه المعاينة مستقلة عن عملية الإرسال.
-*/
-
-imageInput.addEventListener(
-  "change",
-  function () {
-
-    const file =
-      imageInput.files?.[0];
-
-
-    preview.style.display =
-      "none";
-
-    preview.removeAttribute("src");
-
-    imageStatus.style.display =
-      "none";
-
-
-    if (!file) {
-      return;
-    }
-
-
-    if (
-      !file.type ||
-      !file.type.startsWith("image/")
-    ) {
-
-      imageInput.value = "";
-
-      alert(
-        "الملف المختار ليس صورة."
-      );
-
-      return;
-    }
-
-
-    const maxSize =
-      10 * 1024 * 1024;
-
-
-    if (file.size > maxSize) {
-
-      imageInput.value = "";
-
-      alert(
-        "حجم الصورة كبير جداً. اختر صورة أصغر من 10 MB."
-      );
-
-      return;
-    }
-
-
-    imageStatus.style.display =
-      "block";
-
-
-    /*
-      Object URL للمعاينة فقط.
-      أسرع وأكثر ثباتاً على iPhone.
-    */
-
-    const objectURL =
-      URL.createObjectURL(file);
-
-
-    preview.onload = function () {
-
-      URL.revokeObjectURL(
-        objectURL
-      );
-
-    };
-
-
-    preview.src =
-      objectURL;
-
-    preview.style.display =
-      "block";
-
-  }
-);
-
-
-/*
-  إرسال السؤال
-*/
-
-async function askAI() {
-
-  const question =
-    questionInput.value.trim();
-
-  const file =
-    imageInput.files?.[0] || null;
-
-
-  /*
-    يجب وجود سؤال أو صورة.
-  */
-
-  if (!question && !file) {
-
-    alert(
-      "اكتب سؤالاً أو اختر صورة أولاً."
-    );
-
-    return;
   }
 
 
   /*
-    التحقق من الصورة قبل الإرسال.
-  */
+   * اختيار ومعاينة الصورة
+   */
+  imageInput.addEventListener(
+    "change",
+    function () {
 
-  if (file) {
-
-    if (
-      !file.type ||
-      !file.type.startsWith("image/")
-    ) {
-
-      alert(
-        "الملف المختار ليس صورة."
-      );
-
-      return;
-    }
+      var file =
+        imageInput.files &&
+        imageInput.files.length > 0
+          ? imageInput.files[0]
+          : null;
 
 
-    const maxSize =
-      10 * 1024 * 1024;
+      imageStatus.style.display =
+        "none";
+
+      preview.style.display =
+        "none";
+
+      preview.removeAttribute("src");
 
 
-    if (file.size > maxSize) {
-
-      alert(
-        "حجم الصورة كبير جداً. اختر صورة أصغر من 10 MB."
-      );
-
-      return;
-    }
-
-  }
+      if (!file) {
+        return;
+      }
 
 
-  askButton.disabled =
-    true;
+      if (
+        file.type &&
+        file.type.indexOf("image/") !== 0
+      ) {
 
-  loading.style.display =
-    "block";
+        imageInput.value = "";
 
-  answer.style.display =
-    "none";
-
-  answer.classList.remove(
-    "error"
-  );
-
-  answer.textContent = "";
-
-
-  try {
-
-    /*
-      إذا توجد صورة:
-      انتظر فعلياً حتى تتحول إلى Data URL.
-
-      لا يمكن إرسال الطلب قبل اكتمال القراءة.
-    */
-
-    let imageData =
-      null;
-
-
-    if (file) {
-
-      loading.textContent =
-        "جاري تجهيز الصورة...";
-
-
-      imageData =
-        await fileToDataURL(file);
-
-    }
-
-
-    loading.textContent =
-      "جاري تحليل السؤال والصورة...";
-
-
-    /*
-      إرسال البيانات إلى server.js
-    */
-
-    const response =
-      await fetch(
-        API_URL,
-        {
-
-          method: "POST",
-
-          headers: {
-
-            "Content-Type":
-              "application/json"
-
-          },
-
-          body:
-            JSON.stringify({
-
-              question:
-                question,
-
-              image:
-                imageData
-
-            })
-
-        }
-      );
-
-
-    /*
-      قراءة رد الخادم كنص أولاً.
-
-      هذا يمنع تعطل الصفحة إذا أعاد
-      الخادم HTML أو رسالة غير JSON.
-    */
-
-    const responseText =
-      await response.text();
-
-
-    let data;
-
-
-    try {
-
-      data =
-        JSON.parse(
-          responseText
+        alert(
+          "الملف المختار ليس صورة."
         );
 
-    } catch (jsonError) {
-
-      console.error(
-        "SERVER RESPONSE:",
-        responseText
-      );
+        return;
+      }
 
 
-      throw new Error(
-        "الخادم أعاد استجابة غير صالحة."
-      );
+      var maxSize =
+        10 * 1024 * 1024;
+
+
+      if (file.size > maxSize) {
+
+        imageInput.value = "";
+
+        alert(
+          "حجم الصورة كبير جداً. اختر صورة أصغر من 10 MB."
+        );
+
+        return;
+      }
+
+
+      imageStatus.style.display =
+        "block";
+
+
+      /*
+       * المعاينة باستخدام Object URL.
+       */
+      if (
+        window.URL &&
+        window.URL.createObjectURL
+      ) {
+
+        var imageURL =
+          window.URL.createObjectURL(file);
+
+        preview.onload =
+          function () {
+
+            if (
+              window.URL &&
+              window.URL.revokeObjectURL
+            ) {
+
+              window.URL.revokeObjectURL(
+                imageURL
+              );
+            }
+
+          };
+
+        preview.src =
+          imageURL;
+
+        preview.style.display =
+          "block";
+      }
 
     }
+  );
 
 
-    /*
-      إذا أعاد الخادم خطأ.
-    */
-
-    if (!response.ok) {
-
-      throw new Error(
-
-        data.error ||
-        "حدث خطأ أثناء معالجة السؤال."
-
-      );
-
-    }
-
-
-    /*
-      استخراج الإجابة.
-    */
-
-    const finalAnswer =
-
-      data.answer ||
-
-      data.output ||
-
-      data.response;
-
-
-    if (!finalAnswer) {
-
-      throw new Error(
-        "تم الاتصال بالخادم ولكن لم تصل إجابة."
-      );
-
-    }
-
-
-    /*
-      عرض الإجابة.
-    */
-
-    answer.textContent =
-      finalAnswer;
-
-    answer.style.display =
-      "block";
-
-
-    /*
-      تمرير الصفحة إلى الإجابة.
-    */
-
-    answer.scrollIntoView({
-
-      behavior: "smooth",
-
-      block: "start"
-
-    });
-
-
-  } catch (error) {
-
-    console.error(
-      "ONE STUDY ERROR:",
-      error
-    );
-
+  /*
+   * عرض الخطأ
+   */
+  function showError(message) {
 
     answer.classList.add(
       "error"
     );
 
-
     answer.textContent =
-
       "تعذر الحصول على الإجابة:\n" +
-
-      (
-        error?.message ||
-        "حدث خطأ غير معروف."
-      );
-
+      message;
 
     answer.style.display =
       "block";
 
+    try {
 
-    answer.scrollIntoView({
+      answer.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
 
-      behavior: "smooth",
+    } catch (e) {
 
-      block: "start"
+      answer.scrollIntoView();
 
-    });
+    }
+  }
 
 
-  } finally {
+  /*
+   * عرض الإجابة
+   */
+  function showAnswer(text) {
+
+    answer.classList.remove(
+      "error"
+    );
+
+    answer.textContent =
+      text;
+
+    answer.style.display =
+      "block";
+
+    try {
+
+      answer.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    } catch (e) {
+
+      answer.scrollIntoView();
+
+    }
+  }
+
+
+  /*
+   * حل السؤال
+   */
+  async function askAI() {
+
+    var question =
+      questionInput.value.trim();
+
+    var file =
+      imageInput.files &&
+      imageInput.files.length > 0
+        ? imageInput.files[0]
+        : null;
+
+
+    if (!question && !file) {
+
+      alert(
+        "اكتب سؤالاً أو اختر صورة أولاً."
+      );
+
+      return;
+    }
+
+
+    askButton.disabled = true;
+
+    answer.style.display = "none";
+
+    answer.textContent = "";
+
+    answer.classList.remove(
+      "error"
+    );
 
     loading.style.display =
-      "none";
+      "block";
 
 
-    loading.textContent =
-      "جاري تحليل السؤال والصورة...";
+    try {
+
+      var imageData = null;
 
 
-    askButton.disabled =
-      false;
+      if (file) {
+
+        loading.textContent =
+          "جاري تجهيز الصورة...";
+
+        imageData =
+          await fileToDataURL(file);
+
+      }
+
+
+      loading.textContent =
+        "جاري تحليل السؤال والصورة...";
+
+
+      var response =
+        await fetch(
+          API_URL,
+          {
+            method: "POST",
+
+            headers: {
+              "Content-Type":
+                "application/json"
+            },
+
+            body:
+              JSON.stringify({
+                question: question,
+                image: imageData
+              })
+          }
+        );
+
+
+      var responseText =
+        await response.text();
+
+
+      var data;
+
+
+      try {
+
+        data =
+          JSON.parse(
+            responseText
+          );
+
+      } catch (e) {
+
+        throw new Error(
+          "الخادم أعاد استجابة غير صالحة."
+        );
+
+      }
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          data.error ||
+          "حدث خطأ أثناء معالجة السؤال."
+        );
+
+      }
+
+
+      var finalAnswer =
+        data.answer ||
+        data.output ||
+        data.response;
+
+
+      if (!finalAnswer) {
+
+        throw new Error(
+          "تم الاتصال بالخادم ولكن لم تصل إجابة."
+        );
+
+      }
+
+
+      showAnswer(
+        finalAnswer
+      );
+
+
+    } catch (error) {
+
+      console.error(
+        "ONE STUDY ERROR:",
+        error
+      );
+
+      showError(
+        error &&
+        error.message
+          ? error.message
+          : "حدث خطأ غير معروف."
+      );
+
+
+    } finally {
+
+      loading.style.display =
+        "none";
+
+      loading.textContent =
+        "جاري تحليل السؤال...";
+
+      askButton.disabled =
+        false;
+
+    }
 
   }
 
-}
 
+  askButton.addEventListener(
+    "click",
+    function () {
+      askAI();
+    }
+  );
 
-/*
-  تشغيل الزر
-*/
-
-askButton.addEventListener(
-  "click",
-  askAI
-);
-
+})();
 </script>
 
 </body>
