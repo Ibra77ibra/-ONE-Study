@@ -2,7 +2,6 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -13,40 +12,21 @@
   <title>ONE Study</title>
 
   <style>
-
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       background: #f4f7fb;
       color: #172033;
     }
 
-
-    /* HEADER */
-
     .header {
-      background:
-        linear-gradient(
-          135deg,
-          #2563eb,
-          #4f46e5
-        );
-
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
       color: white;
-
-      padding:
-        42px 20px 58px;
-
+      padding: 42px 20px 58px;
       text-align: center;
     }
 
@@ -61,95 +41,50 @@
       opacity: 0.9;
     }
 
-
-    /* MAIN CONTAINER */
-
     .container {
       max-width: 700px;
-
-      margin:
-        -32px auto 40px;
-
-      padding:
-        0 16px;
+      margin: -32px auto 40px;
+      padding: 0 16px;
     }
-
-
-    /* CARD */
 
     .card {
       background: white;
-
       border-radius: 24px;
-
       padding: 24px;
-
-      box-shadow:
-        0 12px 35px
-        rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
     }
 
-
     h2 {
-      margin:
-        0 0 20px;
-
+      margin: 0 0 20px;
       font-size: 23px;
-
       text-align: right;
     }
 
-
-    /* QUESTION */
-
     textarea {
       width: 100%;
-
       min-height: 155px;
-
-      border:
-        1px solid #dbe2ea;
-
+      border: 1px solid #dbe2ea;
       border-radius: 16px;
-
       padding: 16px;
-
       font-size: 17px;
-
       resize: vertical;
-
       outline: none;
-
       font-family: inherit;
-
       direction: rtl;
-
       text-align: right;
     }
 
     textarea:focus {
       border-color: #2563eb;
-
-      box-shadow:
-        0 0 0 3px
-        rgba(37, 99, 235, 0.08);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
     }
-
-
-    /* IMAGE BOX */
 
     .image-box {
       margin-top: 17px;
-
-      border:
-        2px dashed #cbd5e1;
-
+      border: 2px dashed #cbd5e1;
       border-radius: 16px;
-
       padding: 20px;
-
       text-align: center;
-
       background: #f8fafc;
     }
 
@@ -161,51 +96,37 @@
 
     input[type="file"] {
       width: 100%;
-
       font-size: 15px;
     }
 
-
-    /* PREVIEW */
-
     #preview {
       display: none;
-
       width: 100%;
-
       max-height: 350px;
-
       object-fit: contain;
-
       border-radius: 14px;
-
       margin-top: 18px;
-
       background: white;
     }
 
-
-    /* BUTTON */
+    .image-status {
+      display: none;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #166534;
+      font-weight: 600;
+    }
 
     button {
       width: 100%;
-
       margin-top: 20px;
-
       border: 0;
-
       border-radius: 16px;
-
       padding: 17px;
-
       font-size: 20px;
-
       font-weight: 700;
-
       background: #2563eb;
-
       color: white;
-
       cursor: pointer;
     }
 
@@ -218,85 +139,46 @@
       cursor: not-allowed;
     }
 
-
-    /* LOADING */
-
     .loading {
       display: none;
-
       text-align: center;
-
       padding: 22px 10px;
-
       color: #475569;
-
       font-size: 16px;
     }
 
-
-    /* ANSWER */
-
     .answer {
       display: none;
-
       margin-top: 20px;
-
       background: #eef4ff;
-
-      border:
-        1px solid #dbeafe;
-
+      border: 1px solid #dbeafe;
       border-radius: 16px;
-
       padding: 20px;
-
       line-height: 1.9;
-
       font-size: 17px;
-
       white-space: pre-wrap;
-
       text-align: right;
-
       direction: rtl;
-
       unicode-bidi: plaintext;
-
       overflow-wrap: anywhere;
     }
 
-
-    /* ERROR */
-
     .error {
       background: #fff1f2;
-
       border-color: #fecdd3;
-
       color: #9f1239;
     }
 
-
-    /* NOTE */
-
     .note {
       font-size: 14px;
-
       color: #64748b;
-
       margin-top: 14px;
-
       text-align: center;
     }
 
-
-    /* MOBILE */
-
     @media (max-width: 600px) {
-
       .header {
-        padding:
-          38px 16px 55px;
+        padding: 38px 16px 55px;
       }
 
       .logo {
@@ -310,33 +192,20 @@
       h2 {
         font-size: 22px;
       }
-
     }
-
   </style>
-
 </head>
-
 
 <body>
 
-
-  <!-- HEADER -->
-
   <div class="header">
-
-    <div class="logo">
-      ONE Study
-    </div>
+    <div class="logo">ONE Study</div>
 
     <div class="subtitle">
       مساعدك الدراسي بالذكاء الاصطناعي
     </div>
-
   </div>
 
-
-  <!-- MAIN -->
 
   <div class="container">
 
@@ -347,15 +216,11 @@
       </h2>
 
 
-      <!-- QUESTION -->
-
       <textarea
         id="question"
         placeholder="اكتب السؤال هنا..."
       ></textarea>
 
-
-      <!-- IMAGE -->
 
       <div class="image-box">
 
@@ -370,6 +235,13 @@
           capture="environment"
         >
 
+        <div
+          id="imageStatus"
+          class="image-status"
+        >
+          ✓ تم اختيار الصورة
+        </div>
+
         <img
           id="preview"
           alt="معاينة صورة السؤال"
@@ -377,8 +249,6 @@
 
       </div>
 
-
-      <!-- BUTTON -->
 
       <button
         id="askButton"
@@ -388,8 +258,6 @@
       </button>
 
 
-      <!-- LOADING -->
-
       <div
         id="loading"
         class="loading"
@@ -398,15 +266,11 @@
       </div>
 
 
-      <!-- ANSWER -->
-
       <div
         id="answer"
         class="answer"
       ></div>
 
-
-      <!-- NOTE -->
 
       <div class="note">
         راجع الإجابات المهمة وتأكد منها من مصادرك الدراسية.
@@ -419,358 +283,478 @@
 
 <script>
 
-  const API_URL = "/ask";
+const API_URL = "/ask";
 
 
-  /* ELEMENTS */
+const questionInput =
+  document.getElementById("question");
 
-  const imageInput =
-    document.getElementById("imageInput");
+const imageInput =
+  document.getElementById("imageInput");
 
-  const preview =
-    document.getElementById("preview");
+const preview =
+  document.getElementById("preview");
 
-  const questionInput =
-    document.getElementById("question");
+const imageStatus =
+  document.getElementById("imageStatus");
 
-  const askButton =
-    document.getElementById("askButton");
+const askButton =
+  document.getElementById("askButton");
 
-  const loading =
-    document.getElementById("loading");
+const loading =
+  document.getElementById("loading");
 
-  const answer =
-    document.getElementById("answer");
-
-
-  let selectedImage = null;
-
-  let imageLoading = false;
+const answer =
+  document.getElementById("answer");
 
 
-  /* IMAGE SELECTION */
+/*
+  تحويل ملف الصورة إلى Data URL.
 
-  imageInput.addEventListener(
-    "change",
-    function () {
+  هذه الدالة لا تعتمد على متغير selectedImage
+  قد لا يكون جاهزاً.
 
-      const file =
-        imageInput.files &&
-        imageInput.files[0];
+  بل تنتظر فعلياً حتى ينتهي FileReader.
+*/
 
+function fileToDataURL(file) {
 
-      if (!file) {
+  return new Promise((resolve, reject) => {
 
-        selectedImage = null;
+    const reader =
+      new FileReader();
 
-        imageLoading = false;
+    reader.onload = () => {
 
-        preview.removeAttribute("src");
+      if (!reader.result) {
 
-        preview.style.display =
-          "none";
-
-        return;
-
-      }
-
-
-      /* CHECK FILE TYPE */
-
-      if (
-        !file.type ||
-        !file.type.startsWith("image/")
-      ) {
-
-        selectedImage = null;
-
-        imageInput.value = "";
-
-        alert(
-          "الملف المختار ليس صورة."
+        reject(
+          new Error("تعذر قراءة الصورة.")
         );
 
         return;
-
       }
 
-
-      /*
-        Prevent extremely large
-        images from being sent.
-      */
-
-      const maxSize =
-        10 * 1024 * 1024;
+      resolve(reader.result);
+    };
 
 
-      if (file.size > maxSize) {
+    reader.onerror = () => {
 
-        selectedImage = null;
-
-        imageInput.value = "";
-
-        alert(
-          "حجم الصورة كبير جداً. اختر صورة أصغر من 10 MB."
-        );
-
-        return;
-
-      }
-
-
-      imageLoading = true;
-
-      selectedImage = null;
-
-
-      const reader =
-        new FileReader();
-
-
-      reader.onload = function () {
-
-        selectedImage =
-          reader.result;
-
-        preview.src =
-          selectedImage;
-
-        preview.style.display =
-          "block";
-
-        imageLoading = false;
-
-      };
-
-
-      reader.onerror = function () {
-
-        selectedImage = null;
-
-        imageLoading = false;
-
-        preview.style.display =
-          "none";
-
-        alert(
-          "تعذر قراءة الصورة. حاول اختيار صورة أخرى."
-        );
-
-      };
-
-
-      reader.readAsDataURL(file);
-
-    }
-  );
-
-
-  /* ASK AI */
-
-  async function askAI() {
-
-    const question =
-      questionInput.value.trim();
-
-
-    /*
-      Nothing supplied
-    */
-
-    if (
-      !question &&
-      !imageInput.files?.length
-    ) {
-
-      alert(
-        "اكتب سؤالاً أو اختر صورة أولاً."
+      reject(
+        new Error("حدث خطأ أثناء قراءة الصورة.")
       );
-
-      return;
-
-    }
+    };
 
 
-    /*
-      Image selected but
-      FileReader is still working
-    */
+    reader.onabort = () => {
 
-    if (
-      imageInput.files?.length &&
-      (imageLoading || !selectedImage)
-    ) {
-
-      alert(
-        "الصورة ما زالت قيد التحميل. انتظر لحظة ثم اضغط حل السؤال."
+      reject(
+        new Error("تم إلغاء قراءة الصورة.")
       );
-
-      return;
-
-    }
+    };
 
 
-    /* UI STATE */
+    reader.readAsDataURL(file);
 
-    askButton.disabled = true;
+  });
 
-    loading.style.display =
-      "block";
+}
 
-    answer.style.display =
+
+/*
+  معاينة الصورة عند اختيارها.
+
+  هذه المعاينة مستقلة عن عملية الإرسال.
+*/
+
+imageInput.addEventListener(
+  "change",
+  function () {
+
+    const file =
+      imageInput.files?.[0];
+
+
+    preview.style.display =
       "none";
 
-    answer.classList.remove(
-      "error"
+    preview.removeAttribute("src");
+
+    imageStatus.style.display =
+      "none";
+
+
+    if (!file) {
+      return;
+    }
+
+
+    if (
+      !file.type ||
+      !file.type.startsWith("image/")
+    ) {
+
+      imageInput.value = "";
+
+      alert(
+        "الملف المختار ليس صورة."
+      );
+
+      return;
+    }
+
+
+    const maxSize =
+      10 * 1024 * 1024;
+
+
+    if (file.size > maxSize) {
+
+      imageInput.value = "";
+
+      alert(
+        "حجم الصورة كبير جداً. اختر صورة أصغر من 10 MB."
+      );
+
+      return;
+    }
+
+
+    imageStatus.style.display =
+      "block";
+
+
+    /*
+      Object URL للمعاينة فقط.
+      أسرع وأكثر ثباتاً على iPhone.
+    */
+
+    const objectURL =
+      URL.createObjectURL(file);
+
+
+    preview.onload = function () {
+
+      URL.revokeObjectURL(
+        objectURL
+      );
+
+    };
+
+
+    preview.src =
+      objectURL;
+
+    preview.style.display =
+      "block";
+
+  }
+);
+
+
+/*
+  إرسال السؤال
+*/
+
+async function askAI() {
+
+  const question =
+    questionInput.value.trim();
+
+  const file =
+    imageInput.files?.[0] || null;
+
+
+  /*
+    يجب وجود سؤال أو صورة.
+  */
+
+  if (!question && !file) {
+
+    alert(
+      "اكتب سؤالاً أو اختر صورة أولاً."
     );
 
-    answer.textContent = "";
+    return;
+  }
 
 
-    try {
+  /*
+    التحقق من الصورة قبل الإرسال.
+  */
 
-      const response =
-        await fetch(
-          API_URL,
-          {
+  if (file) {
 
-            method: "POST",
+    if (
+      !file.type ||
+      !file.type.startsWith("image/")
+    ) {
 
-            headers: {
-              "Content-Type":
-                "application/json"
-            },
-
-            body:
-              JSON.stringify({
-
-                question:
-                  question,
-
-                image:
-                  selectedImage
-
-              })
-
-          }
-        );
-
-
-      /*
-        Read server response safely
-      */
-
-      const responseText =
-        await response.text();
-
-
-      let data;
-
-
-      try {
-
-        data =
-          JSON.parse(
-            responseText
-          );
-
-      } catch {
-
-        throw new Error(
-          "استجابة الخادم غير صالحة."
-        );
-
-      }
-
-
-      /*
-        Server error
-      */
-
-      if (!response.ok) {
-
-        throw new Error(
-          data.error ||
-          "حدث خطأ أثناء معالجة السؤال."
-        );
-
-      }
-
-
-      /*
-        Successful answer
-      */
-
-      const finalAnswer =
-        data.answer ||
-        data.output ||
-        data.response;
-
-
-      if (!finalAnswer) {
-
-        throw new Error(
-          "لم تصل إجابة من الخادم."
-        );
-
-      }
-
-
-      answer.textContent =
-        finalAnswer;
-
-      answer.style.display =
-        "block";
-
-
-    } catch (error) {
-
-      console.error(
-        "ONE STUDY ERROR:",
-        error
+      alert(
+        "الملف المختار ليس صورة."
       );
 
+      return;
+    }
 
-      answer.classList.add(
-        "error"
+
+    const maxSize =
+      10 * 1024 * 1024;
+
+
+    if (file.size > maxSize) {
+
+      alert(
+        "حجم الصورة كبير جداً. اختر صورة أصغر من 10 MB."
       );
 
-
-      answer.textContent =
-        "تعذر الحصول على الإجابة:\n" +
-        (
-          error.message ||
-          "حدث خطأ غير معروف."
-        );
-
-
-      answer.style.display =
-        "block";
-
-    } finally {
-
-      loading.style.display =
-        "none";
-
-      askButton.disabled =
-        false;
-
+      return;
     }
 
   }
 
 
-  /* BUTTON EVENT */
+  askButton.disabled =
+    true;
 
-  askButton.addEventListener(
-    "click",
-    askAI
+  loading.style.display =
+    "block";
+
+  answer.style.display =
+    "none";
+
+  answer.classList.remove(
+    "error"
   );
+
+  answer.textContent = "";
+
+
+  try {
+
+    /*
+      إذا توجد صورة:
+      انتظر فعلياً حتى تتحول إلى Data URL.
+
+      لا يمكن إرسال الطلب قبل اكتمال القراءة.
+    */
+
+    let imageData =
+      null;
+
+
+    if (file) {
+
+      loading.textContent =
+        "جاري تجهيز الصورة...";
+
+
+      imageData =
+        await fileToDataURL(file);
+
+    }
+
+
+    loading.textContent =
+      "جاري تحليل السؤال والصورة...";
+
+
+    /*
+      إرسال البيانات إلى server.js
+    */
+
+    const response =
+      await fetch(
+        API_URL,
+        {
+
+          method: "POST",
+
+          headers: {
+
+            "Content-Type":
+              "application/json"
+
+          },
+
+          body:
+            JSON.stringify({
+
+              question:
+                question,
+
+              image:
+                imageData
+
+            })
+
+        }
+      );
+
+
+    /*
+      قراءة رد الخادم كنص أولاً.
+
+      هذا يمنع تعطل الصفحة إذا أعاد
+      الخادم HTML أو رسالة غير JSON.
+    */
+
+    const responseText =
+      await response.text();
+
+
+    let data;
+
+
+    try {
+
+      data =
+        JSON.parse(
+          responseText
+        );
+
+    } catch (jsonError) {
+
+      console.error(
+        "SERVER RESPONSE:",
+        responseText
+      );
+
+
+      throw new Error(
+        "الخادم أعاد استجابة غير صالحة."
+      );
+
+    }
+
+
+    /*
+      إذا أعاد الخادم خطأ.
+    */
+
+    if (!response.ok) {
+
+      throw new Error(
+
+        data.error ||
+        "حدث خطأ أثناء معالجة السؤال."
+
+      );
+
+    }
+
+
+    /*
+      استخراج الإجابة.
+    */
+
+    const finalAnswer =
+
+      data.answer ||
+
+      data.output ||
+
+      data.response;
+
+
+    if (!finalAnswer) {
+
+      throw new Error(
+        "تم الاتصال بالخادم ولكن لم تصل إجابة."
+      );
+
+    }
+
+
+    /*
+      عرض الإجابة.
+    */
+
+    answer.textContent =
+      finalAnswer;
+
+    answer.style.display =
+      "block";
+
+
+    /*
+      تمرير الصفحة إلى الإجابة.
+    */
+
+    answer.scrollIntoView({
+
+      behavior: "smooth",
+
+      block: "start"
+
+    });
+
+
+  } catch (error) {
+
+    console.error(
+      "ONE STUDY ERROR:",
+      error
+    );
+
+
+    answer.classList.add(
+      "error"
+    );
+
+
+    answer.textContent =
+
+      "تعذر الحصول على الإجابة:\n" +
+
+      (
+        error?.message ||
+        "حدث خطأ غير معروف."
+      );
+
+
+    answer.style.display =
+      "block";
+
+
+    answer.scrollIntoView({
+
+      behavior: "smooth",
+
+      block: "start"
+
+    });
+
+
+  } finally {
+
+    loading.style.display =
+      "none";
+
+
+    loading.textContent =
+      "جاري تحليل السؤال والصورة...";
+
+
+    askButton.disabled =
+      false;
+
+  }
+
+}
+
+
+/*
+  تشغيل الزر
+*/
+
+askButton.addEventListener(
+  "click",
+  askAI
+);
 
 </script>
 
-
 </body>
-
 </html>
