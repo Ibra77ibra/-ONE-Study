@@ -317,53 +317,69 @@ const answer =
   بل تنتظر فعلياً حتى ينتهي FileReader.
 */
 
-function fileToDataURL(file) {
+async function fileToDataURL(file) {
 
-  return new Promise((resolve, reject) => {
+  if (!file) {
+    return null;
+  }
 
-    const reader =
-      new FileReader();
+  try {
 
-    reader.onload = () => {
+    const buffer =
+      await file.arrayBuffer();
 
-      if (!reader.result) {
+    const bytes =
+      new Uint8Array(buffer);
 
-        reject(
-          new Error("تعذر قراءة الصورة.")
+    const chunkSize =
+      0x8000;
+
+    let binary = "";
+
+    for (
+      let i = 0;
+      i < bytes.length;
+      i += chunkSize
+    ) {
+
+      const chunk =
+        bytes.subarray(
+          i,
+          Math.min(
+            i + chunkSize,
+            bytes.length
+          )
         );
 
-        return;
-      }
+      binary +=
+        String.fromCharCode.apply(
+          null,
+          chunk
+        );
+    }
 
-      resolve(reader.result);
-    };
+    const base64 =
+      btoa(binary);
 
+    return (
+      "data:" +
+      (file.type || "image/jpeg") +
+      ";base64," +
+      base64
+    );
 
-    reader.onerror = () => {
+  } catch (error) {
 
-      reject(
-        new Error("حدث خطأ أثناء قراءة الصورة.")
-      );
-    };
+    console.error(
+      "IMAGE READ ERROR:",
+      error
+    );
 
-
-    reader.onabort = () => {
-
-      reject(
-        new Error("تم إلغاء قراءة الصورة.")
-      );
-    };
-
-
-    reader.readAsDataURL(file);
-
-  });
-
-}
-
-
-/*
-  معاينة الصورة عند اختيارها.
+    throw new Error(
+      "تعذر تجهيز الصورة للإرسال."
+    );
+  }
+}.
 
   هذه المعاينة مستقلة عن عملية الإرسال.
 */
