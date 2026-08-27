@@ -56,12 +56,15 @@ app.post("/ask", async (req, res) => {
       answer: response.output_text
     });
   } catch (error) {
-    console.error(error);
+  console.error("OPENAI ERROR:", error);
 
-    res.status(500).json({
-      error: "Unable to process the question."
-    });
-  }
+  res.status(500).json({
+    error:
+      error?.error?.message ||
+      error?.message ||
+      "Unable to process the question."
+  });
+}
 });
 
 const PORT = process.env.PORT || 3000;
