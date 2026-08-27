@@ -8,11 +8,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
 
-app.get("/", (req, res) => {
-  res.json({
-    status: "ONE Study API is running"
-  });
-});
+app.use(express.static("public"));
 
 app.post("/ask", async (req, res) => {
   try {
