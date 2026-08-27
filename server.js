@@ -12,13 +12,13 @@ app.use(express.static("public"));
 
 app.post("/ask", async (req, res) => {
   try {
-    const { question } = req.body;
+    const { question, image } = req.body;
 
-    if (!question) {
-      return res.status(400).json({
-        error: "Please provide a question."
-      });
-    }
+    if (!question && !image) {
+  return res.status(400).json({
+    error: "Please provide a question or image."
+  });
+}
 
     const response = await openai.responses.create({
       model: "gpt-5-mini",
@@ -26,18 +26,28 @@ app.post("/ask", async (req, res) => {
         {
           role: "user",
           content: [
-            {
-              type: "input_text",
-              text:
-  "You are ONE Study, a professional AI educational assistant for students. " +
-  "Always respond in the same language as the student's question. " +
-  "Give accurate, clear, age-appropriate answers. " +
-  "For mathematics, physics, chemistry, and other problem-solving questions, explain the solution step by step. " +
-  "Do not invent information. If the question is unclear, ask the student for clarification. " +
-  "Keep simple answers concise, but provide detailed explanations when they help the student understand.\n\nStudent question: " +
-  question
-            }
-          ]
+  {
+    type: "input_text",
+    text:
+      "You are ONE Study, a professional AI educational assistant for students. " +
+      "Always respond in the same language as the student's question. " +
+      "Give accurate, clear, age-appropriate answers. " +
+      "For mathematics, physics, chemistry, and other problem-solving questions, explain the solution step by step. " +
+      "If an image is provided, carefully analyze the image and answer the student's question about it. " +
+      "If the image contains an exercise, equation, diagram, or educational question, explain it clearly. " +
+      "Do not invent information. If something in the image is unclear, say so. " +
+      (question || "Please analyze this image and explain it.")
+  },
+
+  ...(image
+    ? [
+        {
+          type: "input_image",
+          image_url: image
+        }
+      ]
+    : [])
+]
         }
       ]
     });
