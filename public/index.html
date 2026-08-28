@@ -20,10 +20,6 @@
 
   <style>
 
-    /* ======================================================
-       RESET
-       ====================================================== */
-
     * {
       box-sizing: border-box;
       -webkit-tap-highlight-color: transparent;
@@ -54,7 +50,6 @@
         );
 
       color: #172033;
-
       min-height: 100vh;
     }
 
@@ -196,7 +191,6 @@
 
     #question {
       width: 100%;
-
       min-height: 150px;
 
       resize: vertical;
@@ -217,7 +211,6 @@
       line-height: 1.9;
 
       color: #172033;
-
       background: #fbfdff;
 
       transition:
@@ -247,9 +240,7 @@
 
     .small-actions {
       display: flex;
-
       gap: 9px;
-
       flex-wrap: wrap;
 
       margin-top: 12px;
@@ -263,7 +254,6 @@
         #dbe4ef;
 
       background: #ffffff;
-
       color: #334155;
 
       border-radius: 13px;
@@ -311,14 +301,9 @@
       padding: 17px;
 
       text-align: center;
-
       cursor: pointer;
 
       color: #526174;
-
-      transition:
-        border-color 0.2s ease,
-        background 0.2s ease;
     }
 
     .image-picker:active {
@@ -327,7 +312,6 @@
 
     .image-picker-icon {
       font-size: 25px;
-
       margin-bottom: 7px;
     }
 
@@ -340,7 +324,6 @@
 
     .image-picker-subtitle {
       font-size: 12px;
-
       color: #8a97a8;
 
       margin-top: 5px;
@@ -357,7 +340,6 @@
 
     #imagePreviewArea {
       display: none;
-
       margin-top: 14px;
     }
 
@@ -388,7 +370,6 @@
 
     .preview-actions {
       display: flex;
-
       gap: 9px;
 
       margin-top: 10px;
@@ -400,24 +381,21 @@
 
     .delete-btn {
       color: #c93636;
-
       border-color: #f0caca;
     }
 
 
     /* ======================================================
-       SOLVE BUTTON
+       SOLVE
        ====================================================== */
 
     .solve-btn {
       width: 100%;
-
       min-height: 54px;
 
       margin-top: 18px;
 
       border: 0;
-
       border-radius: 17px;
 
       background:
@@ -437,10 +415,6 @@
       box-shadow:
         0 11px 25px
         rgba(37, 110, 245, 0.20);
-
-      transition:
-        transform 0.15s ease,
-        opacity 0.2s ease;
     }
 
     .solve-btn:active {
@@ -449,9 +423,7 @@
 
     .solve-btn:disabled {
       opacity: 0.58;
-
       cursor: not-allowed;
-
       box-shadow: none;
     }
 
@@ -513,7 +485,7 @@
 
 
     /* ======================================================
-       ANSWER CARD
+       ANSWER
        ====================================================== */
 
     #answerCard {
@@ -522,7 +494,6 @@
 
     .answer-header {
       display: flex;
-
       align-items: center;
       justify-content: space-between;
 
@@ -540,14 +511,8 @@
       color: #172033;
     }
 
-
-    /* ======================================================
-       STRUCTURED ANSWER
-       ====================================================== */
-
     #answer {
       direction: rtl;
-
       text-align: right;
 
       color: #1f2937;
@@ -558,13 +523,12 @@
       overflow: hidden;
 
       word-break: normal;
-
       overflow-wrap: break-word;
     }
 
 
     /* ======================================================
-       HEADING BLOCK
+       HEADING
        ====================================================== */
 
     .answer-heading {
@@ -593,26 +557,74 @@
 
 
     /* ======================================================
-       TEXT BLOCK
+       PARAGRAPH V2
        ====================================================== */
 
-    .answer-text {
+    .answer-paragraph {
+      display: block;
+
       margin:
-        9px
+        11px
         0;
 
       direction: rtl;
-
       text-align: right;
 
-      white-space: pre-wrap;
+      line-height: 2.15;
 
       unicode-bidi: plaintext;
     }
 
+    .paragraph-text {
+      white-space: pre-wrap;
+    }
+
 
     /* ======================================================
-       MATH BLOCK
+       INLINE MATH V2
+       ====================================================== */
+
+    .inline-math {
+      display: inline-block;
+
+      direction: ltr;
+
+      unicode-bidi: isolate;
+
+      text-align: left;
+
+      vertical-align: middle;
+
+      margin:
+        0
+        3px;
+
+      max-width: 100%;
+    }
+
+    .inline-math mjx-container {
+      display: inline-block !important;
+
+      direction: ltr !important;
+
+      margin:
+        0
+        1px !important;
+
+      vertical-align: middle !important;
+    }
+
+    .inline-math svg {
+      display: inline-block;
+
+      height: auto;
+
+      vertical-align: middle;
+    }
+
+
+    /* ======================================================
+       DISPLAY MATH
        ====================================================== */
 
     .math-block {
@@ -658,11 +670,6 @@
       unicode-bidi: isolate;
     }
 
-
-    /* ======================================================
-       MATHJAX
-       ====================================================== */
-
     .math-block mjx-container {
       display: inline-block !important;
 
@@ -682,11 +689,9 @@
     }
 
 
-    /*
-      MathJax accessibility representation must remain
-      available to assistive technology but must not appear
-      visually beside the SVG equation.
-    */
+    /* ======================================================
+       MATHJAX ACCESSIBILITY
+       ====================================================== */
 
     mjx-assistive-mml {
       position: absolute !important;
@@ -709,7 +714,7 @@
 
 
     /* ======================================================
-       ANSWER ACTIONS
+       ACTIONS
        ====================================================== */
 
     .answer-actions {
@@ -733,7 +738,6 @@
       border-radius: 13px;
 
       background: #ffffff;
-
       color: #334155;
 
       font-size: 13px;
@@ -773,7 +777,6 @@
 
     .feedback-buttons {
       display: flex;
-
       justify-content: center;
 
       gap: 10px;
@@ -781,7 +784,6 @@
 
     .feedback-btn {
       min-width: 82px;
-
       min-height: 39px;
 
       border-radius: 12px;
@@ -876,6 +878,10 @@
         line-height: 1.95;
       }
 
+      .answer-paragraph {
+        line-height: 2.1;
+      }
+
       .answer-actions {
         grid-template-columns: 1fr;
       }
@@ -891,11 +897,11 @@
   </style>
 
 
-  <script>
+  <!-- ======================================================
+       MATHJAX
+       ====================================================== -->
 
-    /* ======================================================
-       MATHJAX CONFIGURATION
-       ====================================================== */
+  <script>
 
     window.MathJax = {
 
@@ -1114,7 +1120,7 @@
 
 
     <!-- ====================================================
-         ANSWER CARD
+         ANSWER
          ==================================================== -->
 
     <section
@@ -1215,66 +1221,50 @@
     const questionInput =
       document.getElementById("question");
 
-
     const imageInput =
       document.getElementById("imageInput");
-
 
     const imagePreviewArea =
       document.getElementById("imagePreviewArea");
 
-
     const imagePreview =
       document.getElementById("imagePreview");
-
 
     const solveBtn =
       document.getElementById("solveBtn");
 
-
     const statusBox =
       document.getElementById("status");
-
 
     const answerCard =
       document.getElementById("answerCard");
 
-
     const answerElement =
       document.getElementById("answer");
-
 
     const pasteBtn =
       document.getElementById("pasteBtn");
 
-
     const clearBtn =
       document.getElementById("clearBtn");
-
 
     const changeImageBtn =
       document.getElementById("changeImageBtn");
 
-
     const removeImageBtn =
       document.getElementById("removeImageBtn");
-
 
     const copyBtn =
       document.getElementById("copyBtn");
 
-
     const saveBtn =
       document.getElementById("saveBtn");
-
 
     const shareBtn =
       document.getElementById("shareBtn");
 
-
     const yesBtn =
       document.getElementById("yesBtn");
-
 
     const noBtn =
       document.getElementById("noBtn");
@@ -1304,6 +1294,9 @@
       statusBox.className =
         type;
 
+      statusBox.style.display =
+        "block";
+
     }
 
 
@@ -1322,8 +1315,7 @@
 
 
     /* ======================================================
-       FILE TO DATA URL
-       No FileReader
+       FILE → DATA URL
        ====================================================== */
 
     async function fileToDataURL(file) {
@@ -1331,14 +1323,11 @@
       const buffer =
         await file.arrayBuffer();
 
-
       const bytes =
         new Uint8Array(buffer);
 
-
       const chunkSize =
         0x8000;
-
 
       let binary =
         "";
@@ -1663,7 +1652,7 @@
 
 
     /* ======================================================
-       CREATE HEADING BLOCK
+       HEADING
        ====================================================== */
 
     function createHeadingBlock(
@@ -1688,23 +1677,31 @@
 
 
     /* ======================================================
-       CREATE TEXT BLOCK
+       INLINE MATH
        ====================================================== */
 
-    function createTextBlock(
-      content
+    function createInlineMath(
+      tex
     ) {
 
       const element =
-        document.createElement("div");
+        document.createElement("span");
 
 
       element.className =
-        "answer-text";
+        "inline-math";
+
+
+      element.dataset.tex =
+        tex;
+
+
+      element.dataset.display =
+        "false";
 
 
       element.textContent =
-        content;
+        "";
 
 
       return element;
@@ -1713,7 +1710,103 @@
 
 
     /* ======================================================
-       CREATE MATH BLOCK
+       PARAGRAPH V2
+       ====================================================== */
+
+    function createParagraphBlock(
+      segments
+    ) {
+
+      const paragraph =
+        document.createElement("div");
+
+
+      paragraph.className =
+        "answer-paragraph";
+
+
+      if (
+        !Array.isArray(segments)
+      ) {
+
+        return paragraph;
+
+      }
+
+
+      for (
+        const segment of segments
+      ) {
+
+        if (
+          !segment ||
+          typeof segment.content !==
+            "string"
+        ) {
+
+          continue;
+
+        }
+
+
+        const content =
+          segment.content.trim();
+
+
+        if (!content) {
+          continue;
+        }
+
+
+        if (
+          segment.type ===
+          "text"
+        ) {
+
+          const span =
+            document.createElement(
+              "span"
+            );
+
+
+          span.className =
+            "paragraph-text";
+
+
+          span.textContent =
+            content;
+
+
+          paragraph.appendChild(
+            span
+          );
+
+        }
+
+
+        else if (
+          segment.type ===
+          "inline_math"
+        ) {
+
+          paragraph.appendChild(
+            createInlineMath(
+              content
+            )
+          );
+
+        }
+
+      }
+
+
+      return paragraph;
+
+    }
+
+
+    /* ======================================================
+       DISPLAY MATH
        ====================================================== */
 
     function createMathBlock(
@@ -1740,6 +1833,10 @@
         tex;
 
 
+      mathContent.dataset.display =
+        "true";
+
+
       mathContent.textContent =
         "";
 
@@ -1755,7 +1852,63 @@
 
 
     /* ======================================================
-       RENDER SINGLE MATH BLOCK
+       HIDE ASSISTIVE DUPLICATE
+       ====================================================== */
+
+    function hideAssistiveMath(
+      rendered
+    ) {
+
+      if (!rendered) {
+        return;
+      }
+
+
+      rendered
+        .querySelectorAll(
+          "mjx-assistive-mml"
+        )
+        .forEach(
+          (node) => {
+
+            node.style.position =
+              "absolute";
+
+            node.style.width =
+              "1px";
+
+            node.style.height =
+              "1px";
+
+            node.style.padding =
+              "0";
+
+            node.style.margin =
+              "-1px";
+
+            node.style.overflow =
+              "hidden";
+
+            node.style.clip =
+              "rect(0, 0, 0, 0)";
+
+            node.style.clipPath =
+              "inset(50%)";
+
+            node.style.whiteSpace =
+              "nowrap";
+
+            node.style.border =
+              "0";
+
+          }
+        );
+
+    }
+
+
+    /* ======================================================
+       RENDER MATH ELEMENT
        ====================================================== */
 
     async function renderMathElement(
@@ -1771,50 +1924,26 @@
       }
 
 
+      const isDisplay =
+        element.dataset.display ===
+        "true";
+
+
       try {
 
         const rendered =
           await window.MathJax.tex2svgPromise(
             tex,
             {
-              display: true
+              display:
+                isDisplay
             }
           );
 
 
-        /*
-          Defensive cleanup:
-          if MathJax adds an assistive representation,
-          it must not become a second visible equation.
-        */
-
-        rendered
-          .querySelectorAll(
-            "mjx-assistive-mml"
-          )
-          .forEach(
-            (node) => {
-
-              node.style.position =
-                "absolute";
-
-              node.style.width =
-                "1px";
-
-              node.style.height =
-                "1px";
-
-              node.style.overflow =
-                "hidden";
-
-              node.style.clip =
-                "rect(0, 0, 0, 0)";
-
-              node.style.clipPath =
-                "inset(50%)";
-
-            }
-          );
+        hideAssistiveMath(
+          rendered
+        );
 
 
         element.replaceChildren(
@@ -1832,9 +1961,8 @@
 
 
         /*
-          If MathJax cannot render an equation,
-          show the original TeX once.
-          Do not create a duplicate.
+          Fallback:
+          show raw TeX once only.
         */
 
         element.textContent =
@@ -1846,7 +1974,70 @@
 
 
     /* ======================================================
-       RENDER STRUCTURED BLOCKS
+       VALIDATE V2 BLOCK
+       ====================================================== */
+
+    function isValidBlock(
+      block
+    ) {
+
+      if (
+        !block ||
+        typeof block !== "object"
+      ) {
+
+        return false;
+
+      }
+
+
+      if (
+        block.type === "heading"
+      ) {
+
+        return (
+          typeof block.content ===
+            "string" &&
+          block.content.trim()
+        );
+
+      }
+
+
+      if (
+        block.type === "math"
+      ) {
+
+        return (
+          typeof block.content ===
+            "string" &&
+          block.content.trim()
+        );
+
+      }
+
+
+      if (
+        block.type === "paragraph"
+      ) {
+
+        return (
+          Array.isArray(
+            block.segments
+          ) &&
+          block.segments.length > 0
+        );
+
+      }
+
+
+      return false;
+
+    }
+
+
+    /* ======================================================
+       RENDER STRUCTURED BLOCKS V2
        ====================================================== */
 
     async function renderBlocks(
@@ -1867,29 +2058,9 @@
       }
 
 
-      const allowedTypes =
-        new Set([
-          "heading",
-          "text",
-          "math"
-        ]);
-
-
       const validBlocks =
         blocks.filter(
-          (block) =>
-
-            block &&
-
-            allowedTypes.has(
-              block.type
-            ) &&
-
-            typeof block.content ===
-              "string" &&
-
-            block.content.trim()
-
+          isValidBlock
         );
 
 
@@ -1912,10 +2083,6 @@
         const block of validBlocks
       ) {
 
-        const content =
-          block.content.trim();
-
-
         if (
           block.type ===
           "heading"
@@ -1923,7 +2090,7 @@
 
           fragment.appendChild(
             createHeadingBlock(
-              content
+              block.content.trim()
             )
           );
 
@@ -1932,12 +2099,12 @@
 
         else if (
           block.type ===
-          "text"
+          "paragraph"
         ) {
 
           fragment.appendChild(
-            createTextBlock(
-              content
+            createParagraphBlock(
+              block.segments
             )
           );
 
@@ -1951,7 +2118,7 @@
 
           fragment.appendChild(
             createMathBlock(
-              content
+              block.content.trim()
             )
           );
 
@@ -1966,60 +2133,59 @@
 
 
       /*
-        Only elements explicitly marked as math
-        are passed to MathJax.
+        Both inline_math and display math
+        are rendered from explicit structured data.
       */
 
       const mathElements =
         answerElement.querySelectorAll(
-          ".math-content"
+          ".math-content, .inline-math"
         );
 
 
       if (
-        mathElements.length > 0
+        mathElements.length === 0
       ) {
 
-        const mathJaxReady =
-          await waitForMathJax();
+        return;
+
+      }
 
 
-        if (!mathJaxReady) {
-
-          console.error(
-            "MathJax failed to load."
-          );
+      const mathJaxReady =
+        await waitForMathJax();
 
 
-          /*
-            Keep raw TeX visible once if
-            MathJax could not load.
-          */
+      if (!mathJaxReady) {
 
-          mathElements.forEach(
-            (element) => {
-
-              element.textContent =
-                element.dataset.tex || "";
-
-            }
-          );
+        console.error(
+          "MathJax failed to load."
+        );
 
 
-          return;
+        mathElements.forEach(
+          (element) => {
 
-        }
+            element.textContent =
+              element.dataset.tex ||
+              "";
+
+          }
+        );
 
 
-        for (
-          const element of mathElements
-        ) {
+        return;
 
-          await renderMathElement(
-            element
-          );
+      }
 
-        }
+
+      for (
+        const element of mathElements
+      ) {
+
+        await renderMathElement(
+          element
+        );
 
       }
 
@@ -2086,8 +2252,10 @@
               method: "POST",
 
               headers: {
+
                 "Content-Type":
                   "application/json"
+
               },
 
               body:
@@ -2135,25 +2303,53 @@
 
 
         /*
-          New server.js returns:
+          Structured Blocks V2:
 
           {
+            version: 2,
+
             blocks: [
+
               {
                 type: "heading",
                 content: "الحل"
               },
+
               {
-                type: "text",
-                content: "..."
+                type: "paragraph",
+
+                segments: [
+                  {
+                    type: "text",
+                    content: "..."
+                  },
+                  {
+                    type: "inline_math",
+                    content: "..."
+                  }
+                ]
               },
+
               {
                 type: "math",
                 content: "..."
               }
+
             ]
           }
         */
+
+
+        if (
+          data.version !== 2
+        ) {
+
+          console.warn(
+            "Unexpected response version:",
+            data.version
+          );
+
+        }
 
 
         if (
@@ -2163,7 +2359,7 @@
         ) {
 
           throw new Error(
-            "الخادم لم يرسل blocks بالصورة المتوقعة."
+            "الخادم لم يرسل Structured Blocks V2 بالصورة المتوقعة."
           );
 
         }
@@ -2226,10 +2422,6 @@
     }
 
 
-    /* ======================================================
-       SOLVE EVENT
-       ====================================================== */
-
     solveBtn.addEventListener(
       "click",
       askAI
@@ -2237,7 +2429,7 @@
 
 
     /* ======================================================
-       BLOCKS TO PLAIN TEXT
+       V2 → PLAIN TEXT
        ====================================================== */
 
     function blocksToPlainText() {
@@ -2253,42 +2445,151 @@
       }
 
 
-      return currentBlocks
+      const parts =
+        [];
 
-        .filter(
-          (block) =>
-            block &&
-            typeof block.content ===
-              "string"
-        )
 
-        .map(
-          (block) => {
+      for (
+        const block of currentBlocks
+      ) {
 
-            const content =
-              block.content.trim();
+        if (!block) {
+          continue;
+        }
 
+
+        /* HEADING */
+
+        if (
+          block.type ===
+          "heading" &&
+          typeof block.content ===
+            "string"
+        ) {
+
+          const content =
+            block.content.trim();
+
+
+          if (content) {
+
+            parts.push(
+              content
+            );
+
+          }
+
+
+          continue;
+
+        }
+
+
+        /* DISPLAY MATH */
+
+        if (
+          block.type ===
+          "math" &&
+          typeof block.content ===
+            "string"
+        ) {
+
+          const content =
+            block.content.trim();
+
+
+          if (content) {
+
+            parts.push(
+              content
+            );
+
+          }
+
+
+          continue;
+
+        }
+
+
+        /* PARAGRAPH */
+
+        if (
+          block.type ===
+            "paragraph" &&
+          Array.isArray(
+            block.segments
+          )
+        ) {
+
+          let paragraphText =
+            "";
+
+
+          for (
+            const segment of
+            block.segments
+          ) {
 
             if (
-              block.type ===
-              "heading"
+              !segment ||
+              typeof segment.content !==
+                "string"
             ) {
 
-              return (
-                content +
-                "\n"
-              );
+              continue;
 
             }
 
 
-            return content;
+            const content =
+              segment.content.trim();
+
+
+            if (!content) {
+              continue;
+            }
+
+
+            /*
+              Add a controlled space between
+              text and inline math segments.
+            */
+
+            if (
+              paragraphText &&
+              !paragraphText.endsWith(" ")
+            ) {
+
+              paragraphText +=
+                " ";
+
+            }
+
+
+            paragraphText +=
+              content;
 
           }
-        )
 
+
+          if (
+            paragraphText.trim()
+          ) {
+
+            parts.push(
+              paragraphText.trim()
+            );
+
+          }
+
+        }
+
+      }
+
+
+      return parts
         .join("\n\n")
-
         .trim();
 
     }
@@ -2351,11 +2652,6 @@
           );
 
 
-          /*
-            Fallback for browsers that
-            restrict Clipboard API.
-          */
-
           const textarea =
             document.createElement(
               "textarea"
@@ -2380,8 +2676,6 @@
 
 
           textarea.focus();
-
-
           textarea.select();
 
 
@@ -2403,7 +2697,10 @@
               1800
             );
 
-          } catch (fallbackError) {
+
+          } catch (
+            fallbackError
+          ) {
 
             showStatus(
               "تعذر نسخ الإجابة تلقائياً.",
@@ -2557,7 +2854,10 @@
 
             });
 
-          } else if (
+          }
+
+
+          else if (
             navigator.clipboard &&
             navigator.clipboard.writeText
           ) {
@@ -2578,7 +2878,10 @@
               2200
             );
 
-          } else {
+          }
+
+
+          else {
 
             showStatus(
               "المشاركة غير متاحة في هذا المتصفح.",
@@ -2589,11 +2892,6 @@
 
 
         } catch (error) {
-
-          /*
-            User cancelling the native
-            share sheet is not an app error.
-          */
 
           if (
             error &&
@@ -2660,7 +2958,7 @@
 
 
     /* ======================================================
-       INITIAL STATE
+       INITIAL
        ====================================================== */
 
     hideStatus();
