@@ -1327,140 +1327,95 @@
 
   function normalizeResponse(text) {
 
+  var source = String(text || "");
 
-    var source =
-      String(
-        text || ""
-      );
-
-
-    source =
-      source
-        .replace(
-          /\r\n/g,
-          "\n"
-        )
-        .replace(
-          /\r/g,
-          "\n"
-        );
+  source = source
+    .replace(/\r\n/g, "\n")
+    .replace(/\r/g, "\n");
 
 
-    /*
-     * DISPLAY
-     *
-     * يدعم وجود أو عدم وجود
-     * علامة $ في البداية والنهاية
-     */
+  /* =========================
+     OPENAI MATH MARKERS
+     ========================= */
 
-    source =
-      source.replace(
+  source = source.replace(
+    /\$?begin:math:display\$?/gi,
+    "\\["
+  );
 
-        /\$?begin:math:display\$?/gi,
+  source = source.replace(
+    /\$?end:math:display\$?/gi,
+    "\\]"
+  );
 
-        "\\["
+  source = source.replace(
+    /\$?begin:math:inline\$?/gi,
+    "\\("
+  );
 
-      );
+  source = source.replace(
+    /\$?end:math:inline\$?/gi,
+    "\\)"
+  );
 
+  source = source.replace(
+    /\$?begin:math:text\$?/gi,
+    "\\("
+  );
 
-    source =
-      source.replace(
-
-        /\$?end:math:display\$?/gi,
-
-        "\\]"
-
-      );
-
-
-    /*
-     * INLINE
-     */
-
-    source =
-      source.replace(
-
-        /\$?begin:math:inline\$?/gi,
-
-        "\\("
-
-      );
+  source = source.replace(
+    /\$?end:math:text\$?/gi,
+    "\\)"
+  );
 
 
-    source =
-      source.replace(
+  /* =========================
+     STANDARD LATEX MARKERS
+     ========================= */
 
-        /\$?end:math:inline\$?/gi,
+  source = source.replace(
+    /\$\$([\s\S]*?)\$\$/g,
+    function (_, math) {
+      return "\\[" + math.trim() + "\\]";
+    }
+  );
 
-        "\\)"
-
-      );
-
-
-    /*
-     * TEXT
-     *
-     * هذه الصيغة ظهرت فعلياً
-     * في الاختبار الأخير.
-     */
-
-    source =
-      source.replace(
-
-        /\$?begin:math:text\$?/gi,
-
-        "\\("
-
-      );
+  source = source.replace(
+    /\$([^$\n]+?)\$/g,
+    function (_, math) {
+      return "\\(" + math.trim() + "\\)";
+    }
+  );
 
 
-    source =
-      source.replace(
+  /* =========================
+     CLEAN SPACES
+     ========================= */
 
-        /\$?end:math:text\$?/gi,
+  source = source.replace(
+    /\\\[\s+/g,
+    "\\["
+  );
 
-        "\\)"
+  source = source.replace(
+    /\s+\\\]/g,
+    "\\]"
+  );
 
-      );
+  source = source.replace(
+    /\\\(\s+/g,
+    "\\("
+  );
 
-
-    /*
-     * إزالة بعض المسافات
-     * حول المحددات
-     */
-
-    source =
-      source.replace(
-        /\\\[\s+/g,
-        "\\["
-      );
-
-
-    source =
-      source.replace(
-        /\s+\\\]/g,
-        "\\]"
-      );
+  source = source.replace(
+    /\s+\\\)/g,
+    "\\)"
+  );
 
 
-    source =
-      source.replace(
-        /\\\(\s+/g,
-        "\\("
-      );
+  return source;
 
-
-    source =
-      source.replace(
-        /\s+\\\)/g,
-        "\\)"
-      );
-
-
-    return source;
-
-  }
-
+}
 
   /* =========================
      CREATE DISPLAY MATH
