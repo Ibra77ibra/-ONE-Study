@@ -71,13 +71,8 @@
     .app {
       width: 100%;
       max-width: 760px;
-
       margin: 0 auto;
-
-      padding:
-        22px
-        16px
-        50px;
+      padding: 22px 16px 50px;
     }
 
 
@@ -87,19 +82,13 @@
 
     .header {
       text-align: center;
-
-      padding:
-        14px
-        8px
-        24px;
+      padding: 14px 8px 24px;
     }
 
     .logo {
       width: 62px;
       height: 62px;
-
       margin: 0 auto 12px;
-
       border-radius: 20px;
 
       display: flex;
@@ -108,7 +97,6 @@
 
       font-size: 27px;
       font-weight: 800;
-
       color: #ffffff;
 
       background:
@@ -125,25 +113,16 @@
 
     .title {
       margin: 0;
-
       font-size: 27px;
       font-weight: 800;
-
       color: #111827;
-
       letter-spacing: -0.4px;
     }
 
     .subtitle {
-      margin:
-        8px
-        auto
-        0;
-
+      margin: 8px auto 0;
       max-width: 520px;
-
       color: #697386;
-
       font-size: 14px;
       line-height: 1.8;
     }
@@ -155,13 +134,8 @@
 
     .card {
       background: rgba(255, 255, 255, 0.96);
-
-      border:
-        1px solid
-        #e4ebf5;
-
+      border: 1px solid #e4ebf5;
       border-radius: 24px;
-
       padding: 18px;
 
       box-shadow:
@@ -179,32 +153,19 @@
     .section-title {
       font-size: 15px;
       font-weight: 750;
-
       color: #273449;
-
       margin-bottom: 12px;
-    }
-
-    .question-box {
-      position: relative;
     }
 
     #question {
       width: 100%;
       min-height: 150px;
-
       resize: vertical;
 
-      border:
-        1.5px solid
-        #dce5f1;
-
+      border: 1.5px solid #dce5f1;
       border-radius: 18px;
 
-      padding:
-        16px
-        15px;
-
+      padding: 16px 15px;
       outline: none;
 
       font-size: 16px;
@@ -225,7 +186,6 @@
 
     #question:focus {
       border-color: #6ea4ff;
-
       background: #ffffff;
 
       box-shadow:
@@ -235,52 +195,37 @@
 
 
     /* ======================================================
-       SMALL ACTIONS
+       BUTTONS
        ====================================================== */
 
-    .small-actions {
+    .small-actions,
+    .preview-actions {
       display: flex;
       gap: 9px;
       flex-wrap: wrap;
-
       margin-top: 12px;
     }
 
     .small-btn {
       min-height: 42px;
-
-      border:
-        1px solid
-        #dbe4ef;
-
+      border: 1px solid #dbe4ef;
       background: #ffffff;
       color: #334155;
-
       border-radius: 13px;
-
-      padding:
-        9px
-        14px;
-
+      padding: 9px 14px;
       font-size: 14px;
       font-weight: 650;
-
       cursor: pointer;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      gap: 6px;
     }
 
-    .small-btn:active {
+    .small-btn:active,
+    .answer-action-btn:active {
       transform: scale(0.98);
     }
 
 
     /* ======================================================
-       IMAGE PICKER
+       IMAGE
        ====================================================== */
 
     .image-area {
@@ -289,25 +234,16 @@
 
     .image-picker {
       width: 100%;
+      display: block;
 
-      border:
-        1.5px dashed
-        #cbd9eb;
-
+      border: 1.5px dashed #cbd9eb;
       background: #f9fcff;
-
       border-radius: 18px;
 
       padding: 17px;
-
       text-align: center;
       cursor: pointer;
-
       color: #526174;
-    }
-
-    .image-picker:active {
-      background: #f2f7ff;
     }
 
     .image-picker-icon {
@@ -318,14 +254,12 @@
     .image-picker-title {
       font-size: 15px;
       font-weight: 700;
-
       color: #334155;
     }
 
     .image-picker-subtitle {
       font-size: 12px;
       color: #8a97a8;
-
       margin-top: 5px;
     }
 
@@ -333,46 +267,25 @@
       display: none;
     }
 
-
-    /* ======================================================
-       IMAGE PREVIEW
-       ====================================================== */
-
     #imagePreviewArea {
       display: none;
       margin-top: 14px;
     }
 
     .preview-card {
-      border:
-        1px solid
-        #e1e9f3;
-
+      border: 1px solid #e1e9f3;
       border-radius: 18px;
-
       padding: 10px;
-
       background: #ffffff;
     }
 
     #imagePreview {
       display: block;
-
       width: 100%;
       max-height: 390px;
-
       object-fit: contain;
-
       border-radius: 13px;
-
       background: #f4f7fa;
-    }
-
-    .preview-actions {
-      display: flex;
-      gap: 9px;
-
-      margin-top: 10px;
     }
 
     .preview-actions button {
@@ -392,7 +305,6 @@
     .solve-btn {
       width: 100%;
       min-height: 54px;
-
       margin-top: 18px;
 
       border: 0;
@@ -406,19 +318,13 @@
         );
 
       color: #ffffff;
-
       font-size: 17px;
       font-weight: 800;
-
       cursor: pointer;
 
       box-shadow:
         0 11px 25px
         rgba(37, 110, 245, 0.20);
-    }
-
-    .solve-btn:active {
-      transform: scale(0.99);
     }
 
     .solve-btn:disabled {
@@ -434,52 +340,31 @@
 
     #status {
       display: none;
-
       margin-top: 14px;
-
       border-radius: 14px;
-
-      padding:
-        12px
-        14px;
-
+      padding: 12px 14px;
       font-size: 14px;
       line-height: 1.7;
     }
 
     #status.loading {
       display: block;
-
       background: #f1f6ff;
-
-      border:
-        1px solid
-        #d8e6ff;
-
+      border: 1px solid #d8e6ff;
       color: #315f9f;
     }
 
     #status.error {
       display: block;
-
       background: #fff4f4;
-
-      border:
-        1px solid
-        #f2d2d2;
-
+      border: 1px solid #f2d2d2;
       color: #ad3030;
     }
 
     #status.success {
       display: block;
-
       background: #f1fbf5;
-
-      border:
-        1px solid
-        #d1efdc;
-
+      border: 1px solid #d1efdc;
       color: #267448;
     }
 
@@ -496,33 +381,55 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 10px;
-
       margin-bottom: 15px;
     }
 
     .answer-title {
       margin: 0;
-
       font-size: 18px;
       font-weight: 800;
-
       color: #172033;
     }
+
+
+    /* ======================================================
+       QUESTION TYPE V3.3
+       ====================================================== */
+
+    #questionTypeBadge {
+      display: none;
+
+      width: fit-content;
+
+      margin:
+        -2px
+        0
+        18px;
+
+      padding:
+        7px
+        12px;
+
+      border-radius: 999px;
+
+      background: #f1f6ff;
+      border: 1px solid #dce8ff;
+
+      color: #3568ad;
+
+      font-size: 12px;
+      font-weight: 750;
+    }
+
 
     #answer {
       direction: rtl;
       text-align: right;
-
       color: #1f2937;
-
       font-size: 16px;
       line-height: 2;
-
       overflow: hidden;
-
-      word-break: normal;
       overflow-wrap: break-word;
     }
 
@@ -532,11 +439,7 @@
        ====================================================== */
 
     .answer-heading {
-      margin:
-        24px
-        0
-        12px;
-
+      margin: 24px 0 12px;
       padding-bottom: 8px;
 
       border-bottom:
@@ -547,7 +450,6 @@
 
       font-size: 18px;
       line-height: 1.6;
-
       font-weight: 800;
     }
 
@@ -557,47 +459,39 @@
 
 
     /* ======================================================
-       PARAGRAPH V2
+       PARAGRAPH V3
        ====================================================== */
 
     .answer-paragraph {
       display: block;
 
-      margin:
-        11px
-        0;
+      margin: 11px 0;
 
       direction: rtl;
       text-align: right;
 
       line-height: 2.15;
 
-      unicode-bidi: plaintext;
-    }
+      unicode-bidi: normal;
 
-    .paragraph-text {
       white-space: pre-wrap;
     }
 
 
     /* ======================================================
-       INLINE MATH V2
+       INLINE MATH V3
        ====================================================== */
 
     .inline-math {
       display: inline-block;
 
-      direction: ltr;
+      direction: ltr !important;
 
       unicode-bidi: isolate;
 
       text-align: left;
 
       vertical-align: middle;
-
-      margin:
-        0
-        3px;
 
       max-width: 100%;
     }
@@ -607,18 +501,14 @@
 
       direction: ltr !important;
 
-      margin:
-        0
-        1px !important;
+      margin: 0 !important;
 
       vertical-align: middle !important;
     }
 
     .inline-math svg {
       display: inline-block;
-
       height: auto;
-
       vertical-align: middle;
     }
 
@@ -631,25 +521,16 @@
       position: relative;
 
       direction: ltr;
-
       text-align: center;
 
       width: 100%;
 
-      margin:
-        15px
-        0;
-
-      padding:
-        13px
-        10px;
+      margin: 15px 0;
+      padding: 13px 10px;
 
       background: #fbfdff;
 
-      border:
-        1px solid
-        #e8eef6;
-
+      border: 1px solid #e8eef6;
       border-radius: 15px;
 
       overflow-x: auto;
@@ -662,7 +543,6 @@
       display: inline-block;
 
       direction: ltr;
-
       text-align: left;
 
       min-width: max-content;
@@ -672,25 +552,168 @@
 
     .math-block mjx-container {
       display: inline-block !important;
-
       margin: 0 !important;
-
       direction: ltr !important;
-
-      text-align: left !important;
     }
 
     .math-block svg {
       display: inline-block;
-
       height: auto;
-
       vertical-align: middle;
     }
 
 
     /* ======================================================
-       MATHJAX ACCESSIBILITY
+       STEPS V3.3
+       ====================================================== */
+
+    .steps-block {
+      margin: 18px 0;
+    }
+
+    .step-item {
+      position: relative;
+
+      margin: 12px 0;
+
+      padding:
+        15px
+        16px;
+
+      border:
+        1px solid
+        #e3ebf5;
+
+      border-radius: 17px;
+
+      background: #fcfdff;
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      margin-bottom: 9px;
+    }
+
+    .step-number {
+      flex: 0 0 auto;
+
+      width: 28px;
+      height: 28px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #eaf2ff;
+
+      color: #2768c7;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .step-title {
+      color: #24344d;
+
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .step-content .answer-paragraph:first-child {
+      margin-top: 4px;
+    }
+
+    .step-content .math-block:last-child {
+      margin-bottom: 2px;
+    }
+
+
+    /* ======================================================
+       FINAL ANSWER V3.3
+       ====================================================== */
+
+    .final-answer-block {
+      margin: 24px 0 10px;
+
+      padding:
+        17px
+        16px;
+
+      border:
+        1.5px solid
+        #cfe0ff;
+
+      border-radius: 19px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #f5f9ff,
+          #fbfdff
+        );
+    }
+
+    .final-answer-title {
+      margin-bottom: 10px;
+
+      color: #215cae;
+
+      font-size: 17px;
+      font-weight: 850;
+    }
+
+    .final-answer-content
+      .math-block {
+
+      background: #ffffff;
+
+      border-color: #dce8f8;
+    }
+
+
+    /* ======================================================
+       NOTICE V3.3
+       ====================================================== */
+
+    .notice-block {
+      margin: 17px 0;
+
+      padding:
+        13px
+        14px;
+
+      border:
+        1px solid
+        #e3e9f2;
+
+      border-radius: 15px;
+
+      background: #f8fafc;
+
+      color: #4b596d;
+
+      line-height: 2;
+    }
+
+    .notice-label {
+      display: block;
+
+      margin-bottom: 4px;
+
+      color: #526174;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+
+    /* ======================================================
+       MATHJAX ASSISTIVE
        ====================================================== */
 
     mjx-assistive-mml {
@@ -731,10 +754,7 @@
     .answer-action-btn {
       min-height: 45px;
 
-      border:
-        1px solid
-        #dce5ef;
-
+      border: 1px solid #dce5ef;
       border-radius: 13px;
 
       background: #ffffff;
@@ -746,10 +766,6 @@
       cursor: pointer;
     }
 
-    .answer-action-btn:active {
-      transform: scale(0.98);
-    }
-
 
     /* ======================================================
        FEEDBACK
@@ -757,28 +773,20 @@
 
     .feedback {
       margin-top: 20px;
-
       padding-top: 16px;
-
-      border-top:
-        1px solid
-        #edf1f5;
-
+      border-top: 1px solid #edf1f5;
       text-align: center;
     }
 
     .feedback-title {
       font-size: 13px;
-
       color: #758196;
-
       margin-bottom: 10px;
     }
 
     .feedback-buttons {
       display: flex;
       justify-content: center;
-
       gap: 10px;
     }
 
@@ -787,7 +795,6 @@
       min-height: 39px;
 
       border-radius: 12px;
-
       background: #ffffff;
 
       font-size: 14px;
@@ -797,50 +804,29 @@
     }
 
     .yes-btn {
-      border:
-        1px solid
-        #bfe5ce;
-
+      border: 1px solid #bfe5ce;
       color: #23834c;
     }
 
     .no-btn {
-      border:
-        1px solid
-        #efc6c6;
-
+      border: 1px solid #efc6c6;
       color: #c13c3c;
     }
 
 
-    /* ======================================================
-       FOOTER
-       ====================================================== */
-
     .footer {
       text-align: center;
-
       color: #9aa4b2;
-
       font-size: 12px;
-
       margin-top: 24px;
-
       padding: 8px;
     }
 
 
-    /* ======================================================
-       MOBILE
-       ====================================================== */
-
     @media (max-width: 520px) {
 
       .app {
-        padding:
-          14px
-          12px
-          40px;
+        padding: 14px 12px 40px;
       }
 
       .header {
@@ -850,9 +836,7 @@
       .logo {
         width: 56px;
         height: 56px;
-
         border-radius: 18px;
-
         font-size: 24px;
       }
 
@@ -862,24 +846,17 @@
 
       .card {
         border-radius: 21px;
-
         padding: 15px;
       }
 
       #question {
         min-height: 145px;
-
         font-size: 16px;
       }
 
       #answer {
         font-size: 16px;
-
         line-height: 1.95;
-      }
-
-      .answer-paragraph {
-        line-height: 2.1;
       }
 
       .answer-actions {
@@ -887,19 +864,21 @@
       }
 
       .math-block {
-        padding:
-          12px
-          8px;
+        padding: 12px 8px;
+      }
+
+      .step-item {
+        padding: 13px 12px;
+      }
+
+      .final-answer-block {
+        padding: 15px 12px;
       }
 
     }
 
   </style>
 
-
-  <!-- ======================================================
-       MATHJAX
-       ====================================================== -->
 
   <script>
 
@@ -908,9 +887,7 @@
       tex: {
 
         packages: {
-          "[+]": [
-            "ams"
-          ]
+          "[+]": ["ams"]
         },
 
         processEscapes: true
@@ -918,25 +895,16 @@
       },
 
       loader: {
-
-        load: [
-          "[tex]/ams"
-        ]
-
+        load: ["[tex]/ams"]
       },
 
       svg: {
-
         fontCache: "local",
-
         displayAlign: "center"
-
       },
 
       startup: {
-
         typeset: false
-
       }
 
     };
@@ -957,11 +925,6 @@
 
   <main class="app">
 
-
-    <!-- ====================================================
-         HEADER
-         ==================================================== -->
-
     <header class="header">
 
       <div class="logo">
@@ -980,28 +943,19 @@
     </header>
 
 
-    <!-- ====================================================
-         QUESTION CARD
-         ==================================================== -->
-
     <section class="card">
 
       <div class="section-title">
         اكتب سؤالك
       </div>
 
-
-      <div class="question-box">
-
-        <textarea
-          id="question"
-          placeholder="اكتب السؤال هنا، أو اختر صورة للسؤال..."
-          autocomplete="off"
-          autocorrect="on"
-          spellcheck="true"
-        ></textarea>
-
-      </div>
+      <textarea
+        id="question"
+        placeholder="اكتب السؤال هنا، أو اختر صورة للسؤال..."
+        autocomplete="off"
+        autocorrect="on"
+        spellcheck="true"
+      ></textarea>
 
 
       <div class="small-actions">
@@ -1014,7 +968,6 @@
           لصق
         </button>
 
-
         <button
           type="button"
           class="small-btn"
@@ -1025,10 +978,6 @@
 
       </div>
 
-
-      <!-- ==================================================
-           IMAGE
-           ================================================== -->
 
       <div class="image-area">
 
@@ -1068,7 +1017,6 @@
               alt="معاينة صورة السؤال"
             >
 
-
             <div class="preview-actions">
 
               <button
@@ -1078,7 +1026,6 @@
               >
                 تغيير الصورة
               </button>
-
 
               <button
                 type="button"
@@ -1096,10 +1043,6 @@
 
       </div>
 
-
-      <!-- ==================================================
-           SOLVE
-           ================================================== -->
 
       <button
         type="button"
@@ -1119,10 +1062,6 @@
     </section>
 
 
-    <!-- ====================================================
-         ANSWER
-         ==================================================== -->
-
     <section
       class="card"
       id="answerCard"
@@ -1135,6 +1074,9 @@
         </h2>
 
       </div>
+
+
+      <div id="questionTypeBadge"></div>
 
 
       <div id="answer"></div>
@@ -1150,7 +1092,6 @@
           نسخ الإجابة
         </button>
 
-
         <button
           type="button"
           class="answer-action-btn"
@@ -1158,7 +1099,6 @@
         >
           حفظ الإجابة
         </button>
-
 
         <button
           type="button"
@@ -1177,7 +1117,6 @@
           هل كانت الإجابة مفيدة؟
         </div>
 
-
         <div class="feedback-buttons">
 
           <button
@@ -1187,7 +1126,6 @@
           >
             نعم
           </button>
-
 
           <button
             type="button"
@@ -1207,7 +1145,6 @@
     <footer class="footer">
       ONE Study
     </footer>
-
 
   </main>
 
@@ -1242,6 +1179,9 @@
     const answerElement =
       document.getElementById("answer");
 
+    const questionTypeBadge =
+      document.getElementById("questionTypeBadge");
+
     const pasteBtn =
       document.getElementById("pasteBtn");
 
@@ -1274,9 +1214,14 @@
        STATE
        ====================================================== */
 
-    let selectedImageDataURL = null;
+    let selectedImageDataURL =
+      null;
 
-    let currentBlocks = [];
+    let currentBlocks =
+      [];
+
+    let currentQuestionTypeLabel =
+      "";
 
 
     /* ======================================================
@@ -1315,7 +1260,7 @@
 
 
     /* ======================================================
-       FILE → DATA URL
+       FILE TO DATA URL
        ====================================================== */
 
     async function fileToDataURL(file) {
@@ -1345,7 +1290,6 @@
             i + chunkSize
           );
 
-
         binary +=
           String.fromCharCode.apply(
             null,
@@ -1370,7 +1314,7 @@
 
 
     /* ======================================================
-       IMAGE SELECT
+       IMAGE
        ====================================================== */
 
     imageInput.addEventListener(
@@ -1427,7 +1371,6 @@
 
           hideStatus();
 
-
         } catch (error) {
 
           console.error(
@@ -1438,7 +1381,6 @@
 
           selectedImageDataURL =
             null;
-
 
           imageInput.value =
             "";
@@ -1455,10 +1397,6 @@
     );
 
 
-    /* ======================================================
-       CHANGE IMAGE
-       ====================================================== */
-
     changeImageBtn.addEventListener(
       "click",
       function () {
@@ -1469,10 +1407,6 @@
     );
 
 
-    /* ======================================================
-       REMOVE IMAGE
-       ====================================================== */
-
     removeImageBtn.addEventListener(
       "click",
       function () {
@@ -1480,15 +1414,12 @@
         selectedImageDataURL =
           null;
 
-
         imageInput.value =
           "";
-
 
         imagePreview.removeAttribute(
           "src"
         );
-
 
         imagePreviewArea.style.display =
           "none";
@@ -1515,12 +1446,10 @@
             const text =
               await navigator.clipboard.readText();
 
-
             if (text) {
 
               questionInput.value =
                 text;
-
 
               questionInput.focus();
 
@@ -1532,14 +1461,12 @@
 
           }
 
-
         } catch (error) {
 
           console.error(
             "PASTE ERROR:",
             error
           );
-
 
           questionInput.focus();
 
@@ -1560,37 +1487,37 @@
         questionInput.value =
           "";
 
-
         selectedImageDataURL =
           null;
 
-
         imageInput.value =
           "";
-
 
         imagePreview.removeAttribute(
           "src"
         );
 
-
         imagePreviewArea.style.display =
           "none";
-
 
         currentBlocks =
           [];
 
+        currentQuestionTypeLabel =
+          "";
+
+        questionTypeBadge.textContent =
+          "";
+
+        questionTypeBadge.style.display =
+          "none";
 
         answerElement.replaceChildren();
-
 
         answerCard.style.display =
           "none";
 
-
         hideStatus();
-
 
         questionInput.focus();
 
@@ -1599,7 +1526,7 @@
 
 
     /* ======================================================
-       WAIT FOR MATHJAX
+       MATHJAX
        ====================================================== */
 
     async function waitForMathJax() {
@@ -1629,7 +1556,6 @@
 
           }
 
-
           return true;
 
         }
@@ -1652,56 +1578,31 @@
 
 
     /* ======================================================
-       HEADING
-       ====================================================== */
-
-    function createHeadingBlock(
-      content
-    ) {
-
-      const element =
-        document.createElement("div");
-
-
-      element.className =
-        "answer-heading";
-
-
-      element.textContent =
-        content;
-
-
-      return element;
-
-    }
-
-
-    /* ======================================================
        INLINE MATH
        ====================================================== */
 
-    function createInlineMath(
-      tex
-    ) {
+    function createInlineMath(tex) {
 
       const element =
-        document.createElement("span");
+        document.createElement("bdi");
 
 
       element.className =
         "inline-math";
 
 
+      element.setAttribute(
+        "dir",
+        "ltr"
+      );
+
+
       element.dataset.tex =
-        tex;
+        tex.trim();
 
 
       element.dataset.display =
         "false";
-
-
-      element.textContent =
-        "";
 
 
       return element;
@@ -1710,7 +1611,8 @@
 
 
     /* ======================================================
-       PARAGRAPH V2
+       PARAGRAPH
+       Preserve spaces exactly
        ====================================================== */
 
     function createParagraphBlock(
@@ -1749,49 +1651,47 @@
         }
 
 
-        const content =
-          segment.content.trim();
+        if (
+          segment.type === "text"
+        ) {
+
+          if (
+            !segment.content.trim()
+          ) {
+
+            continue;
+
+          }
 
 
-        if (!content) {
+          paragraph.appendChild(
+            document.createTextNode(
+              segment.content
+            )
+          );
+
+
           continue;
+
         }
 
 
         if (
-          segment.type ===
-          "text"
+          segment.type === "inline_math"
         ) {
 
-          const span =
-            document.createElement(
-              "span"
-            );
+          const tex =
+            segment.content.trim();
 
 
-          span.className =
-            "paragraph-text";
+          if (!tex) {
+            continue;
+          }
 
-
-          span.textContent =
-            content;
-
-
-          paragraph.appendChild(
-            span
-          );
-
-        }
-
-
-        else if (
-          segment.type ===
-          "inline_math"
-        ) {
 
           paragraph.appendChild(
             createInlineMath(
-              content
+              tex
             )
           );
 
@@ -1806,12 +1706,35 @@
 
 
     /* ======================================================
+       HEADING
+       ====================================================== */
+
+    function createHeadingBlock(
+      content
+    ) {
+
+      const element =
+        document.createElement("div");
+
+
+      element.className =
+        "answer-heading";
+
+
+      element.textContent =
+        content.trim();
+
+
+      return element;
+
+    }
+
+
+    /* ======================================================
        DISPLAY MATH
        ====================================================== */
 
-    function createMathBlock(
-      tex
-    ) {
+    function createMathBlock(tex) {
 
       const wrapper =
         document.createElement("div");
@@ -1821,28 +1744,30 @@
         "math-block";
 
 
-      const mathContent =
+      const content =
         document.createElement("div");
 
 
-      mathContent.className =
+      content.className =
         "math-content";
 
 
-      mathContent.dataset.tex =
-        tex;
+      content.setAttribute(
+        "dir",
+        "ltr"
+      );
 
 
-      mathContent.dataset.display =
+      content.dataset.tex =
+        tex.trim();
+
+
+      content.dataset.display =
         "true";
 
 
-      mathContent.textContent =
-        "";
-
-
       wrapper.appendChild(
-        mathContent
+        content
       );
 
 
@@ -1852,7 +1777,353 @@
 
 
     /* ======================================================
-       HIDE ASSISTIVE DUPLICATE
+       INNER BLOCK
+       ====================================================== */
+
+    function createInnerBlock(block) {
+
+      if (
+        !block ||
+        typeof block !== "object"
+      ) {
+
+        return null;
+
+      }
+
+
+      if (
+        block.type === "paragraph" &&
+        Array.isArray(block.segments)
+      ) {
+
+        return createParagraphBlock(
+          block.segments
+        );
+
+      }
+
+
+      if (
+        block.type === "math" &&
+        typeof block.content ===
+          "string" &&
+        block.content.trim()
+      ) {
+
+        return createMathBlock(
+          block.content
+        );
+
+      }
+
+
+      return null;
+
+    }
+
+
+    /* ======================================================
+       STEPS
+       ====================================================== */
+
+    function createStepsBlock(items) {
+
+      const wrapper =
+        document.createElement("div");
+
+
+      wrapper.className =
+        "steps-block";
+
+
+      if (
+        !Array.isArray(items)
+      ) {
+
+        return wrapper;
+
+      }
+
+
+      let visibleNumber =
+        0;
+
+
+      for (
+        const item of items
+      ) {
+
+        if (
+          !item ||
+          typeof item.title !==
+            "string" ||
+          !item.title.trim() ||
+          !Array.isArray(
+            item.blocks
+          )
+        ) {
+
+          continue;
+
+        }
+
+
+        const innerElements =
+          [];
+
+
+        for (
+          const block of item.blocks
+        ) {
+
+          const element =
+            createInnerBlock(
+              block
+            );
+
+
+          if (element) {
+
+            innerElements.push(
+              element
+            );
+
+          }
+
+        }
+
+
+        if (
+          innerElements.length === 0
+        ) {
+
+          continue;
+
+        }
+
+
+        visibleNumber++;
+
+
+        const itemElement =
+          document.createElement("div");
+
+
+        itemElement.className =
+          "step-item";
+
+
+        const header =
+          document.createElement("div");
+
+
+        header.className =
+          "step-header";
+
+
+        const number =
+          document.createElement("div");
+
+
+        number.className =
+          "step-number";
+
+
+        number.textContent =
+          String(
+            visibleNumber
+          );
+
+
+        const title =
+          document.createElement("div");
+
+
+        title.className =
+          "step-title";
+
+
+        title.textContent =
+          item.title.trim();
+
+
+        header.appendChild(
+          number
+        );
+
+
+        header.appendChild(
+          title
+        );
+
+
+        const content =
+          document.createElement("div");
+
+
+        content.className =
+          "step-content";
+
+
+        for (
+          const element of innerElements
+        ) {
+
+          content.appendChild(
+            element
+          );
+
+        }
+
+
+        itemElement.appendChild(
+          header
+        );
+
+
+        itemElement.appendChild(
+          content
+        );
+
+
+        wrapper.appendChild(
+          itemElement
+        );
+
+      }
+
+
+      return wrapper;
+
+    }
+
+
+    /* ======================================================
+       FINAL ANSWER
+       ====================================================== */
+
+    function createFinalAnswerBlock(
+      blocks
+    ) {
+
+      const wrapper =
+        document.createElement("div");
+
+
+      wrapper.className =
+        "final-answer-block";
+
+
+      const title =
+        document.createElement("div");
+
+
+      title.className =
+        "final-answer-title";
+
+
+      title.textContent =
+        "النتيجة النهائية";
+
+
+      const content =
+        document.createElement("div");
+
+
+      content.className =
+        "final-answer-content";
+
+
+      if (
+        Array.isArray(blocks)
+      ) {
+
+        for (
+          const block of blocks
+        ) {
+
+          const element =
+            createInnerBlock(
+              block
+            );
+
+
+          if (element) {
+
+            content.appendChild(
+              element
+            );
+
+          }
+
+        }
+
+      }
+
+
+      wrapper.appendChild(
+        title
+      );
+
+
+      wrapper.appendChild(
+        content
+      );
+
+
+      return wrapper;
+
+    }
+
+
+    /* ======================================================
+       NOTICE
+       ====================================================== */
+
+    function createNoticeBlock(
+      segments
+    ) {
+
+      const wrapper =
+        document.createElement("div");
+
+
+      wrapper.className =
+        "notice-block";
+
+
+      const label =
+        document.createElement("span");
+
+
+      label.className =
+        "notice-label";
+
+
+      label.textContent =
+        "ملاحظة";
+
+
+      wrapper.appendChild(
+        label
+      );
+
+
+      wrapper.appendChild(
+        createParagraphBlock(
+          segments
+        )
+      );
+
+
+      return wrapper;
+
+    }
+
+
+    /* ======================================================
+       ASSISTIVE MATH
        ====================================================== */
 
     function hideAssistiveMath(
@@ -1908,7 +2179,7 @@
 
 
     /* ======================================================
-       RENDER MATH ELEMENT
+       RENDER MATH
        ====================================================== */
 
     async function renderMathElement(
@@ -1950,7 +2221,6 @@
           rendered
         );
 
-
       } catch (error) {
 
         console.error(
@@ -1959,11 +2229,6 @@
           tex
         );
 
-
-        /*
-          Fallback:
-          show raw TeX once only.
-        */
 
         element.textContent =
           tex;
@@ -1974,12 +2239,10 @@
 
 
     /* ======================================================
-       VALIDATE V2 BLOCK
+       VALIDATE TOP LEVEL V3
        ====================================================== */
 
-    function isValidBlock(
-      block
-    ) {
+    function isValidBlock(block) {
 
       if (
         !block ||
@@ -1992,33 +2255,24 @@
 
 
       if (
-        block.type === "heading"
-      ) {
-
-        return (
-          typeof block.content ===
-            "string" &&
-          block.content.trim()
-        );
-
-      }
-
-
-      if (
+        block.type === "heading" ||
         block.type === "math"
       ) {
 
         return (
           typeof block.content ===
             "string" &&
-          block.content.trim()
+          Boolean(
+            block.content.trim()
+          )
         );
 
       }
 
 
       if (
-        block.type === "paragraph"
+        block.type === "paragraph" ||
+        block.type === "notice"
       ) {
 
         return (
@@ -2031,13 +2285,42 @@
       }
 
 
+      if (
+        block.type === "steps"
+      ) {
+
+        return (
+          Array.isArray(
+            block.items
+          ) &&
+          block.items.length > 0
+        );
+
+      }
+
+
+      if (
+        block.type ===
+        "final_answer"
+      ) {
+
+        return (
+          Array.isArray(
+            block.blocks
+          ) &&
+          block.blocks.length > 0
+        );
+
+      }
+
+
       return false;
 
     }
 
 
     /* ======================================================
-       RENDER STRUCTURED BLOCKS V2
+       RENDER V3
        ====================================================== */
 
     async function renderBlocks(
@@ -2083,43 +2366,87 @@
         const block of validBlocks
       ) {
 
+        let element =
+          null;
+
+
         if (
-          block.type ===
-          "heading"
+          block.type === "heading"
         ) {
 
-          fragment.appendChild(
+          element =
             createHeadingBlock(
-              block.content.trim()
-            )
-          );
+              block.content
+            );
 
         }
 
 
         else if (
-          block.type ===
-          "paragraph"
+          block.type === "paragraph"
         ) {
 
-          fragment.appendChild(
+          element =
             createParagraphBlock(
               block.segments
-            )
-          );
+            );
+
+        }
+
+
+        else if (
+          block.type === "math"
+        ) {
+
+          element =
+            createMathBlock(
+              block.content
+            );
+
+        }
+
+
+        else if (
+          block.type === "steps"
+        ) {
+
+          element =
+            createStepsBlock(
+              block.items
+            );
 
         }
 
 
         else if (
           block.type ===
-          "math"
+          "final_answer"
         ) {
 
+          element =
+            createFinalAnswerBlock(
+              block.blocks
+            );
+
+        }
+
+
+        else if (
+          block.type === "notice"
+        ) {
+
+          element =
+            createNoticeBlock(
+              block.segments
+            );
+
+        }
+
+
+        if (element) {
+
           fragment.appendChild(
-            createMathBlock(
-              block.content.trim()
-            )
+            element
           );
 
         }
@@ -2131,11 +2458,6 @@
         fragment
       );
 
-
-      /*
-        Both inline_math and display math
-        are rendered from explicit structured data.
-      */
 
       const mathElements =
         answerElement.querySelectorAll(
@@ -2152,16 +2474,11 @@
       }
 
 
-      const mathJaxReady =
+      const ready =
         await waitForMathJax();
 
 
-      if (!mathJaxReady) {
-
-        console.error(
-          "MathJax failed to load."
-        );
-
+      if (!ready) {
 
         mathElements.forEach(
           (element) => {
@@ -2172,7 +2489,6 @@
 
           }
         );
-
 
         return;
 
@@ -2193,7 +2509,7 @@
 
 
     /* ======================================================
-       ASK AI
+       ASK
        ====================================================== */
 
     async function askAI() {
@@ -2232,8 +2548,16 @@
       answerElement.replaceChildren();
 
 
+      questionTypeBadge.style.display =
+        "none";
+
+
       currentBlocks =
         [];
+
+
+      currentQuestionTypeLabel =
+        "";
 
 
       showStatus(
@@ -2252,10 +2576,8 @@
               method: "POST",
 
               headers: {
-
                 "Content-Type":
                   "application/json"
-
               },
 
               body:
@@ -2281,7 +2603,7 @@
           data =
             await response.json();
 
-        } catch (jsonError) {
+        } catch (error) {
 
           throw new Error(
             "وصل رد غير صالح من الخادم."
@@ -2290,9 +2612,7 @@
         }
 
 
-        if (
-          !response.ok
-        ) {
+        if (!response.ok) {
 
           throw new Error(
             data?.error ||
@@ -2302,46 +2622,8 @@
         }
 
 
-        /*
-          Structured Blocks V2:
-
-          {
-            version: 2,
-
-            blocks: [
-
-              {
-                type: "heading",
-                content: "الحل"
-              },
-
-              {
-                type: "paragraph",
-
-                segments: [
-                  {
-                    type: "text",
-                    content: "..."
-                  },
-                  {
-                    type: "inline_math",
-                    content: "..."
-                  }
-                ]
-              },
-
-              {
-                type: "math",
-                content: "..."
-              }
-
-            ]
-          }
-        */
-
-
         if (
-          data.version !== 2
+          data.version !== 3
         ) {
 
           console.warn(
@@ -2359,7 +2641,7 @@
         ) {
 
           throw new Error(
-            "الخادم لم يرسل Structured Blocks V2 بالصورة المتوقعة."
+            "الخادم لم يرسل Structured Blocks V3 بالصورة المتوقعة."
           );
 
         }
@@ -2367,6 +2649,27 @@
 
         currentBlocks =
           data.blocks;
+
+
+        currentQuestionTypeLabel =
+          typeof data.question_type_label ===
+            "string"
+            ? data.question_type_label.trim()
+            : "";
+
+
+        if (
+          currentQuestionTypeLabel
+        ) {
+
+          questionTypeBadge.textContent =
+            currentQuestionTypeLabel;
+
+
+          questionTypeBadge.style.display =
+            "block";
+
+        }
 
 
         await renderBlocks(
@@ -2392,7 +2695,6 @@
           },
           100
         );
-
 
       } catch (error) {
 
@@ -2429,7 +2731,152 @@
 
 
     /* ======================================================
-       V2 → PLAIN TEXT
+       SEGMENTS TO TEXT
+       ====================================================== */
+
+    function segmentsToPlainText(
+      segments
+    ) {
+
+      if (
+        !Array.isArray(segments)
+      ) {
+
+        return "";
+
+      }
+
+
+      let result =
+        "";
+
+
+      for (
+        const segment of segments
+      ) {
+
+        if (
+          !segment ||
+          typeof segment.content !==
+            "string"
+        ) {
+
+          continue;
+
+        }
+
+
+        if (
+          segment.type === "text"
+        ) {
+
+          result +=
+            segment.content;
+
+        }
+
+
+        else if (
+          segment.type ===
+          "inline_math"
+        ) {
+
+          result +=
+            segment.content.trim();
+
+        }
+
+      }
+
+
+      return result.trim();
+
+    }
+
+
+    /* ======================================================
+       INNER BLOCKS TO TEXT
+       ====================================================== */
+
+    function innerBlocksToPlainText(
+      blocks
+    ) {
+
+      if (
+        !Array.isArray(blocks)
+      ) {
+
+        return "";
+
+      }
+
+
+      const parts =
+        [];
+
+
+      for (
+        const block of blocks
+      ) {
+
+        if (!block) {
+          continue;
+        }
+
+
+        if (
+          block.type === "paragraph"
+        ) {
+
+          const text =
+            segmentsToPlainText(
+              block.segments
+            );
+
+
+          if (text) {
+
+            parts.push(
+              text
+            );
+
+          }
+
+        }
+
+
+        else if (
+          block.type === "math" &&
+          typeof block.content ===
+            "string"
+        ) {
+
+          const text =
+            block.content.trim();
+
+
+          if (text) {
+
+            parts.push(
+              text
+            );
+
+          }
+
+        }
+
+      }
+
+
+      return parts
+        .join("\n")
+        .trim();
+
+    }
+
+
+    /* ======================================================
+       V3 TO PLAIN TEXT
        ====================================================== */
 
     function blocksToPlainText() {
@@ -2458,25 +2905,18 @@
         }
 
 
-        /* HEADING */
-
         if (
-          block.type ===
-          "heading" &&
+          block.type === "heading" &&
           typeof block.content ===
             "string"
         ) {
 
-          const content =
+          const text =
             block.content.trim();
 
 
-          if (content) {
-
-            parts.push(
-              content
-            );
-
+          if (text) {
+            parts.push(text);
           }
 
 
@@ -2485,25 +2925,18 @@
         }
 
 
-        /* DISPLAY MATH */
-
         if (
-          block.type ===
-          "math" &&
-          typeof block.content ===
-            "string"
+          block.type === "paragraph"
         ) {
 
-          const content =
-            block.content.trim();
-
-
-          if (content) {
-
-            parts.push(
-              content
+          const text =
+            segmentsToPlainText(
+              block.segments
             );
 
+
+          if (text) {
+            parts.push(text);
           }
 
 
@@ -2512,38 +2945,52 @@
         }
 
 
-        /* PARAGRAPH */
-
         if (
-          block.type ===
-            "paragraph" &&
-          Array.isArray(
-            block.segments
-          )
+          block.type === "math" &&
+          typeof block.content ===
+            "string"
         ) {
 
-          let paragraphText =
-            "";
+          const text =
+            block.content.trim();
+
+
+          if (text) {
+            parts.push(text);
+          }
+
+
+          continue;
+
+        }
+
+
+        if (
+          block.type === "steps" &&
+          Array.isArray(block.items)
+        ) {
+
+          const stepParts =
+            [];
+
+
+          let number =
+            0;
 
 
           for (
-            const segment of
-            block.segments
+            const item of block.items
           ) {
 
-            if (
-              !segment ||
-              typeof segment.content !==
-                "string"
-            ) {
-
+            if (!item) {
               continue;
-
             }
 
 
             const content =
-              segment.content.trim();
+              innerBlocksToPlainText(
+                item.blocks
+              );
 
 
             if (!content) {
@@ -2551,34 +2998,86 @@
             }
 
 
-            /*
-              Add a controlled space between
-              text and inline math segments.
-            */
-
-            if (
-              paragraphText &&
-              !paragraphText.endsWith(" ")
-            ) {
-
-              paragraphText +=
-                " ";
-
-            }
+            number++;
 
 
-            paragraphText +=
-              content;
+            const title =
+              typeof item.title ===
+                "string"
+                ? item.title.trim()
+                : "";
+
+
+            stepParts.push(
+              number +
+              ". " +
+              title +
+              "\n" +
+              content
+            );
 
           }
 
 
           if (
-            paragraphText.trim()
+            stepParts.length
           ) {
 
             parts.push(
-              paragraphText.trim()
+              stepParts.join(
+                "\n\n"
+              )
+            );
+
+          }
+
+
+          continue;
+
+        }
+
+
+        if (
+          block.type ===
+            "final_answer"
+        ) {
+
+          const content =
+            innerBlocksToPlainText(
+              block.blocks
+            );
+
+
+          if (content) {
+
+            parts.push(
+              "النتيجة النهائية\n" +
+              content
+            );
+
+          }
+
+
+          continue;
+
+        }
+
+
+        if (
+          block.type === "notice"
+        ) {
+
+          const content =
+            segmentsToPlainText(
+              block.segments
+            );
+
+
+          if (content) {
+
+            parts.push(
+              "ملاحظة\n" +
+              content
             );
 
           }
@@ -2643,14 +3142,7 @@
 
           }
 
-
         } catch (error) {
-
-          console.error(
-            "COPY ERROR:",
-            error
-          );
-
 
           const textarea =
             document.createElement(
@@ -2697,10 +3189,7 @@
               1800
             );
 
-
-          } catch (
-            fallbackError
-          ) {
+          } catch (fallbackError) {
 
             showStatus(
               "تعذر نسخ الإجابة تلقائياً.",
@@ -2801,7 +3290,6 @@
             1800
           );
 
-
         } catch (error) {
 
           console.error(
@@ -2889,7 +3377,6 @@
             );
 
           }
-
 
         } catch (error) {
 
