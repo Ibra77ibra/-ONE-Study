@@ -12,19 +12,32 @@
   <title>ONE Study</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
       background: #f4f7fb;
       color: #172033;
     }
 
     .header {
-      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      background:
+        linear-gradient(
+          135deg,
+          #2563eb,
+          #4f46e5
+        );
+
       color: white;
       padding: 42px 20px 58px;
       text-align: center;
@@ -51,7 +64,10 @@
       background: white;
       border-radius: 24px;
       padding: 24px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+
+      box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.08);
     }
 
     h2 {
@@ -63,13 +79,19 @@
     textarea {
       width: 100%;
       min-height: 155px;
-      border: 1px solid #dbe2ea;
+
+      border:
+        1px solid #dbe2ea;
+
       border-radius: 16px;
       padding: 16px;
+
       font-size: 17px;
       resize: vertical;
       outline: none;
+
       font-family: inherit;
+
       direction: rtl;
       text-align: right;
     }
@@ -78,12 +100,23 @@
       border-color: #2563eb;
     }
 
+
+    /* =========================
+       IMAGE AREA
+       ========================= */
+
     .image-box {
       margin-top: 17px;
-      border: 2px dashed #cbd5e1;
+
+      border:
+        2px dashed #cbd5e1;
+
       border-radius: 16px;
+
       padding: 20px;
+
       text-align: center;
+
       background: #f8fafc;
     }
 
@@ -100,32 +133,51 @@
 
     #preview {
       display: none;
+
       width: 100%;
       max-height: 350px;
+
       object-fit: contain;
+
       border-radius: 14px;
+
       margin-top: 18px;
+
       background: white;
     }
 
     .image-status {
       display: none;
+
       margin-top: 12px;
+
       color: #15803d;
+
       font-weight: 700;
       font-size: 15px;
     }
 
+
+    /* =========================
+       BUTTON
+       ========================= */
+
     button {
       width: 100%;
+
       margin-top: 20px;
+
       border: 0;
       border-radius: 16px;
+
       padding: 17px;
+
       font-size: 20px;
       font-weight: 700;
+
       background: #2563eb;
       color: white;
+
       cursor: pointer;
     }
 
@@ -134,49 +186,171 @@
       cursor: not-allowed;
     }
 
+
+    /* =========================
+       LOADING
+       ========================= */
+
     .loading {
       display: none;
+
       text-align: center;
+
       padding: 22px 10px;
+
       color: #475569;
+
       font-size: 17px;
       font-weight: 600;
     }
 
-.answer {
-  display: none;
-  margin-top: 20px;
-  background: #eef4ff;
-  border: 1px solid #dbeafe;
-  border-radius: 16px;
-  padding: 20px;
-  line-height: 2;
-  font-size: 17px;
-  white-space: pre-wrap;
-  text-align: right;
-  direction: rtl;
-  unicode-bidi: plaintext;
-  overflow-wrap: break-word;
-  word-break: normal;
-  font-variant-numeric: lining-nums tabular-nums;
-}
-    
+
+    /* =========================
+       ANSWER
+       ========================= */
+
+    .answer {
+      display: none;
+
+      margin-top: 20px;
+
+      background: #eef4ff;
+
+      border:
+        1px solid #dbeafe;
+
+      border-radius: 16px;
+
+      padding: 20px;
+
+      font-size: 17px;
+
+      line-height: 2;
+
+      direction: rtl;
+      text-align: right;
+
+      overflow-wrap: break-word;
+      word-break: normal;
+    }
+
+
+    /*
+     * سطر عربي
+     */
+    .answer-line {
+      width: 100%;
+
+      direction: rtl;
+      text-align: right;
+
+      unicode-bidi: plaintext;
+
+      margin:
+        4px 0;
+    }
+
+
+    /*
+     * سطر رياضي مستقل
+     */
+    .math-line {
+      width: 100%;
+
+      direction: ltr;
+      text-align: left;
+
+      unicode-bidi: isolate;
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        Menlo,
+        monospace;
+
+      font-size: 17px;
+      font-weight: 600;
+
+      line-height: 1.9;
+
+      margin:
+        8px 0;
+
+      padding:
+        2px 0;
+
+      overflow-wrap: break-word;
+    }
+
+
+    /*
+     * معادلة داخل سطر عربي
+     */
+    .inline-math {
+      display: inline-block;
+
+      direction: ltr;
+
+      unicode-bidi: isolate;
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        Menlo,
+        monospace;
+
+      font-weight: 600;
+
+      margin:
+        0 3px;
+    }
+
+
+    /*
+     * سطر فارغ
+     */
+    .answer-space {
+      height: 12px;
+    }
+
+
+    /*
+     * رسالة الخطأ
+     */
     .answer.error {
       background: #fff1f2;
       border-color: #fecdd3;
       color: #9f1239;
+
+      direction: rtl;
+      text-align: right;
+
+      white-space: pre-wrap;
     }
+
 
     .note {
       font-size: 14px;
+
       color: #64748b;
+
       margin-top: 14px;
+
       text-align: center;
     }
 
+
+    /* =========================
+       MOBILE
+       ========================= */
+
     @media (max-width: 600px) {
+
       .header {
-        padding: 38px 16px 55px;
+        padding:
+          38px 16px 55px;
       }
 
       .logo {
@@ -190,26 +364,56 @@
       h2 {
         font-size: 22px;
       }
+
+      .answer {
+        padding: 18px 16px;
+        font-size: 17px;
+      }
+
+      .math-line {
+        font-size: 16px;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+
   <div class="header">
-    <div class="logo">ONE Study</div>
+
+    <div class="logo">
+      ONE Study
+    </div>
 
     <div class="subtitle">
       مساعدك الدراسي بالذكاء الاصطناعي
     </div>
+
   </div>
 
+
+  <!-- =========================
+       MAIN
+       ========================= -->
 
   <div class="container">
 
     <div class="card">
 
-      <h2>ما السؤال الذي تريد حله؟</h2>
+
+      <h2>
+        ما السؤال الذي تريد حله؟
+      </h2>
+
 
       <textarea
         id="question"
@@ -217,11 +421,14 @@
       ></textarea>
 
 
+      <!-- IMAGE -->
+
       <div class="image-box">
 
         <div class="image-title">
           📷 صوّر أو اختر صورة للسؤال
         </div>
+
 
         <input
           id="imageInput"
@@ -230,12 +437,14 @@
           capture="environment"
         >
 
+
         <div
           id="imageStatus"
           class="image-status"
         >
           ✓ تم اختيار الصورة
         </div>
+
 
         <img
           id="preview"
@@ -245,6 +454,8 @@
       </div>
 
 
+      <!-- BUTTON -->
+
       <button
         id="askButton"
         type="button"
@@ -253,6 +464,8 @@
       </button>
 
 
+      <!-- LOADING -->
+
       <div
         id="loading"
         class="loading"
@@ -260,6 +473,8 @@
         جاري تحليل السؤال...
       </div>
 
+
+      <!-- ANSWER -->
 
       <div
         id="answer"
@@ -271,55 +486,97 @@
         راجع الإجابات المهمة وتأكد منها من مصادرك الدراسية.
       </div>
 
+
     </div>
 
   </div>
 
 
+
 <script>
+
 (function () {
 
   "use strict";
 
+
+  /* =========================
+     SETTINGS
+     ========================= */
+
   var API_URL = "/ask";
 
+
+  /* =========================
+     ELEMENTS
+     ========================= */
+
   var questionInput =
-    document.getElementById("question");
+    document.getElementById(
+      "question"
+    );
+
 
   var imageInput =
-    document.getElementById("imageInput");
+    document.getElementById(
+      "imageInput"
+    );
+
 
   var preview =
-    document.getElementById("preview");
+    document.getElementById(
+      "preview"
+    );
+
 
   var imageStatus =
-    document.getElementById("imageStatus");
+    document.getElementById(
+      "imageStatus"
+    );
+
 
   var askButton =
-    document.getElementById("askButton");
+    document.getElementById(
+      "askButton"
+    );
+
 
   var loading =
-    document.getElementById("loading");
+    document.getElementById(
+      "loading"
+    );
+
 
   var answer =
-    document.getElementById("answer");
+    document.getElementById(
+      "answer"
+    );
 
 
-  /*
-   * تحويل الصورة إلى Base64 بدون FileReader.
-   * نستخدم Blob + fetch + ArrayBuffer.
-   */
+
+  /* =========================
+     IMAGE TO BASE64
+     بدون FileReader
+     ========================= */
+
   async function fileToDataURL(file) {
 
     var buffer =
       await file.arrayBuffer();
 
+
     var bytes =
-      new Uint8Array(buffer);
+      new Uint8Array(
+        buffer
+      );
+
 
     var binary = "";
 
-    var chunkSize = 0x8000;
+
+    var chunkSize =
+      0x8000;
+
 
     for (
       var i = 0;
@@ -336,18 +593,26 @@
           )
         );
 
+
       binary +=
         String.fromCharCode.apply(
           null,
           chunk
         );
+
     }
 
+
     var base64 =
-      btoa(binary);
+      btoa(
+        binary
+      );
+
 
     var mimeType =
-      file.type || "image/jpeg";
+      file.type ||
+      "image/jpeg";
+
 
     return (
       "data:" +
@@ -355,30 +620,40 @@
       ";base64," +
       base64
     );
+
   }
 
 
-  /*
-   * اختيار ومعاينة الصورة
-   */
+
+  /* =========================
+     IMAGE SELECTION
+     ========================= */
+
   imageInput.addEventListener(
     "change",
     function () {
 
+
       var file =
         imageInput.files &&
         imageInput.files.length > 0
+
           ? imageInput.files[0]
+
           : null;
 
 
       imageStatus.style.display =
         "none";
 
+
       preview.style.display =
         "none";
 
-      preview.removeAttribute("src");
+
+      preview.removeAttribute(
+        "src"
+      );
 
 
       if (!file) {
@@ -386,51 +661,76 @@
       }
 
 
+
+      /* CHECK FILE TYPE */
+
       if (
         file.type &&
-        file.type.indexOf("image/") !== 0
+        file.type.indexOf(
+          "image/"
+        ) !== 0
       ) {
 
-        imageInput.value = "";
+        imageInput.value =
+          "";
+
 
         alert(
           "الملف المختار ليس صورة."
         );
 
+
         return;
+
       }
 
 
+
+      /* MAX 10 MB */
+
       var maxSize =
-        10 * 1024 * 1024;
+        10 *
+        1024 *
+        1024;
 
 
-      if (file.size > maxSize) {
+      if (
+        file.size >
+        maxSize
+      ) {
 
-        imageInput.value = "";
+        imageInput.value =
+          "";
+
 
         alert(
           "حجم الصورة كبير جداً. اختر صورة أصغر من 10 MB."
         );
 
+
         return;
+
       }
+
 
 
       imageStatus.style.display =
         "block";
 
 
-      /*
-       * المعاينة باستخدام Object URL.
-       */
+
+      /* IMAGE PREVIEW */
+
       if (
         window.URL &&
         window.URL.createObjectURL
       ) {
 
         var imageURL =
-          window.URL.createObjectURL(file);
+          window.URL.createObjectURL(
+            file
+          );
+
 
         preview.onload =
           function () {
@@ -443,192 +743,593 @@
               window.URL.revokeObjectURL(
                 imageURL
               );
+
             }
 
           };
 
+
         preview.src =
           imageURL;
 
+
         preview.style.display =
           "block";
+
       }
 
     }
   );
 
 
-  /*
-   * عرض الخطأ
-   */
+
+  /* =========================
+     ERROR
+     ========================= */
+
   function showError(message) {
+
+
+    answer.innerHTML =
+      "";
+
 
     answer.classList.add(
       "error"
     );
 
+
     answer.textContent =
       "تعذر الحصول على الإجابة:\n" +
       message;
 
+
     answer.style.display =
       "block";
+
+
+    scrollToAnswer();
+
+  }
+
+
+
+  /* =========================
+     SCROLL
+     ========================= */
+
+  function scrollToAnswer() {
 
     try {
 
       answer.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+
+        behavior:
+          "smooth",
+
+        block:
+          "start"
+
       });
 
-    } catch (e) {
+    }
+
+    catch (e) {
 
       answer.scrollIntoView();
 
     }
+
   }
 
 
-  /*
-   * عرض الإجابة
-   */
-  function showAnswer(text) {
 
-  answer.classList.remove(
-    "error"
-  );
+  /* =========================
+     ARABIC DETECTION
+     ========================= */
 
-  answer.innerHTML = "";
+  function containsArabic(text) {
 
-  var lines =
-    String(text).split("\n");
+    return (
+      /[\u0600-\u06FF]/.test(
+        text
+      )
+    );
 
-  lines.forEach(function (line) {
+  }
+
+
+
+  /* =========================
+     MATH DETECTION
+     ========================= */
+
+  function looksLikeMath(text) {
+
+    var value =
+      String(text)
+        .trim();
+
+
+    if (!value) {
+      return false;
+    }
+
+
+    /*
+     * إذا كان السطر يحتوي
+     * على كمية كبيرة من العربية
+     * نعتبره شرحاً وليس معادلة مستقلة
+     */
+
+    var arabicMatches =
+      value.match(
+        /[\u0600-\u06FF]/g
+      );
+
+
+    var arabicCount =
+      arabicMatches
+        ? arabicMatches.length
+        : 0;
+
+
+    /*
+     * علامات رياضية
+     */
+
+    var hasMathSymbol =
+      /[=+\-−×÷√^<>≤≥±∫∑π∞]/.test(
+        value
+      );
+
+
+    /*
+     * متغيرات ودوال
+     */
+
+    var hasVariable =
+      /\b[a-zA-Z]\b/.test(
+        value
+      ) ||
+      /[a-zA-Z]\s*\(/.test(
+        value
+      );
+
+
+    /*
+     * أرقام
+     */
+
+    var hasNumber =
+      /\d/.test(
+        value
+      );
+
+
+    /*
+     * معادلة غالباً
+     */
+
+    if (
+      hasMathSymbol &&
+      (
+        hasVariable ||
+        hasNumber
+      ) &&
+      arabicCount < 4
+    ) {
+
+      return true;
+
+    }
+
+
+    return false;
+
+  }
+
+
+
+  /* =========================
+     NORMALIZE MATH
+     ========================= */
+
+  function normalizeMath(text) {
+
+    var value =
+      String(text);
+
+
+    /*
+     * توحيد بعض الرموز
+     */
+
+    value =
+      value.replace(
+        /\u2212/g,
+        "-"
+      );
+
+
+    value =
+      value.replace(
+        /\s*=\s*/g,
+        " = "
+      );
+
+
+    value =
+      value.replace(
+        /\s*\+\s*/g,
+        " + "
+      );
+
+
+    value =
+      value.replace(
+        /\s*-\s*/g,
+        " - "
+      );
+
+
+    value =
+      value.replace(
+        /\s{2,}/g,
+        " "
+      );
+
+
+    return value.trim();
+
+  }
+
+
+
+  /* =========================
+     CREATE ARABIC LINE
+     ========================= */
+
+  function createTextLine(text) {
 
     var div =
-      document.createElement("div");
+      document.createElement(
+        "div"
+      );
 
-    div.textContent =
-      line;
+
+    div.className =
+      "answer-line";
+
 
     div.setAttribute(
       "dir",
-      "auto"
+      "rtl"
     );
 
-    div.style.unicodeBidi =
-      "plaintext";
 
-    if (line.trim() === "") {
-      div.innerHTML = "&nbsp;";
-    }
+    div.textContent =
+      text;
 
-    answer.appendChild(div);
 
-  });
-
-  answer.style.display =
-    "block";
-
-  try {
-
-    answer.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-
-  } catch (e) {
-
-    answer.scrollIntoView();
+    return div;
 
   }
 
-}
-
-  /*
-   * حل السؤال
-   */
-  async function askAI() {
-
-    var question =
-      questionInput.value.trim();
-
-    var file =
-      imageInput.files &&
-      imageInput.files.length > 0
-        ? imageInput.files[0]
-        : null;
 
 
-    if (!question && !file) {
+  /* =========================
+     CREATE MATH LINE
+     ========================= */
 
-      alert(
-        "اكتب سؤالاً أو اختر صورة أولاً."
+  function createMathLine(text) {
+
+    var div =
+      document.createElement(
+        "div"
       );
 
-      return;
-    }
+
+    div.className =
+      "math-line";
 
 
-    askButton.disabled = true;
+    div.setAttribute(
+      "dir",
+      "ltr"
+    );
 
-    answer.style.display = "none";
 
-    answer.textContent = "";
+    div.textContent =
+      normalizeMath(
+        text
+      );
+
+
+    return div;
+
+  }
+
+
+
+  /* =========================
+     CREATE EMPTY SPACE
+     ========================= */
+
+  function createSpace() {
+
+    var div =
+      document.createElement(
+        "div"
+      );
+
+
+    div.className =
+      "answer-space";
+
+
+    return div;
+
+  }
+
+
+
+  /* =========================
+     DISPLAY ANSWER
+     ========================= */
+
+  function showAnswer(text) {
+
 
     answer.classList.remove(
       "error"
     );
 
+
+    answer.innerHTML =
+      "";
+
+
+    var cleanText =
+      String(
+        text || ""
+      )
+      .replace(
+        /\r\n/g,
+        "\n"
+      )
+      .replace(
+        /\r/g,
+        "\n"
+      );
+
+
+    var lines =
+      cleanText.split(
+        "\n"
+      );
+
+
+    lines.forEach(
+      function (line) {
+
+
+        var trimmed =
+          line.trim();
+
+
+        /*
+         * EMPTY LINE
+         */
+
+        if (!trimmed) {
+
+          answer.appendChild(
+            createSpace()
+          );
+
+          return;
+
+        }
+
+
+        /*
+         * PURE / MOSTLY MATH LINE
+         */
+
+        if (
+          looksLikeMath(
+            trimmed
+          )
+        ) {
+
+          answer.appendChild(
+            createMathLine(
+              trimmed
+            )
+          );
+
+          return;
+
+        }
+
+
+        /*
+         * ARABIC / NORMAL TEXT
+         */
+
+        answer.appendChild(
+          createTextLine(
+            trimmed
+          )
+        );
+
+      }
+    );
+
+
+    answer.style.display =
+      "block";
+
+
+    scrollToAnswer();
+
+  }
+
+
+
+  /* =========================
+     ASK AI
+     ========================= */
+
+  async function askAI() {
+
+
+    var question =
+      questionInput.value
+        .trim();
+
+
+    var file =
+      imageInput.files &&
+      imageInput.files.length > 0
+
+        ? imageInput.files[0]
+
+        : null;
+
+
+
+    /*
+     * NOTHING ENTERED
+     */
+
+    if (
+      !question &&
+      !file
+    ) {
+
+      alert(
+        "اكتب سؤالاً أو اختر صورة أولاً."
+      );
+
+
+      return;
+
+    }
+
+
+
+    /* LOCK BUTTON */
+
+    askButton.disabled =
+      true;
+
+
+    answer.style.display =
+      "none";
+
+
+    answer.innerHTML =
+      "";
+
+
+    answer.classList.remove(
+      "error"
+    );
+
+
     loading.style.display =
       "block";
 
 
+    loading.textContent =
+      "جاري تحليل السؤال...";
+
+
+
     try {
 
-      var imageData = null;
 
+      var imageData =
+        null;
+
+
+
+      /* IMAGE */
 
       if (file) {
+
 
         loading.textContent =
           "جاري تجهيز الصورة...";
 
+
         imageData =
-          await fileToDataURL(file);
+          await fileToDataURL(
+            file
+          );
 
       }
 
 
-      loading.textContent =
-        "جاري تحليل السؤال والصورة...";
 
+      loading.textContent =
+        file
+
+          ? "جاري تحليل السؤال والصورة..."
+
+          : "جاري تحليل السؤال...";
+
+
+
+      /* REQUEST */
 
       var response =
         await fetch(
+
           API_URL,
+
           {
-            method: "POST",
+
+            method:
+              "POST",
+
 
             headers: {
+
               "Content-Type":
                 "application/json"
+
             },
+
 
             body:
               JSON.stringify({
-                question: question,
-                image: imageData
+
+                question:
+                  question,
+
+                image:
+                  imageData
+
               })
+
           }
+
         );
 
+
+
+      /* READ SERVER RESPONSE */
 
       var responseText =
         await response.text();
 
 
+
       var data;
+
 
 
       try {
@@ -638,7 +1339,9 @@
             responseText
           );
 
-      } catch (e) {
+      }
+
+      catch (e) {
 
         throw new Error(
           "الخادم أعاد استجابة غير صالحة."
@@ -647,23 +1350,40 @@
       }
 
 
-      if (!response.ok) {
+
+      /* SERVER ERROR */
+
+      if (
+        !response.ok
+      ) {
 
         throw new Error(
+
           data.error ||
+
           "حدث خطأ أثناء معالجة السؤال."
+
         );
 
       }
 
 
+
+      /* GET ANSWER */
+
       var finalAnswer =
+
         data.answer ||
+
         data.output ||
+
         data.response;
 
 
-      if (!finalAnswer) {
+
+      if (
+        !finalAnswer
+      ) {
 
         throw new Error(
           "تم الاتصال بالخادم ولكن لم تصل إجابة."
@@ -672,33 +1392,49 @@
       }
 
 
+
+      /* SHOW ANSWER */
+
       showAnswer(
         finalAnswer
       );
 
 
-    } catch (error) {
+    }
+
+    catch (error) {
+
 
       console.error(
         "ONE STUDY ERROR:",
         error
       );
 
+
       showError(
+
         error &&
         error.message
+
           ? error.message
+
           : "حدث خطأ غير معروف."
+
       );
 
 
-    } finally {
+    }
+
+    finally {
+
 
       loading.style.display =
         "none";
 
+
       loading.textContent =
         "جاري تحليل السؤال...";
+
 
       askButton.disabled =
         false;
@@ -708,15 +1444,29 @@
   }
 
 
+
+  /* =========================
+     BUTTON EVENT
+     ========================= */
+
   askButton.addEventListener(
+
     "click",
+
     function () {
+
       askAI();
+
     }
+
   );
 
+
 })();
+
 </script>
 
+
 </body>
+
 </html>
