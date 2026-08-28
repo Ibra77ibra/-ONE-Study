@@ -11,14 +11,50 @@
 
   <title>ONE Study</title>
 
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [
+          ["\\(", "\\)"]
+        ],
+        displayMath: [
+          ["\\[", "\\]"]
+        ]
+      },
+
+      options: {
+        skipHtmlTags: [
+          "script",
+          "noscript",
+          "style",
+          "textarea",
+          "pre",
+          "code"
+        ]
+      }
+    };
+  </script>
+
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  ></script>
+
+
   <style>
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
     body {
       margin: 0;
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -30,6 +66,11 @@
       color: #172033;
     }
 
+
+    /* =========================
+       HEADER
+       ========================= */
+
     .header {
       background:
         linear-gradient(
@@ -39,9 +80,13 @@
         );
 
       color: white;
-      padding: 42px 20px 58px;
+
+      padding:
+        42px 20px 58px;
+
       text-align: center;
     }
+
 
     .logo {
       font-size: 38px;
@@ -49,20 +94,33 @@
       margin-bottom: 8px;
     }
 
+
     .subtitle {
       font-size: 17px;
       opacity: 0.9;
     }
 
+
+    /* =========================
+       CONTAINER
+       ========================= */
+
     .container {
       max-width: 700px;
-      margin: -32px auto 40px;
-      padding: 0 16px;
+
+      margin:
+        -32px auto 40px;
+
+      padding:
+        0 16px;
     }
+
 
     .card {
       background: white;
+
       border-radius: 24px;
+
       padding: 24px;
 
       box-shadow:
@@ -70,31 +128,46 @@
         rgba(0, 0, 0, 0.08);
     }
 
+
     h2 {
-      margin: 0 0 20px;
+      margin:
+        0 0 20px;
+
       font-size: 23px;
+
       text-align: right;
     }
 
+
+    /* =========================
+       QUESTION
+       ========================= */
+
     textarea {
       width: 100%;
+
       min-height: 155px;
 
       border:
         1px solid #dbe2ea;
 
       border-radius: 16px;
+
       padding: 16px;
 
       font-size: 17px;
+
       resize: vertical;
+
       outline: none;
 
       font-family: inherit;
 
       direction: rtl;
+
       text-align: right;
     }
+
 
     textarea:focus {
       border-color: #2563eb;
@@ -102,7 +175,7 @@
 
 
     /* =========================
-       IMAGE AREA
+       IMAGE
        ========================= */
 
     .image-box {
@@ -120,22 +193,29 @@
       background: #f8fafc;
     }
 
+
     .image-title {
       font-size: 17px;
+
       font-weight: 700;
+
       margin-bottom: 14px;
     }
 
+
     input[type="file"] {
       width: 100%;
+
       font-size: 15px;
     }
+
 
     #preview {
       display: none;
 
       width: 100%;
-      max-height: 350px;
+
+      max-height: 400px;
 
       object-fit: contain;
 
@@ -146,6 +226,7 @@
       background: white;
     }
 
+
     .image-status {
       display: none;
 
@@ -154,6 +235,7 @@
       color: #15803d;
 
       font-weight: 700;
+
       font-size: 15px;
     }
 
@@ -168,21 +250,26 @@
       margin-top: 20px;
 
       border: 0;
+
       border-radius: 16px;
 
       padding: 17px;
 
       font-size: 20px;
+
       font-weight: 700;
 
       background: #2563eb;
+
       color: white;
 
       cursor: pointer;
     }
 
+
     button:disabled {
       opacity: 0.55;
+
       cursor: not-allowed;
     }
 
@@ -196,11 +283,13 @@
 
       text-align: center;
 
-      padding: 22px 10px;
+      padding:
+        22px 10px;
 
       color: #475569;
 
       font-size: 17px;
+
       font-weight: 600;
     }
 
@@ -219,117 +308,106 @@
       border:
         1px solid #dbeafe;
 
-      border-radius: 16px;
+      border-radius: 18px;
 
-      padding: 20px;
+      padding: 22px;
 
-      font-size: 17px;
+      font-size: 18px;
 
       line-height: 2;
 
-      direction: rtl;
       text-align: right;
 
+      direction: rtl;
+
       overflow-wrap: break-word;
+
       word-break: normal;
     }
 
 
-    /*
-     * سطر عربي
-     */
     .answer-line {
+      display: block;
+
       width: 100%;
 
+      margin:
+        0 0 10px;
+
       direction: rtl;
+
       text-align: right;
 
       unicode-bidi: plaintext;
+    }
 
-      margin:
-        4px 0;
+
+    .answer-line:last-child {
+      margin-bottom: 0;
     }
 
 
     /*
-     * سطر رياضي مستقل
+     * الأسطر الرياضية الخالصة
      */
     .math-line {
-      width: 100%;
-
       direction: ltr;
-      text-align: left;
+
+      text-align: center;
 
       unicode-bidi: isolate;
 
-      font-family:
-        "SFMono-Regular",
-        Consolas,
-        "Liberation Mono",
-        Menlo,
-        monospace;
-
-      font-size: 17px;
-      font-weight: 600;
-
-      line-height: 1.9;
-
       margin:
-        8px 0;
+        14px 0;
+
+      overflow-x: auto;
+
+      overflow-y: hidden;
 
       padding:
-        2px 0;
-
-      overflow-wrap: break-word;
+        4px 2px;
     }
 
 
     /*
-     * معادلة داخل سطر عربي
+     * MathJax
      */
-    .inline-math {
-      display: inline-block;
+    .answer mjx-container {
+      max-width: 100%;
+    }
 
-      direction: ltr;
 
-      unicode-bidi: isolate;
+    .answer mjx-container[display="true"] {
+      overflow-x: auto;
 
-      font-family:
-        "SFMono-Regular",
-        Consolas,
-        "Liberation Mono",
-        Menlo,
-        monospace;
-
-      font-weight: 600;
+      overflow-y: hidden;
 
       margin:
-        0 3px;
+        14px 0 !important;
+
+      padding:
+        4px 0;
+
+      text-align: center !important;
     }
 
 
-    /*
-     * سطر فارغ
-     */
-    .answer-space {
-      height: 12px;
-    }
-
-
-    /*
-     * رسالة الخطأ
-     */
     .answer.error {
       background: #fff1f2;
+
       border-color: #fecdd3;
+
       color: #9f1239;
 
       direction: rtl;
-      text-align: right;
 
-      white-space: pre-wrap;
+      text-align: right;
     }
 
+
+    /* =========================
+       NOTE
+       ========================= */
 
     .note {
       font-size: 14px;
@@ -353,25 +431,28 @@
           38px 16px 55px;
       }
 
+
       .logo {
         font-size: 36px;
       }
+
 
       .card {
         padding: 20px;
       }
 
+
       h2 {
         font-size: 22px;
       }
 
-      .answer {
-        padding: 18px 16px;
-        font-size: 17px;
-      }
 
-      .math-line {
-        font-size: 16px;
+      .answer {
+        padding: 18px;
+
+        font-size: 17px;
+
+        line-height: 2;
       }
 
     }
@@ -492,7 +573,6 @@
   </div>
 
 
-
 <script>
 
 (function () {
@@ -501,15 +581,11 @@
 
 
   /* =========================
-     SETTINGS
+     ELEMENTS
      ========================= */
 
   var API_URL = "/ask";
 
-
-  /* =========================
-     ELEMENTS
-     ========================= */
 
   var questionInput =
     document.getElementById(
@@ -553,10 +629,8 @@
     );
 
 
-
   /* =========================
      IMAGE TO BASE64
-     بدون FileReader
      ========================= */
 
   async function fileToDataURL(file) {
@@ -624,9 +698,8 @@
   }
 
 
-
   /* =========================
-     IMAGE SELECTION
+     IMAGE PREVIEW
      ========================= */
 
   imageInput.addEventListener(
@@ -657,12 +730,15 @@
 
 
       if (!file) {
+
         return;
+
       }
 
 
-
-      /* CHECK FILE TYPE */
+      /*
+       * التأكد من أنه ملف صورة
+       */
 
       if (
         file.type &&
@@ -685,8 +761,9 @@
       }
 
 
-
-      /* MAX 10 MB */
+      /*
+       * الحد الأقصى 10MB
+       */
 
       var maxSize =
         10 *
@@ -713,18 +790,19 @@
       }
 
 
-
       imageStatus.style.display =
         "block";
 
 
-
-      /* IMAGE PREVIEW */
+      /*
+       * معاينة الصورة
+       */
 
       if (
         window.URL &&
         window.URL.createObjectURL
       ) {
+
 
         var imageURL =
           window.URL.createObjectURL(
@@ -734,6 +812,7 @@
 
         preview.onload =
           function () {
+
 
             if (
               window.URL &&
@@ -762,7 +841,6 @@
   );
 
 
-
   /* =========================
      ERROR
      ========================= */
@@ -779,9 +857,24 @@
     );
 
 
-    answer.textContent =
+    var errorText =
+      document.createElement(
+        "div"
+      );
+
+
+    errorText.textContent =
       "تعذر الحصول على الإجابة:\n" +
       message;
+
+
+    errorText.style.whiteSpace =
+      "pre-wrap";
+
+
+    answer.appendChild(
+      errorText
+    );
 
 
     answer.style.display =
@@ -793,204 +886,170 @@
   }
 
 
-
   /* =========================
-     SCROLL
+     DETECT MATH
      ========================= */
 
-  function scrollToAnswer() {
+  function looksLikeMath(line) {
 
-    try {
 
-      answer.scrollIntoView({
+    var text =
+      line.trim();
 
-        behavior:
-          "smooth",
 
-        block:
-          "start"
+    if (!text) {
 
-      });
+      return false;
 
     }
 
-    catch (e) {
 
-      answer.scrollIntoView();
+    /*
+     * السطر يعتبر رياضياً إذا
+     * كان أغلبه أرقام ورموز
+     * أو يحتوي على معادلة واضحة.
+     */
 
-    }
+    var hasEquation =
+      /[=±√^]/.test(
+        text
+      );
 
-  }
 
+    var hasMathVariable =
+      /(?:^|\s)[a-zA-Z]\s*[=(+\-]/.test(
+        text
+      );
 
-
-  /* =========================
-     ARABIC DETECTION
-     ========================= */
-
-  function containsArabic(text) {
 
     return (
-      /[\u0600-\u06FF]/.test(
-        text
-      )
+      hasEquation ||
+      hasMathVariable
     );
 
   }
 
 
-
   /* =========================
-     MATH DETECTION
+     CONVERT COMMON MATH
+     TO LATEX
      ========================= */
 
-  function looksLikeMath(text) {
-
-    var value =
-      String(text)
-        .trim();
+  function convertMath(text) {
 
 
-    if (!value) {
-      return false;
-    }
-
-
-    /*
-     * إذا كان السطر يحتوي
-     * على كمية كبيرة من العربية
-     * نعتبره شرحاً وليس معادلة مستقلة
-     */
-
-    var arabicMatches =
-      value.match(
-        /[\u0600-\u06FF]/g
-      );
-
-
-    var arabicCount =
-      arabicMatches
-        ? arabicMatches.length
-        : 0;
-
-
-    /*
-     * علامات رياضية
-     */
-
-    var hasMathSymbol =
-      /[=+\-−×÷√^<>≤≥±∫∑π∞]/.test(
-        value
-      );
-
-
-    /*
-     * متغيرات ودوال
-     */
-
-    var hasVariable =
-      /\b[a-zA-Z]\b/.test(
-        value
-      ) ||
-      /[a-zA-Z]\s*\(/.test(
-        value
-      );
-
-
-    /*
-     * أرقام
-     */
-
-    var hasNumber =
-      /\d/.test(
-        value
-      );
-
-
-    /*
-     * معادلة غالباً
-     */
-
-    if (
-      hasMathSymbol &&
-      (
-        hasVariable ||
-        hasNumber
-      ) &&
-      arabicCount < 4
-    ) {
-
-      return true;
-
-    }
-
-
-    return false;
-
-  }
-
-
-
-  /* =========================
-     NORMALIZE MATH
-     ========================= */
-
-  function normalizeMath(text) {
-
-    var value =
+    var result =
       String(text);
 
 
     /*
-     * توحيد بعض الرموز
+     * الجذور
+     *
+     * √2
+     * يصبح
+     * \sqrt{2}
      */
 
-    value =
-      value.replace(
-        /\u2212/g,
-        "-"
+    result =
+      result.replace(
+        /√\s*\(?([0-9a-zA-Z]+)\)?/g,
+        "\\sqrt{$1}"
       );
 
 
-    value =
-      value.replace(
-        /\s*=\s*/g,
-        " = "
+    /*
+     * القوى البسيطة
+     *
+     * x^2
+     * x^3
+     */
+
+    result =
+      result.replace(
+        /([a-zA-Z0-9\)])\^([0-9]+)/g,
+        "$1^{$2}"
       );
 
 
-    value =
-      value.replace(
-        /\s*\+\s*/g,
-        " + "
+    /*
+     * علامة الضرب
+     */
+
+    result =
+      result.replace(
+        /×/g,
+        "\\times "
       );
 
 
-    value =
-      value.replace(
-        /\s*-\s*/g,
-        " - "
+    /*
+     * علامة لا يساوي
+     */
+
+    result =
+      result.replace(
+        /≠/g,
+        "\\ne "
       );
 
 
-    value =
-      value.replace(
-        /\s{2,}/g,
-        " "
+    /*
+     * أصغر أو يساوي
+     */
+
+    result =
+      result.replace(
+        /≤/g,
+        "\\le "
       );
 
 
-    return value.trim();
+    /*
+     * أكبر أو يساوي
+     */
+
+    result =
+      result.replace(
+        /≥/g,
+        "\\ge "
+      );
+
+
+    /*
+     * السهم
+     */
+
+    result =
+      result.replace(
+        /⇒/g,
+        "\\Rightarrow "
+      );
+
+
+    /*
+     * زائد أو ناقص
+     */
+
+    result =
+      result.replace(
+        /±/g,
+        "\\pm "
+      );
+
+
+    return result;
 
   }
 
 
-
   /* =========================
-     CREATE ARABIC LINE
+     CREATE NORMAL LINE
      ========================= */
 
-  function createTextLine(text) {
+  function createNormalLine(
+    text
+  ) {
+
 
     var div =
       document.createElement(
@@ -1004,8 +1063,12 @@
 
     div.setAttribute(
       "dir",
-      "rtl"
+      "auto"
     );
+
+
+    div.style.unicodeBidi =
+      "plaintext";
 
 
     div.textContent =
@@ -1017,12 +1080,14 @@
   }
 
 
-
   /* =========================
      CREATE MATH LINE
      ========================= */
 
-  function createMathLine(text) {
+  function createMathLine(
+    text
+  ) {
+
 
     var div =
       document.createElement(
@@ -1040,32 +1105,16 @@
     );
 
 
-    div.textContent =
-      normalizeMath(
+    var mathText =
+      convertMath(
         text
       );
 
 
-    return div;
-
-  }
-
-
-
-  /* =========================
-     CREATE EMPTY SPACE
-     ========================= */
-
-  function createSpace() {
-
-    var div =
-      document.createElement(
-        "div"
-      );
-
-
-    div.className =
-      "answer-space";
+    div.textContent =
+      "\\[" +
+      mathText +
+      "\\]";
 
 
     return div;
@@ -1073,9 +1122,8 @@
   }
 
 
-
   /* =========================
-     DISPLAY ANSWER
+     SHOW ANSWER
      ========================= */
 
   function showAnswer(text) {
@@ -1090,43 +1138,43 @@
       "";
 
 
-    var cleanText =
-      String(
-        text || ""
-      )
-      .replace(
-        /\r\n/g,
-        "\n"
-      )
-      .replace(
-        /\r/g,
-        "\n"
-      );
-
-
     var lines =
-      cleanText.split(
-        "\n"
-      );
+      String(text)
+        .replace(/\r/g, "")
+        .split("\n");
 
 
     lines.forEach(
       function (line) {
 
 
-        var trimmed =
+        var cleanLine =
           line.trim();
 
 
         /*
-         * EMPTY LINE
+         * سطر فارغ
          */
 
-        if (!trimmed) {
+        if (
+          cleanLine === ""
+        ) {
+
+
+          var space =
+            document.createElement(
+              "div"
+            );
+
+
+          space.style.height =
+            "12px";
+
 
           answer.appendChild(
-            createSpace()
+            space
           );
+
 
           return;
 
@@ -1134,35 +1182,33 @@
 
 
         /*
-         * PURE / MOSTLY MATH LINE
+         * السطر الرياضي
          */
 
         if (
           looksLikeMath(
-            trimmed
+            cleanLine
           )
         ) {
 
+
           answer.appendChild(
             createMathLine(
-              trimmed
+              cleanLine
             )
           );
 
-          return;
+
+        } else {
+
+
+          answer.appendChild(
+            createNormalLine(
+              cleanLine
+            )
+          );
 
         }
-
-
-        /*
-         * ARABIC / NORMAL TEXT
-         */
-
-        answer.appendChild(
-          createTextLine(
-            trimmed
-          )
-        );
 
       }
     );
@@ -1172,10 +1218,81 @@
       "block";
 
 
+    /*
+     * تشغيل MathJax
+     * بعد إدخال الإجابة
+     */
+
+    renderMath();
+
+
     scrollToAnswer();
 
   }
 
+
+  /* =========================
+     RENDER MATHJAX
+     ========================= */
+
+  function renderMath() {
+
+
+    if (
+      window.MathJax &&
+      window.MathJax.typesetPromise
+    ) {
+
+
+      window.MathJax
+        .typesetPromise(
+          [answer]
+        )
+        .catch(
+          function (error) {
+
+            console.error(
+              "MathJax error:",
+              error
+            );
+
+          }
+        );
+
+    }
+
+  }
+
+
+  /* =========================
+     SCROLL
+     ========================= */
+
+  function scrollToAnswer() {
+
+
+    try {
+
+
+      answer.scrollIntoView({
+
+        behavior:
+          "smooth",
+
+        block:
+          "start"
+
+      });
+
+
+    } catch (e) {
+
+
+      answer.scrollIntoView();
+
+    }
+
+  }
 
 
   /* =========================
@@ -1186,8 +1303,7 @@
 
 
     var question =
-      questionInput.value
-        .trim();
+      questionInput.value.trim();
 
 
     var file =
@@ -1199,15 +1315,15 @@
         : null;
 
 
-
     /*
-     * NOTHING ENTERED
+     * لا يوجد سؤال أو صورة
      */
 
     if (
       !question &&
       !file
     ) {
+
 
       alert(
         "اكتب سؤالاً أو اختر صورة أولاً."
@@ -1219,8 +1335,9 @@
     }
 
 
-
-    /* LOCK BUTTON */
+    /*
+     * بداية التحميل
+     */
 
     askButton.disabled =
       true;
@@ -1243,11 +1360,6 @@
       "block";
 
 
-    loading.textContent =
-      "جاري تحليل السؤال...";
-
-
-
     try {
 
 
@@ -1255,8 +1367,9 @@
         null;
 
 
-
-      /* IMAGE */
+      /*
+       * تجهيز الصورة
+       */
 
       if (file) {
 
@@ -1273,17 +1386,15 @@
       }
 
 
-
       loading.textContent =
         file
-
           ? "جاري تحليل السؤال والصورة..."
-
           : "جاري تحليل السؤال...";
 
 
-
-      /* REQUEST */
+      /*
+       * إرسال السؤال إلى الخادم
+       */
 
       var response =
         await fetch(
@@ -1320,28 +1431,28 @@
         );
 
 
-
-      /* READ SERVER RESPONSE */
+      /*
+       * قراءة استجابة الخادم
+       */
 
       var responseText =
         await response.text();
 
 
-
       var data;
 
 
-
       try {
+
 
         data =
           JSON.parse(
             responseText
           );
 
-      }
 
-      catch (e) {
+      } catch (e) {
+
 
         throw new Error(
           "الخادم أعاد استجابة غير صالحة."
@@ -1350,12 +1461,14 @@
       }
 
 
-
-      /* SERVER ERROR */
+      /*
+       * خطأ من الخادم
+       */
 
       if (
         !response.ok
       ) {
+
 
         throw new Error(
 
@@ -1368,8 +1481,9 @@
       }
 
 
-
-      /* GET ANSWER */
+      /*
+       * استخراج الإجابة
+       */
 
       var finalAnswer =
 
@@ -1380,10 +1494,10 @@
         data.response;
 
 
-
       if (
         !finalAnswer
       ) {
+
 
         throw new Error(
           "تم الاتصال بالخادم ولكن لم تصل إجابة."
@@ -1392,17 +1506,16 @@
       }
 
 
-
-      /* SHOW ANSWER */
+      /*
+       * عرض الإجابة
+       */
 
       showAnswer(
         finalAnswer
       );
 
 
-    }
-
-    catch (error) {
+    } catch (error) {
 
 
       console.error(
@@ -1423,9 +1536,7 @@
       );
 
 
-    }
-
-    finally {
+    } finally {
 
 
       loading.style.display =
@@ -1444,9 +1555,8 @@
   }
 
 
-
   /* =========================
-     BUTTON EVENT
+     BUTTON
      ========================= */
 
   askButton.addEventListener(
