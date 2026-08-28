@@ -3,917 +3,825 @@
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+>
+
+<title>ONE Study</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Tahoma,
+    Arial,
+    sans-serif;
+
+  background: #f4f7fb;
+  color: #172033;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.header {
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4338ca
+    );
+
+  color: #ffffff;
+  padding: 42px 20px 58px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-  >
+/* =========================
+   MAIN
+   ========================= */
 
-  <title>ONE Study</title>
+.container {
+  max-width: 720px;
+  margin: -32px auto 40px;
+  padding: 0 16px;
+}
 
-  <style>
+.card {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 26px;
 
-    * {
-      box-sizing: border-box;
-    }
+  box-shadow:
+    0 12px 35px
+    rgba(15, 23, 42, 0.09);
+}
 
-    html {
-      -webkit-text-size-adjust: 100%;
-    }
 
-    body {
-      margin: 0;
+/* =========================
+   QUESTION
+   ========================= */
 
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Tahoma,
-        Arial,
-        sans-serif;
+h2 {
+  margin: 0 0 20px;
+  font-size: 25px;
+  line-height: 1.5;
+  font-weight: 800;
+  color: #172033;
+  text-align: right;
+}
 
-      background: #f4f7fb;
-      color: #172033;
-    }
+textarea {
+  width: 100%;
+  min-height: 170px;
 
+  border:
+    1.5px solid #d6deea;
 
-    /* =========================
-       HEADER
-       ========================= */
+  border-radius: 18px;
+  padding: 18px;
 
-    .header {
-      background:
-        linear-gradient(
-          135deg,
-          #2563eb,
-          #4338ca
-        );
+  font-size: 18px;
+  line-height: 1.8;
 
-      color: #ffffff;
+  resize: vertical;
+  outline: none;
 
-      padding:
-        42px 20px 58px;
+  font-family: inherit;
 
-      text-align: center;
-    }
+  direction: rtl;
+  text-align: right;
 
-    .logo {
-      font-size: 40px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      margin-bottom: 8px;
-    }
+  background: #ffffff;
+  color: #172033;
+}
 
-    .subtitle {
-      font-size: 18px;
-      font-weight: 500;
-      opacity: 0.95;
-    }
+textarea::placeholder {
+  color: #8a94a6;
+}
 
+textarea:focus {
+  border-color: #2563eb;
 
-    /* =========================
-       MAIN
-       ========================= */
+  box-shadow:
+    0 0 0 4px
+    rgba(37, 99, 235, 0.08);
+}
 
-    .container {
-      max-width: 720px;
 
-      margin:
-        -32px auto 40px;
+/* =========================
+   QUESTION TOOLS
+   ========================= */
 
-      padding:
-        0 16px;
-    }
+.question-tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 14px;
+}
 
-    .card {
-      background: #ffffff;
+.tool-button {
+  margin: 0;
+  min-height: 58px;
+  padding: 13px 12px;
 
-      border-radius: 26px;
+  border:
+    1.5px solid #dbe5f5;
 
-      padding: 26px;
+  border-radius: 16px;
 
-      box-shadow:
-        0 12px 35px
-        rgba(15, 23, 42, 0.09);
-    }
+  background: #f7f9ff;
+  color: #174ea6;
 
+  font-size: 17px;
+  font-weight: 700;
 
-    /* =========================
-       QUESTION
-       ========================= */
+  cursor: pointer;
+  font-family: inherit;
 
-    h2 {
-      margin:
-        0 0 20px;
+  -webkit-tap-highlight-color: transparent;
+}
 
-      font-size: 25px;
+.tool-button:active {
+  background: #eef3ff;
+}
 
-      line-height: 1.5;
 
-      font-weight: 800;
+/* =========================
+   IMAGE
+   ========================= */
 
-      color: #172033;
+.image-box {
+  margin-top: 20px;
 
-      text-align: right;
-    }
+  border:
+    2px dashed #cbd5e1;
 
-    textarea {
-      width: 100%;
+  border-radius: 20px;
 
-      min-height: 170px;
+  padding: 22px 18px;
 
-      border:
-        1.5px solid #d6deea;
+  text-align: center;
+  background: #fafcff;
+}
 
-      border-radius: 18px;
+.image-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: #172033;
+  margin-bottom: 16px;
+}
 
-      padding: 18px;
+.file-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-      font-size: 18px;
+  width: 100%;
+  min-height: 62px;
 
-      line-height: 1.8;
+  border-radius: 16px;
 
-      resize: vertical;
+  background: #eef4ff;
+  color: #1856b8;
 
-      outline: none;
+  font-size: 18px;
+  font-weight: 800;
 
-      font-family: inherit;
+  cursor: pointer;
 
-      direction: rtl;
+  padding: 12px 16px;
 
-      text-align: right;
+  -webkit-tap-highlight-color: transparent;
+}
 
-      background: #ffffff;
+#imageInput {
+  display: none;
+}
 
-      color: #172033;
-    }
+.image-status {
+  display: none;
+  margin-top: 14px;
 
-    textarea::placeholder {
-      color: #8a94a6;
-    }
+  color: #147a3e;
 
-    textarea:focus {
-      border-color: #2563eb;
+  font-size: 16px;
+  font-weight: 700;
+}
 
-      box-shadow:
-        0 0 0 4px
-        rgba(37, 99, 235, 0.08);
-    }
+.preview-wrap {
+  display: none;
 
+  margin-top: 16px;
+  padding: 10px;
 
-    /* =========================
-       QUESTION TOOLS
-       ========================= */
+  border:
+    1px solid #e1e7f0;
 
-    .question-tools {
-      display: grid;
+  border-radius: 16px;
 
-      grid-template-columns:
-        1fr 1fr;
+  background: #ffffff;
+}
 
-      gap: 12px;
+#preview {
+  display: block;
 
-      margin-top: 14px;
-    }
+  width: 100%;
+  max-height: 420px;
 
-    .tool-button {
-      margin: 0;
+  object-fit: contain;
 
-      min-height: 58px;
+  border-radius: 12px;
+  background: #ffffff;
+}
 
-      padding:
-        13px 12px;
+.image-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-      border:
-        1.5px solid #dbe5f5;
+  gap: 10px;
 
-      border-radius: 16px;
+  margin-top: 12px;
+}
 
-      background: #f7f9ff;
+.small-button {
+  border:
+    1px solid #dbe5f5;
 
-      color: #174ea6;
+  border-radius: 13px;
 
-      font-size: 17px;
+  min-height: 48px;
 
-      font-weight: 700;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
 
-      cursor: pointer;
+  cursor: pointer;
 
-      font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
 
-      -webkit-tap-highlight-color:
-        transparent;
-    }
+.change-image {
+  background: #eef4ff;
+  color: #1856b8;
+}
 
-    .tool-button:active {
-      background: #eef3ff;
-    }
+.remove-image {
+  background: #fff5f5;
+  color: #b42318;
+  border-color: #f5d0d0;
+}
 
 
-    /* =========================
-       IMAGE
-       ========================= */
+/* =========================
+   SOLVE
+   ========================= */
 
-    .image-box {
-      margin-top: 20px;
+.solve-button {
+  width: 100%;
 
-      border:
-        2px dashed #cbd5e1;
+  margin-top: 22px;
 
-      border-radius: 20px;
+  min-height: 66px;
 
-      padding: 22px 18px;
+  border: 0;
+  border-radius: 18px;
 
-      text-align: center;
+  padding: 16px 20px;
 
-      background: #fafcff;
-    }
+  background: #2563eb;
+  color: #ffffff;
 
-    .image-title {
-      font-size: 19px;
+  font-family: inherit;
 
-      font-weight: 800;
+  font-size: 21px;
+  font-weight: 800;
 
-      color: #172033;
+  cursor: pointer;
 
-      margin-bottom: 16px;
-    }
+  box-shadow:
+    0 7px 18px
+    rgba(37, 99, 235, 0.16);
 
-    .file-label {
-      display: flex;
+  -webkit-tap-highlight-color: transparent;
+}
 
-      align-items: center;
+.solve-button:active {
+  transform: scale(0.995);
+}
 
-      justify-content: center;
+.solve-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
 
-      width: 100%;
 
-      min-height: 62px;
+/* =========================
+   LOADING
+   ========================= */
 
-      border-radius: 16px;
+.loading {
+  display: none;
 
-      background: #eef4ff;
+  text-align: center;
 
-      color: #1856b8;
+  padding: 24px 10px 8px;
 
-      font-size: 18px;
+  color: #475569;
 
-      font-weight: 800;
+  font-size: 17px;
+  font-weight: 700;
+}
 
-      cursor: pointer;
 
-      padding:
-        12px 16px;
+/* =========================
+   ANSWER
+   ========================= */
 
-      -webkit-tap-highlight-color:
-        transparent;
-    }
+.answer-section {
+  display: none;
+  margin-top: 24px;
+}
 
-    #imageInput {
-      display: none;
-    }
+.answer-title {
+  margin-bottom: 12px;
 
-    .image-status {
-      display: none;
+  color: #172033;
 
-      margin-top: 14px;
+  font-size: 22px;
+  font-weight: 800;
 
-      color: #147a3e;
+  text-align: right;
+}
 
-      font-size: 16px;
+.answer {
+  display: block;
 
-      font-weight: 700;
-    }
+  width: 100%;
 
-    .preview-wrap {
-      display: none;
+  background: #f8faff;
 
-      margin-top: 16px;
+  border:
+    1px solid #dce6f7;
 
-      padding: 10px;
+  border-radius: 20px;
 
-      border:
-        1px solid #e1e7f0;
+  padding: 22px;
 
-      border-radius: 16px;
+  font-size: 18px;
+  line-height: 2;
 
-      background: #ffffff;
-    }
+  direction: rtl;
+  text-align: right;
 
-    #preview {
-      display: block;
+  color: #172033;
 
-      width: 100%;
+  overflow: hidden;
 
-      max-height: 420px;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
 
-      object-fit: contain;
 
-      border-radius: 12px;
+/* =========================
+   TEXT
+   ========================= */
 
-      background: #ffffff;
-    }
+.text-line {
+  display: block;
 
-    .image-actions {
-      display: grid;
+  width: 100%;
 
-      grid-template-columns:
-        1fr 1fr;
+  direction: rtl;
+  text-align: right;
 
-      gap: 10px;
+  unicode-bidi: isolate;
 
-      margin-top: 12px;
-    }
+  margin: 0 0 8px;
+}
 
-    .small-button {
-      border:
-        1px solid #dbe5f5;
+.empty-line {
+  width: 100%;
+  height: 10px;
+}
 
-      border-radius: 13px;
 
-      min-height: 48px;
+/* =========================
+   DISPLAY MATH
+   ========================= */
 
-      font-family: inherit;
+.display-math {
+  display: block;
 
-      font-size: 15px;
+  width: 100%;
 
-      font-weight: 700;
+  direction: ltr;
 
-      cursor: pointer;
+  unicode-bidi: isolate;
 
-      -webkit-tap-highlight-color:
-        transparent;
-    }
+  text-align: center;
 
-    .change-image {
-      background: #eef4ff;
-      color: #1856b8;
-    }
+  margin: 15px 0;
 
-    .remove-image {
-      background: #fff5f5;
+  padding: 8px 2px;
 
-      color: #b42318;
+  overflow-x: auto;
+  overflow-y: hidden;
 
-      border-color: #f5d0d0;
-    }
+  -webkit-overflow-scrolling: touch;
+}
 
 
-    /* =========================
-       SOLVE BUTTON
-       ========================= */
+/* =========================
+   INLINE MATH
+   ========================= */
 
-    .solve-button {
-      width: 100%;
+.inline-math {
+  display: inline-flex;
 
-      margin-top: 22px;
+  direction: ltr;
 
-      min-height: 66px;
+  unicode-bidi: isolate;
 
-      border: 0;
+  vertical-align: middle;
 
-      border-radius: 18px;
+  margin: 0 4px;
 
-      padding:
-        16px 20px;
+  max-width: 100%;
+}
 
-      background: #2563eb;
 
-      color: #ffffff;
+/* =========================
+   MATHJAX SVG
+   ========================= */
 
-      font-family: inherit;
+.display-math mjx-container {
+  display: block !important;
 
-      font-size: 21px;
+  direction: ltr !important;
 
-      font-weight: 800;
+  text-align: center !important;
 
-      cursor: pointer;
+  margin: 0 auto !important;
 
-      box-shadow:
-        0 7px 18px
-        rgba(37, 99, 235, 0.16);
+  max-width: 100% !important;
+}
 
-      -webkit-tap-highlight-color:
-        transparent;
-    }
+.inline-math mjx-container {
+  display: inline-block !important;
 
-    .solve-button:active {
-      transform: scale(0.995);
-    }
+  direction: ltr !important;
 
-    .solve-button:disabled {
-      opacity: 0.55;
+  margin: 0 !important;
+}
 
-      cursor: not-allowed;
+.display-math svg {
+  display: inline-block;
 
-      transform: none;
-    }
+  max-width: none;
 
+  height: auto;
 
-    /* =========================
-       LOADING
-       ========================= */
+  vertical-align: middle;
+}
 
-    .loading {
-      display: none;
+.inline-math svg {
+  display: inline-block;
 
-      text-align: center;
+  max-width: 100%;
 
-      padding:
-        24px 10px 8px;
+  height: auto;
 
-      color: #475569;
+  vertical-align: middle;
+}
 
-      font-size: 17px;
 
-      font-weight: 700;
-    }
+/* =========================
+   FALLBACK
+   ========================= */
 
+.math-fallback {
+  direction: ltr;
 
-    /* =========================
-       ANSWER
-       ========================= */
+  unicode-bidi: isolate;
 
-    .answer-section {
-      display: none;
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    monospace;
 
-      margin-top: 24px;
-    }
+  white-space: pre-wrap;
 
-    .answer-title {
-      margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
 
-      color: #172033;
 
-      font-size: 22px;
+/* =========================
+   ANSWER ACTIONS
+   ========================= */
 
-      font-weight: 800;
+.answer-actions {
+  display: grid;
 
-      text-align: right;
-    }
+  grid-template-columns:
+    repeat(3, 1fr);
 
-    .answer {
-      display: block;
+  gap: 10px;
 
-      background: #f8faff;
+  margin-top: 16px;
+}
 
-      border:
-        1px solid #dce6f7;
+.answer-action {
+  min-height: 56px;
 
-      border-radius: 20px;
+  border:
+    1.5px solid #cddbf2;
 
-      padding: 22px;
+  border-radius: 15px;
 
-      font-size: 18px;
+  background: #ffffff;
+  color: #174ea6;
 
-      line-height: 2;
+  font-family: inherit;
 
-      direction: rtl;
+  font-size: 16px;
+  font-weight: 800;
 
-      text-align: right;
+  cursor: pointer;
 
-      color: #172033;
+  padding: 10px 8px;
 
-      overflow-wrap: break-word;
+  -webkit-tap-highlight-color: transparent;
+}
 
-      word-break: normal;
-    }
+.answer-action:active {
+  background: #f0f5ff;
+}
 
 
-    /* =========================
-       ARABIC TEXT
-       ========================= */
+/* =========================
+   FEEDBACK
+   ========================= */
 
-    .text-line {
-      display: block;
+.feedback {
+  margin-top: 22px;
 
-      width: 100%;
+  padding: 22px;
 
-      direction: rtl;
+  border:
+    1px solid #e0e6ef;
 
-      text-align: right;
+  border-radius: 20px;
 
-      unicode-bidi: isolate;
+  background: #fafbfc;
+}
 
-      margin:
-        0 0 8px;
-    }
+.feedback-title {
+  margin-bottom: 17px;
 
-    .empty-line {
-      width: 100%;
+  text-align: center;
 
-      height: 10px;
-    }
+  color: #172033;
 
+  font-size: 21px;
+  font-weight: 800;
+}
 
-    /* =========================
-       DISPLAY MATH
-       ========================= */
+.feedback-buttons {
+  display: grid;
 
-    .display-math {
-      display: block;
+  grid-template-columns:
+    1fr 1fr;
 
-      width: 100%;
+  gap: 12px;
+}
 
-      direction: ltr;
+.feedback-button {
+  min-height: 58px;
 
-      unicode-bidi: isolate;
+  border: 0;
 
-      text-align: center;
+  border-radius: 15px;
 
-      margin:
-        15px 0;
+  color: #ffffff;
 
-      padding:
-        8px 4px;
+  font-family: inherit;
 
-      overflow-x: auto;
+  font-size: 18px;
+  font-weight: 800;
 
-      overflow-y: hidden;
+  cursor: pointer;
 
-      -webkit-overflow-scrolling:
-        touch;
-    }
+  -webkit-tap-highlight-color: transparent;
+}
 
+.yes-button {
+  background: #16803d;
+}
 
-    /* =========================
-       INLINE MATH
-       ========================= */
+.no-button {
+  background: #c9363e;
+}
 
-    .inline-math {
-      display: inline-block;
+.feedback-message {
+  display: none;
 
-      direction: ltr;
+  margin-top: 14px;
 
-      unicode-bidi: isolate;
+  text-align: center;
 
-      white-space: nowrap;
+  color: #475569;
 
-      vertical-align: middle;
+  font-size: 15px;
+  font-weight: 700;
+}
 
-      margin:
-        0 3px;
 
-      max-width: 100%;
-    }
+/* =========================
+   ERROR
+   ========================= */
 
+.answer.error {
+  background: #fff5f5;
 
-    /* =========================
-       MATHJAX
-       ========================= */
+  border-color: #f3c7ca;
 
-    .answer mjx-container {
-      direction: ltr !important;
+  color: #991b1b;
 
-      unicode-bidi: isolate !important;
+  direction: rtl;
 
-      max-width: 100%;
-    }
+  text-align: right;
 
-    .display-math
-    mjx-container[display="true"] {
-      display: block !important;
+  white-space: pre-wrap;
+}
 
-      direction: ltr !important;
 
-      text-align: center !important;
+/* =========================
+   NOTE
+   ========================= */
 
-      margin:
-        6px auto !important;
+.note {
+  margin-top: 22px;
 
-      max-width: 100%;
+  color: #667085;
 
-      overflow-x: auto;
+  text-align: center;
 
-      overflow-y: hidden;
-    }
+  font-size: 14px;
 
-    .inline-math
-    mjx-container {
-      display: inline-block !important;
+  line-height: 1.7;
 
-      direction: ltr !important;
+  font-weight: 500;
+}
 
-      margin:
-        0 !important;
-    }
 
+/* =========================
+   TOAST
+   ========================= */
 
-    /* =========================
-       MATH FALLBACK
-       ========================= */
+.toast {
+  position: fixed;
 
-    .math-fallback {
-      direction: ltr;
+  left: 50%;
+  bottom: 28px;
 
-      unicode-bidi: isolate;
+  transform:
+    translateX(-50%)
+    translateY(20px);
 
-      font-family:
-        "SFMono-Regular",
-        Consolas,
-        monospace;
+  background: #172033;
 
-      white-space: pre-wrap;
+  color: #ffffff;
 
-      overflow-wrap: anywhere;
-    }
+  padding: 12px 18px;
 
+  border-radius: 13px;
 
-    /* =========================
-       ANSWER ACTIONS
-       ========================= */
+  font-size: 15px;
+  font-weight: 700;
 
-    .answer-actions {
-      display: grid;
+  opacity: 0;
 
-      grid-template-columns:
-        repeat(3, 1fr);
+  pointer-events: none;
 
-      gap: 10px;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 
-      margin-top: 16px;
-    }
+  z-index: 9999;
 
-    .answer-action {
-      min-height: 56px;
+  text-align: center;
 
-      border:
-        1.5px solid #cddbf2;
+  max-width: calc(100% - 32px);
+}
 
-      border-radius: 15px;
+.toast.show {
+  opacity: 1;
 
-      background: #ffffff;
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
 
-      color: #174ea6;
 
-      font-family: inherit;
+/* =========================
+   MOBILE
+   ========================= */
 
-      font-size: 16px;
+@media (max-width: 600px) {
 
-      font-weight: 800;
+  .header {
+    padding: 38px 16px 55px;
+  }
 
-      cursor: pointer;
+  .logo {
+    font-size: 38px;
+  }
 
-      padding:
-        10px 8px;
+  .subtitle {
+    font-size: 17px;
+  }
 
-      -webkit-tap-highlight-color:
-        transparent;
-    }
+  .container {
+    padding: 0 12px;
+  }
 
-    .answer-action:active {
-      background: #f0f5ff;
-    }
+  .card {
+    padding: 20px 16px;
+  }
 
+  h2 {
+    font-size: 23px;
+  }
 
-    /* =========================
-       FEEDBACK
-       ========================= */
+  textarea {
+    font-size: 17px;
+  }
 
-    .feedback {
-      margin-top: 22px;
+  .answer {
+    padding: 19px 16px;
 
-      padding: 22px;
+    font-size: 17px;
 
-      border:
-        1px solid #e0e6ef;
+    line-height: 2;
+  }
 
-      border-radius: 20px;
+  .answer-actions {
+    grid-template-columns: 1fr;
+  }
 
-      background: #fafbfc;
-    }
+  .answer-action {
+    min-height: 55px;
+    font-size: 17px;
+  }
 
-    .feedback-title {
-      margin-bottom: 17px;
+  .feedback {
+    padding: 18px 14px;
+  }
 
-      text-align: center;
+  .feedback-title {
+    font-size: 20px;
+  }
 
-      color: #172033;
+  .display-math {
+    margin: 12px 0;
+  }
 
-      font-size: 21px;
+}
 
-      font-weight: 800;
-    }
-
-    .feedback-buttons {
-      display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap: 12px;
-    }
-
-    .feedback-button {
-      min-height: 58px;
-
-      border: 0;
-
-      border-radius: 15px;
-
-      color: #ffffff;
-
-      font-family: inherit;
-
-      font-size: 18px;
-
-      font-weight: 800;
-
-      cursor: pointer;
-
-      -webkit-tap-highlight-color:
-        transparent;
-    }
-
-    .yes-button {
-      background: #16803d;
-    }
-
-    .no-button {
-      background: #c9363e;
-    }
-
-    .feedback-message {
-      display: none;
-
-      margin-top: 14px;
-
-      text-align: center;
-
-      color: #475569;
-
-      font-size: 15px;
-
-      font-weight: 700;
-    }
-
-
-    /* =========================
-       ERROR
-       ========================= */
-
-    .answer.error {
-      background: #fff5f5;
-
-      border-color: #f3c7ca;
-
-      color: #991b1b;
-
-      direction: rtl;
-
-      text-align: right;
-
-      white-space: pre-wrap;
-    }
-
-
-    /* =========================
-       NOTE
-       ========================= */
-
-    .note {
-      margin-top: 22px;
-
-      color: #667085;
-
-      text-align: center;
-
-      font-size: 14px;
-
-      line-height: 1.7;
-
-      font-weight: 500;
-    }
-
-
-    /* =========================
-       TOAST
-       ========================= */
-
-    .toast {
-      position: fixed;
-
-      left: 50%;
-
-      bottom: 28px;
-
-      transform:
-        translateX(-50%)
-        translateY(20px);
-
-      background: #172033;
-
-      color: #ffffff;
-
-      padding:
-        12px 18px;
-
-      border-radius: 13px;
-
-      font-size: 15px;
-
-      font-weight: 700;
-
-      opacity: 0;
-
-      pointer-events: none;
-
-      transition:
-        opacity 0.2s ease,
-        transform 0.2s ease;
-
-      z-index: 9999;
-
-      text-align: center;
-
-      max-width:
-        calc(100% - 32px);
-    }
-
-    .toast.show {
-      opacity: 1;
-
-      transform:
-        translateX(-50%)
-        translateY(0);
-    }
-
-
-    /* =========================
-       MOBILE
-       ========================= */
-
-    @media (max-width: 600px) {
-
-      .header {
-        padding:
-          38px 16px 55px;
-      }
-
-      .logo {
-        font-size: 38px;
-      }
-
-      .subtitle {
-        font-size: 17px;
-      }
-
-      .container {
-        padding:
-          0 12px;
-      }
-
-      .card {
-        padding:
-          20px 16px;
-      }
-
-      h2 {
-        font-size: 23px;
-      }
-
-      textarea {
-        font-size: 17px;
-      }
-
-      .answer {
-        padding:
-          19px 16px;
-
-        font-size: 17px;
-
-        line-height: 2;
-      }
-
-      .answer-actions {
-        grid-template-columns:
-          1fr;
-      }
-
-      .answer-action {
-        min-height: 55px;
-
-        font-size: 17px;
-      }
-
-      .feedback {
-        padding:
-          18px 14px;
-      }
-
-      .feedback-title {
-        font-size: 20px;
-      }
-
-      .display-math {
-        margin:
-          12px 0;
-      }
-
-    }
-
-  </style>
+</style>
 
 </head>
 
@@ -921,906 +829,766 @@
 <body>
 
 
-  <!-- =========================
-       HEADER
-       ========================= -->
+<!-- =========================
+     HEADER
+     ========================= -->
 
-  <div class="header">
+<div class="header">
 
-    <div class="logo">
-      ONE Study
-    </div>
-
-    <div class="subtitle">
-      مساعدك الدراسي بالذكاء الاصطناعي
-    </div>
-
+  <div class="logo">
+    ONE Study
   </div>
 
+  <div class="subtitle">
+    مساعدك الدراسي بالذكاء الاصطناعي
+  </div>
 
-  <!-- =========================
-       MAIN
-       ========================= -->
-
-  <div class="container">
-
-    <div class="card">
+</div>
 
 
-      <h2>
-        ما السؤال الذي تريد حله؟
-      </h2>
+<!-- =========================
+     MAIN
+     ========================= -->
+
+<div class="container">
+
+  <div class="card">
 
 
-      <textarea
-        id="question"
-        placeholder="اكتب السؤال هنا أو الصقه..."
-      ></textarea>
+    <h2>
+      ما السؤال الذي تريد حله؟
+    </h2>
 
 
-      <!-- QUESTION TOOLS -->
-
-      <div class="question-tools">
-
-        <button
-          id="pasteButton"
-          class="tool-button"
-          type="button"
-        >
-          📋 لصق
-        </button>
-
-        <button
-          id="clearButton"
-          class="tool-button"
-          type="button"
-        >
-          ✕ مسح السؤال
-        </button>
-
-      </div>
+    <textarea
+      id="question"
+      placeholder="اكتب السؤال هنا أو الصقه..."
+    ></textarea>
 
 
-      <!-- =========================
-           IMAGE
-           ========================= -->
-
-      <div class="image-box">
-
-        <div class="image-title">
-          🖼️ صورة السؤال
-        </div>
-
-        <label
-          class="file-label"
-          for="imageInput"
-        >
-          اختيار صورة من الاستديو
-        </label>
-
-        <input
-          id="imageInput"
-          type="file"
-          accept="image/*"
-        >
-
-        <div
-          id="imageStatus"
-          class="image-status"
-        >
-          ✓ تم اختيار الصورة
-        </div>
-
-        <div
-          id="previewWrap"
-          class="preview-wrap"
-        >
-
-          <img
-            id="preview"
-            alt="معاينة صورة السؤال"
-          >
-
-          <div class="image-actions">
-
-            <button
-              id="changeImageButton"
-              class="small-button change-image"
-              type="button"
-            >
-              تغيير الصورة
-            </button>
-
-            <button
-              id="removeImageButton"
-              class="small-button remove-image"
-              type="button"
-            >
-              حذف الصورة
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- =========================
-           SOLVE
-           ========================= -->
+    <div class="question-tools">
 
       <button
-        id="askButton"
-        class="solve-button"
+        id="pasteButton"
+        class="tool-button"
         type="button"
       >
-        حل السؤال
+        📋 لصق
       </button>
 
-
-      <div
-        id="loading"
-        class="loading"
+      <button
+        id="clearButton"
+        class="tool-button"
+        type="button"
       >
-        جاري تحليل السؤال...
-      </div>
-
-
-      <!-- =========================
-           ANSWER
-           ========================= -->
-
-      <div
-        id="answerSection"
-        class="answer-section"
-      >
-
-        <div class="answer-title">
-          الحل
-        </div>
-
-        <div
-          id="answer"
-          class="answer"
-        ></div>
-
-
-        <!-- ANSWER ACTIONS -->
-
-        <div class="answer-actions">
-
-          <button
-            id="copyAnswerButton"
-            class="answer-action"
-            type="button"
-          >
-            📋 نسخ الإجابة
-          </button>
-
-          <button
-            id="saveAnswerButton"
-            class="answer-action"
-            type="button"
-          >
-            💾 حفظ الإجابة
-          </button>
-
-          <button
-            id="shareAnswerButton"
-            class="answer-action"
-            type="button"
-          >
-            📤 مشاركة
-          </button>
-
-        </div>
-
-
-        <!-- FEEDBACK -->
-
-        <div class="feedback">
-
-          <div class="feedback-title">
-            هل كانت الإجابة مفيدة؟
-          </div>
-
-          <div class="feedback-buttons">
-
-            <button
-              id="yesButton"
-              class="feedback-button yes-button"
-              type="button"
-            >
-              👍 نعم
-            </button>
-
-            <button
-              id="noButton"
-              class="feedback-button no-button"
-              type="button"
-            >
-              👎 لا
-            </button>
-
-          </div>
-
-          <div
-            id="feedbackMessage"
-            class="feedback-message"
-          ></div>
-
-        </div>
-
-      </div>
-
-
-      <div class="note">
-        راجع الإجابات المهمة وتأكد منها من مصادرك الدراسية.
-      </div>
-
+        ✕ مسح السؤال
+      </button>
 
     </div>
 
+
+    <!-- =========================
+         IMAGE
+         ========================= -->
+
+    <div class="image-box">
+
+      <div class="image-title">
+        🖼️ صورة السؤال
+      </div>
+
+      <label
+        class="file-label"
+        for="imageInput"
+      >
+        اختيار صورة من الاستديو
+      </label>
+
+      <input
+        id="imageInput"
+        type="file"
+        accept="image/*"
+      >
+
+      <div
+        id="imageStatus"
+        class="image-status"
+      >
+        ✓ تم اختيار الصورة
+      </div>
+
+      <div
+        id="previewWrap"
+        class="preview-wrap"
+      >
+
+        <img
+          id="preview"
+          alt="معاينة صورة السؤال"
+        >
+
+        <div class="image-actions">
+
+          <button
+            id="changeImageButton"
+            class="small-button change-image"
+            type="button"
+          >
+            تغيير الصورة
+          </button>
+
+          <button
+            id="removeImageButton"
+            class="small-button remove-image"
+            type="button"
+          >
+            حذف الصورة
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         SOLVE
+         ========================= -->
+
+    <button
+      id="askButton"
+      class="solve-button"
+      type="button"
+    >
+      حل السؤال
+    </button>
+
+
+    <div
+      id="loading"
+      class="loading"
+    >
+      جاري تحليل السؤال...
+    </div>
+
+
+    <!-- =========================
+         ANSWER
+         ========================= -->
+
+    <div
+      id="answerSection"
+      class="answer-section"
+    >
+
+      <div class="answer-title">
+        الحل
+      </div>
+
+      <div
+        id="answer"
+        class="answer"
+      ></div>
+
+
+      <div class="answer-actions">
+
+        <button
+          id="copyAnswerButton"
+          class="answer-action"
+          type="button"
+        >
+          📋 نسخ الإجابة
+        </button>
+
+        <button
+          id="saveAnswerButton"
+          class="answer-action"
+          type="button"
+        >
+          💾 حفظ الإجابة
+        </button>
+
+        <button
+          id="shareAnswerButton"
+          class="answer-action"
+          type="button"
+        >
+          📤 مشاركة
+        </button>
+
+      </div>
+
+
+      <!-- FEEDBACK -->
+
+      <div class="feedback">
+
+        <div class="feedback-title">
+          هل كانت الإجابة مفيدة؟
+        </div>
+
+        <div class="feedback-buttons">
+
+          <button
+            id="yesButton"
+            class="feedback-button yes-button"
+            type="button"
+          >
+            👍 نعم
+          </button>
+
+          <button
+            id="noButton"
+            class="feedback-button no-button"
+            type="button"
+          >
+            👎 لا
+          </button>
+
+        </div>
+
+        <div
+          id="feedbackMessage"
+          class="feedback-message"
+        ></div>
+
+      </div>
+
+    </div>
+
+
+    <div class="note">
+      راجع الإجابات المهمة وتأكد منها من مصادرك الدراسية.
+    </div>
+
+
   </div>
 
+</div>
 
-  <div
-    id="toast"
-    class="toast"
-  ></div>
+
+<div
+  id="toast"
+  class="toast"
+></div>
 
 
 <script>
 
 (function () {
 
-  "use strict";
+"use strict";
 
 
-  /* =========================
-     SETTINGS
-     ========================= */
+/* =========================
+   SETTINGS
+   ========================= */
 
-  var API_URL = "/ask";
+var API_URL = "/ask";
 
-  var mathJaxPromise = null;
+var mathJaxPromise = null;
 
-  var currentAnswerText = "";
+var currentAnswerText = "";
 
-  var toastTimer = null;
+var toastTimer = null;
 
 
-  /* =========================
-     ELEMENTS
-     ========================= */
+/* =========================
+   ELEMENTS
+   ========================= */
 
-  var questionInput =
-    document.getElementById(
-      "question"
+var questionInput =
+  document.getElementById("question");
+
+var imageInput =
+  document.getElementById("imageInput");
+
+var imageStatus =
+  document.getElementById("imageStatus");
+
+var previewWrap =
+  document.getElementById("previewWrap");
+
+var preview =
+  document.getElementById("preview");
+
+var pasteButton =
+  document.getElementById("pasteButton");
+
+var clearButton =
+  document.getElementById("clearButton");
+
+var changeImageButton =
+  document.getElementById("changeImageButton");
+
+var removeImageButton =
+  document.getElementById("removeImageButton");
+
+var askButton =
+  document.getElementById("askButton");
+
+var loading =
+  document.getElementById("loading");
+
+var answerSection =
+  document.getElementById("answerSection");
+
+var answer =
+  document.getElementById("answer");
+
+var copyAnswerButton =
+  document.getElementById("copyAnswerButton");
+
+var saveAnswerButton =
+  document.getElementById("saveAnswerButton");
+
+var shareAnswerButton =
+  document.getElementById("shareAnswerButton");
+
+var yesButton =
+  document.getElementById("yesButton");
+
+var noButton =
+  document.getElementById("noButton");
+
+var feedbackMessage =
+  document.getElementById("feedbackMessage");
+
+var toast =
+  document.getElementById("toast");
+
+
+/* =========================
+   TOAST
+   ========================= */
+
+function showToast(message) {
+
+  toast.textContent = message;
+
+  toast.classList.add("show");
+
+  if (toastTimer) {
+    clearTimeout(toastTimer);
+  }
+
+  toastTimer =
+    setTimeout(
+      function () {
+        toast.classList.remove("show");
+      },
+      2200
     );
 
-  var imageInput =
-    document.getElementById(
-      "imageInput"
-    );
-
-  var imageStatus =
-    document.getElementById(
-      "imageStatus"
-    );
-
-  var previewWrap =
-    document.getElementById(
-      "previewWrap"
-    );
-
-  var preview =
-    document.getElementById(
-      "preview"
-    );
-
-  var pasteButton =
-    document.getElementById(
-      "pasteButton"
-    );
-
-  var clearButton =
-    document.getElementById(
-      "clearButton"
-    );
-
-  var changeImageButton =
-    document.getElementById(
-      "changeImageButton"
-    );
-
-  var removeImageButton =
-    document.getElementById(
-      "removeImageButton"
-    );
-
-  var askButton =
-    document.getElementById(
-      "askButton"
-    );
-
-  var loading =
-    document.getElementById(
-      "loading"
-    );
-
-  var answerSection =
-    document.getElementById(
-      "answerSection"
-    );
-
-  var answer =
-    document.getElementById(
-      "answer"
-    );
-
-  var copyAnswerButton =
-    document.getElementById(
-      "copyAnswerButton"
-    );
-
-  var saveAnswerButton =
-    document.getElementById(
-      "saveAnswerButton"
-    );
-
-  var shareAnswerButton =
-    document.getElementById(
-      "shareAnswerButton"
-    );
-
-  var yesButton =
-    document.getElementById(
-      "yesButton"
-    );
-
-  var noButton =
-    document.getElementById(
-      "noButton"
-    );
-
-  var feedbackMessage =
-    document.getElementById(
-      "feedbackMessage"
-    );
-
-  var toast =
-    document.getElementById(
-      "toast"
-    );
+}
 
 
-  /* =========================
-     TOAST
-     ========================= */
+/* =========================
+   MATHJAX SVG CONFIG
+   ========================= */
 
-  function showToast(message) {
+function configureMathJax() {
 
-    toast.textContent =
-      message;
+  window.MathJax = {
 
-    toast.classList.add(
-      "show"
-    );
+    tex: {
+      processEscapes: true
+    },
 
-    if (toastTimer) {
+    svg: {
+      fontCache: "local",
+      displayAlign: "center"
+    },
 
-      clearTimeout(
-        toastTimer
-      );
-
+    startup: {
+      typeset: false
     }
 
-    toastTimer =
-      setTimeout(
+  };
 
+}
+
+
+/* =========================
+   LOAD SCRIPT
+   ========================= */
+
+function loadScript(url) {
+
+  return new Promise(
+
+    function (resolve, reject) {
+
+      var script =
+        document.createElement("script");
+
+      script.src = url;
+
+      script.async = true;
+
+      script.onload =
+        function () {
+          resolve();
+        };
+
+      script.onerror =
         function () {
 
-          toast.classList.remove(
-            "show"
+          script.remove();
+
+          reject(
+            new Error(
+              "فشل تحميل مكتبة الرياضيات."
+            )
           );
 
-        },
+        };
 
-        2200
+      document.head.appendChild(script);
 
-      );
+    }
 
-  }
+  );
+
+}
 
 
-  /* =========================
-     MATHJAX CONFIGURATION
-     ========================= */
+/* =========================
+   LOAD MATHJAX SVG
+   ========================= */
 
-  function configureMathJax() {
+async function loadMathJax() {
 
-    window.MathJax = {
+  if (
+    window.MathJax &&
+    typeof window.MathJax.tex2svgPromise ===
+      "function"
+  ) {
 
-      tex: {
-
-        inlineMath: [
-          ["\\(", "\\)"],
-          ["$", "$"]
-        ],
-
-        displayMath: [
-          ["\\[", "\\]"],
-          ["$$", "$$"]
-        ],
-
-        processEscapes: true,
-
-        packages: {
-          "[+]": [
-            "ams"
-          ]
-        }
-
-      },
-
-      loader: {
-
-        load: [
-          "[tex]/ams"
-        ]
-
-      },
-
-      options: {
-
-        skipHtmlTags: [
-          "script",
-          "noscript",
-          "style",
-          "textarea",
-          "pre",
-          "code"
-        ]
-
-      },
-
-      chtml: {
-        scale: 1
-      },
-
-      startup: {
-        typeset: false
-      }
-
-    };
+    return true;
 
   }
 
+  if (mathJaxPromise) {
+    return mathJaxPromise;
+  }
 
-  /* =========================
-     LOAD SCRIPT
-     ========================= */
+  mathJaxPromise =
+    (async function () {
 
-  function loadScript(url) {
+      var sources = [
 
-    return new Promise(
+        "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js",
 
-      function (
-        resolve,
-        reject
+        "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js",
+
+        "https://unpkg.com/mathjax@3.2.2/es5/tex-svg.js"
+
+      ];
+
+      for (
+        var i = 0;
+        i < sources.length;
+        i++
       ) {
 
-        var script =
-          document.createElement(
-            "script"
+        try {
+
+          configureMathJax();
+
+          await loadScript(
+            sources[i]
           );
 
-        script.src =
-          url;
+          if (
+            window.MathJax &&
+            window.MathJax.startup &&
+            window.MathJax.startup.promise
+          ) {
 
-        script.async =
-          true;
+            await window.MathJax
+              .startup
+              .promise;
 
-        script.onload =
-          function () {
+          }
 
-            resolve();
+          if (
+            window.MathJax &&
+            typeof window.MathJax.tex2svgPromise ===
+              "function"
+          ) {
 
-          };
-
-        script.onerror =
-          function () {
-
-            script.remove();
-
-            reject(
-              new Error(
-                "فشل تحميل مكتبة الرياضيات."
-              )
-            );
-
-          };
-
-        document.head.appendChild(
-          script
-        );
-
-      }
-
-    );
-
-  }
-
-
-  /* =========================
-     LOAD MATHJAX
-     ========================= */
-
-  async function loadMathJax() {
-
-    if (
-      window.MathJax &&
-      typeof window.MathJax.typesetPromise ===
-      "function"
-    ) {
-
-      return true;
-
-    }
-
-    if (mathJaxPromise) {
-
-      return mathJaxPromise;
-
-    }
-
-    mathJaxPromise =
-      (async function () {
-
-        var sources = [
-
-          "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js",
-
-          "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js",
-
-          "https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"
-
-        ];
-
-        for (
-          var i = 0;
-          i < sources.length;
-          i++
-        ) {
-
-          try {
-
-            configureMathJax();
-
-            await loadScript(
+            console.log(
+              "MathJax SVG ready:",
               sources[i]
             );
 
-            if (
-              window.MathJax &&
-              window.MathJax.startup &&
-              window.MathJax.startup.promise
-            ) {
-
-              await window.MathJax
-                .startup
-                .promise;
-
-            }
-
-            if (
-              window.MathJax &&
-              typeof window.MathJax.typesetPromise ===
-              "function"
-            ) {
-
-              console.log(
-                "MathJax ready:",
-                sources[i]
-              );
-
-              return true;
-
-            }
-
-          } catch (error) {
-
-            console.warn(
-              "MathJax source failed:",
-              sources[i],
-              error
-            );
+            return true;
 
           }
 
-        }
+        } catch (error) {
 
-        mathJaxPromise = null;
-
-        return false;
-
-      })();
-
-    return mathJaxPromise;
-
-  }
-
-
-  /* =========================
-     IMAGE TO BASE64
-     ========================= */
-
-  async function fileToDataURL(file) {
-
-    var buffer =
-      await file.arrayBuffer();
-
-    var bytes =
-      new Uint8Array(
-        buffer
-      );
-
-    var binary = "";
-
-    var chunkSize =
-      0x8000;
-
-    for (
-      var i = 0;
-      i < bytes.length;
-      i += chunkSize
-    ) {
-
-      var chunk =
-        bytes.subarray(
-
-          i,
-
-          Math.min(
-            i + chunkSize,
-            bytes.length
-          )
-
-        );
-
-      binary +=
-        String.fromCharCode.apply(
-          null,
-          chunk
-        );
-
-    }
-
-    var base64 =
-      btoa(
-        binary
-      );
-
-    var mimeType =
-      file.type ||
-      "image/jpeg";
-
-    return (
-      "data:" +
-      mimeType +
-      ";base64," +
-      base64
-    );
-
-  }
-
-
-  /* =========================
-     IMAGE
-     ========================= */
-
-  function clearImage() {
-
-    imageInput.value =
-      "";
-
-    imageStatus.style.display =
-      "none";
-
-    previewWrap.style.display =
-      "none";
-
-    preview.removeAttribute(
-      "src"
-    );
-
-  }
-
-
-  imageInput.addEventListener(
-
-    "change",
-
-    function () {
-
-      var file =
-        imageInput.files &&
-        imageInput.files.length > 0
-
-          ? imageInput.files[0]
-
-          : null;
-
-      if (!file) {
-
-        clearImage();
-
-        return;
-
-      }
-
-      if (
-        file.type &&
-        file.type.indexOf(
-          "image/"
-        ) !== 0
-      ) {
-
-        clearImage();
-
-        alert(
-          "الملف المختار ليس صورة."
-        );
-
-        return;
-
-      }
-
-      var maxSize =
-        10 *
-        1024 *
-        1024;
-
-      if (
-        file.size >
-        maxSize
-      ) {
-
-        clearImage();
-
-        alert(
-          "حجم الصورة كبير جداً. اختر صورة أصغر من 10 MB."
-        );
-
-        return;
-
-      }
-
-      imageStatus.style.display =
-        "block";
-
-      if (
-        window.URL &&
-        window.URL.createObjectURL
-      ) {
-
-        var imageURL =
-          window.URL.createObjectURL(
-            file
+          console.warn(
+            "MathJax source failed:",
+            sources[i],
+            error
           );
 
-        preview.onload =
-          function () {
-
-            if (
-              window.URL &&
-              window.URL.revokeObjectURL
-            ) {
-
-              window.URL.revokeObjectURL(
-                imageURL
-              );
-
-            }
-
-          };
-
-        preview.src =
-          imageURL;
-
-        previewWrap.style.display =
-          "block";
+        }
 
       }
 
-    }
+      mathJaxPromise = null;
 
+      return false;
+
+    })();
+
+  return mathJaxPromise;
+
+}
+
+
+/* =========================
+   IMAGE TO BASE64
+   ========================= */
+
+async function fileToDataURL(file) {
+
+  var buffer =
+    await file.arrayBuffer();
+
+  var bytes =
+    new Uint8Array(buffer);
+
+  var binary = "";
+
+  var chunkSize =
+    0x8000;
+
+  for (
+    var i = 0;
+    i < bytes.length;
+    i += chunkSize
+  ) {
+
+    var chunk =
+      bytes.subarray(
+        i,
+        Math.min(
+          i + chunkSize,
+          bytes.length
+        )
+      );
+
+    binary +=
+      String.fromCharCode.apply(
+        null,
+        chunk
+      );
+
+  }
+
+  var base64 =
+    btoa(binary);
+
+  var mimeType =
+    file.type ||
+    "image/jpeg";
+
+  return (
+    "data:" +
+    mimeType +
+    ";base64," +
+    base64
   );
 
-
-  changeImageButton.addEventListener(
-
-    "click",
-
-    function () {
-
-      imageInput.click();
-
-    }
-
-  );
+}
 
 
-  removeImageButton.addEventListener(
+/* =========================
+   IMAGE
+   ========================= */
 
-    "click",
+function clearImage() {
 
-    function () {
+  imageInput.value = "";
+
+  imageStatus.style.display =
+    "none";
+
+  previewWrap.style.display =
+    "none";
+
+  preview.removeAttribute("src");
+
+}
+
+
+imageInput.addEventListener(
+
+  "change",
+
+  function () {
+
+    var file =
+      imageInput.files &&
+      imageInput.files.length > 0
+        ? imageInput.files[0]
+        : null;
+
+    if (!file) {
 
       clearImage();
 
-      showToast(
-        "تم حذف الصورة"
-      );
+      return;
 
     }
 
-  );
+    if (
+      file.type &&
+      file.type.indexOf("image/") !== 0
+    ) {
 
+      clearImage();
 
-  /* =========================
-     PASTE
-     ========================= */
+      alert(
+        "الملف المختار ليس صورة."
+      );
 
-  pasteButton.addEventListener(
+      return;
 
-    "click",
+    }
 
-    async function () {
+    var maxSize =
+      10 * 1024 * 1024;
 
-      try {
+    if (file.size > maxSize) {
 
-        if (
-          navigator.clipboard &&
-          navigator.clipboard.readText
-        ) {
+      clearImage();
 
-          var text =
-            await navigator.clipboard
-              .readText();
+      alert(
+        "حجم الصورة كبير جداً. اختر صورة أصغر من 10 MB."
+      );
 
-          if (!text) {
+      return;
 
-            showToast(
-              "لا يوجد نص للصق"
+    }
+
+    imageStatus.style.display =
+      "block";
+
+    if (
+      window.URL &&
+      window.URL.createObjectURL
+    ) {
+
+      var imageURL =
+        window.URL.createObjectURL(
+          file
+        );
+
+      preview.onload =
+        function () {
+
+          if (
+            window.URL &&
+            window.URL.revokeObjectURL
+          ) {
+
+            window.URL.revokeObjectURL(
+              imageURL
             );
-
-            return;
 
           }
 
-          questionInput.value =
-            text;
+        };
 
-          questionInput.focus();
+      preview.src =
+        imageURL;
+
+      previewWrap.style.display =
+        "block";
+
+    }
+
+  }
+
+);
+
+
+changeImageButton.addEventListener(
+
+  "click",
+
+  function () {
+    imageInput.click();
+  }
+
+);
+
+
+removeImageButton.addEventListener(
+
+  "click",
+
+  function () {
+
+    clearImage();
+
+    showToast(
+      "تم حذف الصورة"
+    );
+
+  }
+
+);
+
+
+/* =========================
+   PASTE
+   ========================= */
+
+pasteButton.addEventListener(
+
+  "click",
+
+  async function () {
+
+    try {
+
+      if (
+        navigator.clipboard &&
+        navigator.clipboard.readText
+      ) {
+
+        var text =
+          await navigator.clipboard
+            .readText();
+
+        if (!text) {
 
           showToast(
-            "تم لصق النص"
+            "لا يوجد نص للصق"
           );
 
-        } else {
-
-          questionInput.focus();
-
-          showToast(
-            "اضغط مطولاً داخل مربع السؤال ثم اختر لصق"
-          );
+          return;
 
         }
 
-      } catch (error) {
+        questionInput.value =
+          text;
+
+        questionInput.focus();
+
+        showToast(
+          "تم لصق النص"
+        );
+
+      } else {
 
         questionInput.focus();
 
@@ -1830,1399 +1598,1452 @@
 
       }
 
-    }
-
-  );
-
-
-  /* =========================
-     CLEAR QUESTION
-     ========================= */
-
-  clearButton.addEventListener(
-
-    "click",
-
-    function () {
-
-      questionInput.value =
-        "";
+    } catch (error) {
 
       questionInput.focus();
 
       showToast(
-        "تم مسح السؤال"
+        "اضغط مطولاً داخل مربع السؤال ثم اختر لصق"
       );
+
+    }
+
+  }
+
+);
+
+
+/* =========================
+   CLEAR QUESTION
+   ========================= */
+
+clearButton.addEventListener(
+
+  "click",
+
+  function () {
+
+    questionInput.value = "";
+
+    questionInput.focus();
+
+    showToast(
+      "تم مسح السؤال"
+    );
+
+  }
+
+);
+
+
+/* =========================
+   SCROLL
+   ========================= */
+
+function scrollToAnswer() {
+
+  try {
+
+    answerSection.scrollIntoView({
+
+      behavior: "smooth",
+
+      block: "start"
+
+    });
+
+  } catch (error) {
+
+    answerSection.scrollIntoView();
+
+  }
+
+}
+
+
+/* =========================
+   ERROR
+   ========================= */
+
+function showError(message) {
+
+  currentAnswerText = "";
+
+  answer.innerHTML = "";
+
+  answer.classList.add("error");
+
+  answer.textContent =
+    "تعذر الحصول على الإجابة:\n" +
+    message;
+
+  answerSection.style.display =
+    "block";
+
+  scrollToAnswer();
+
+}
+
+
+/* =========================
+   NORMALIZE RESPONSE
+   ========================= */
+
+function normalizeResponse(text) {
+
+  var source =
+    String(text || "");
+
+  source =
+    source
+      .replace(/\r\n/g, "\n")
+      .replace(/\r/g, "\n");
+
+
+  /*
+   * Internal math markers
+   */
+
+  source =
+    source.replace(
+      /\$?begin:math:display\$?/gi,
+      "\\["
+    );
+
+  source =
+    source.replace(
+      /\$?end:math:display\$?/gi,
+      "\\]"
+    );
+
+  source =
+    source.replace(
+      /\$?begin:math:inline\$?/gi,
+      "\\("
+    );
+
+  source =
+    source.replace(
+      /\$?end:math:inline\$?/gi,
+      "\\)"
+    );
+
+  source =
+    source.replace(
+      /\$?begin:math:text\$?/gi,
+      "\\("
+    );
+
+  source =
+    source.replace(
+      /\$?end:math:text\$?/gi,
+      "\\)"
+    );
+
+
+  /*
+   * $$ ... $$
+   */
+
+  source =
+    source.replace(
+
+      /\$\$([\s\S]*?)\$\$/g,
+
+      function (_, math) {
+
+        return (
+          "\\[" +
+          math.trim() +
+          "\\]"
+        );
+
+      }
+
+    );
+
+
+  /*
+   * $ ... $
+   */
+
+  source =
+    source.replace(
+
+      /(^|[^\\$])\$([^$\n]+?)\$/g,
+
+      function (_, prefix, math) {
+
+        return (
+          prefix +
+          "\\(" +
+          math.trim() +
+          "\\)"
+        );
+
+      }
+
+    );
+
+
+  /*
+   * Clean delimiters
+   */
+
+  source =
+    source.replace(
+      /\\\[\s+/g,
+      "\\["
+    );
+
+  source =
+    source.replace(
+      /\s+\\\]/g,
+      "\\]"
+    );
+
+  source =
+    source.replace(
+      /\\\(\s+/g,
+      "\\("
+    );
+
+  source =
+    source.replace(
+      /\s+\\\)/g,
+      "\\)"
+    );
+
+
+  /*
+   * Double escaped delimiters
+   */
+
+  source =
+    source.replace(
+      /\\\\\[/g,
+      "\\["
+    );
+
+  source =
+    source.replace(
+      /\\\\\]/g,
+      "\\]"
+    );
+
+  source =
+    source.replace(
+      /\\\\\(/g,
+      "\\("
+    );
+
+  source =
+    source.replace(
+      /\\\\\)/g,
+      "\\)"
+    );
+
+
+  return source;
+
+}
+
+
+/* =========================
+   LATEX DETECTION
+   ========================= */
+
+function looksLikeLatex(text) {
+
+  var value =
+    String(text || "").trim();
+
+  if (!value) {
+    return false;
+  }
+
+  if (
+    /\\(?:frac|dfrac|tfrac|sqrt|pm|mp|times|cdot|div|leq|geq|neq|approx|equiv|infty|sum|prod|int|lim|sin|cos|tan|log|ln|theta|alpha|beta|gamma|delta|pi|left|right|begin|end|text|mathrm|mathbf|overline|underline|vec|hat|bar|Rightarrow|Leftarrow|rightarrow|leftarrow|quad)\b/.test(
+      value
+    )
+  ) {
+    return true;
+  }
+
+  if (
+    /[A-Za-z0-9]\s*[=<>]\s*[A-Za-z0-9\\{(\[]/.test(
+      value
+    )
+  ) {
+    return true;
+  }
+
+  if (
+    /[A-Za-z]\s*\^\s*\{?[0-9A-Za-z+\-]+/.test(
+      value
+    )
+  ) {
+    return true;
+  }
+
+  if (
+    /[A-Za-z]\s*_\s*\{?[0-9A-Za-z+\-]+/.test(
+      value
+    )
+  ) {
+    return true;
+  }
+
+  return false;
+
+}
+
+
+/* =========================
+   CREATE DISPLAY MATH
+
+   IMPORTANT:
+   We store RAW TeX only.
+   No \[ \] are inserted into DOM.
+   ========================= */
+
+function createDisplayMath(math) {
+
+  var div =
+    document.createElement("div");
+
+  div.className =
+    "display-math";
+
+  div.setAttribute(
+    "dir",
+    "ltr"
+  );
+
+  div.dataset.tex =
+    String(math || "").trim();
+
+  div.dataset.display =
+    "true";
+
+  return div;
+
+}
+
+
+/* =========================
+   CREATE INLINE MATH
+   ========================= */
+
+function createInlineMath(math) {
+
+  var span =
+    document.createElement("span");
+
+  span.className =
+    "inline-math";
+
+  span.setAttribute(
+    "dir",
+    "ltr"
+  );
+
+  span.dataset.tex =
+    String(math || "").trim();
+
+  span.dataset.display =
+    "false";
+
+  return span;
+
+}
+
+
+/* =========================
+   INLINE CONTENT
+   ========================= */
+
+function appendInlineContent(
+  parent,
+  line
+) {
+
+  var inlineRegex =
+    /\\\(([\s\S]*?)\\\)/g;
+
+  var lastIndex = 0;
+
+  var match;
+
+  while (
+    (
+      match =
+        inlineRegex.exec(line)
+    ) !== null
+  ) {
+
+    var before =
+      line.slice(
+        lastIndex,
+        match.index
+      );
+
+    if (before) {
+
+      parent.appendChild(
+        document.createTextNode(
+          before
+        )
+      );
+
+    }
+
+    parent.appendChild(
+      createInlineMath(
+        match[1]
+      )
+    );
+
+    lastIndex =
+      inlineRegex.lastIndex;
+
+  }
+
+  var remaining =
+    line.slice(lastIndex);
+
+  if (remaining) {
+
+    parent.appendChild(
+      document.createTextNode(
+        remaining
+      )
+    );
+
+  }
+
+}
+
+
+/* =========================
+   TEXT LINE
+   ========================= */
+
+function appendTextLine(line) {
+
+  var cleanLine =
+    String(line || "").trim();
+
+  if (!cleanLine) {
+
+    var empty =
+      document.createElement("div");
+
+    empty.className =
+      "empty-line";
+
+    answer.appendChild(empty);
+
+    return;
+
+  }
+
+
+  var containsArabic =
+    /[\u0600-\u06FF]/.test(
+      cleanLine
+    );
+
+
+  /*
+   * Pure mathematical line
+   */
+
+  if (
+    !containsArabic &&
+    looksLikeLatex(cleanLine)
+  ) {
+
+    answer.appendChild(
+      createDisplayMath(
+        cleanLine
+      )
+    );
+
+    return;
+
+  }
+
+
+  /*
+   * Normal Arabic/text line
+   */
+
+  var div =
+    document.createElement("div");
+
+  div.className =
+    "text-line";
+
+  div.setAttribute(
+    "dir",
+    "rtl"
+  );
+
+  appendInlineContent(
+    div,
+    cleanLine
+  );
+
+  answer.appendChild(div);
+
+}
+
+
+/* =========================
+   TEXT BLOCK
+   ========================= */
+
+function appendTextBlock(text) {
+
+  if (
+    text === null ||
+    text === undefined
+  ) {
+    return;
+  }
+
+  var lines =
+    String(text).split("\n");
+
+  lines.forEach(
+
+    function (line) {
+
+      appendTextLine(line);
 
     }
 
   );
 
+}
 
-  /* =========================
-     SCROLL
-     ========================= */
 
-  function scrollToAnswer() {
+/* =========================
+   PARSE ANSWER
+   ========================= */
 
-    try {
+function parseAnswer(text) {
 
-      answerSection.scrollIntoView({
+  answer.innerHTML = "";
 
-        behavior:
-          "smooth",
+  var source =
+    normalizeResponse(text);
 
-        block:
-          "start"
+  var displayRegex =
+    /\\\[([\s\S]*?)\\\]/g;
 
-      });
+  var lastIndex = 0;
 
-    } catch (error) {
+  var match;
 
-      answerSection.scrollIntoView();
-
-    }
-
-  }
-
-
-  /* =========================
-     ERROR
-     ========================= */
-
-  function showError(message) {
-
-    currentAnswerText =
-      "";
-
-    answer.innerHTML =
-      "";
-
-    answer.classList.add(
-      "error"
-    );
-
-    answer.textContent =
-      "تعذر الحصول على الإجابة:\n" +
-      message;
-
-    answerSection.style.display =
-      "block";
-
-    scrollToAnswer();
-
-  }
-
-
-  /* =========================
-     NORMALIZE RESPONSE
-
-     توحيد جميع صيغ الرياضيات
-     التي قد تصل من الخادم.
-     ========================= */
-
-  function normalizeResponse(text) {
-
-    var source =
-      String(
-        text || ""
-      );
-
-    source =
-      source
-        .replace(
-          /\r\n/g,
-          "\n"
-        )
-        .replace(
-          /\r/g,
-          "\n"
-        );
-
-
-    /*
-     * OpenAI internal-style
-     * math markers
-     */
-
-    source =
-      source.replace(
-        /\$?begin:math:display\$?/gi,
-        "\\["
-      );
-
-    source =
-      source.replace(
-        /\$?end:math:display\$?/gi,
-        "\\]"
-      );
-
-    source =
-      source.replace(
-        /\$?begin:math:inline\$?/gi,
-        "\\("
-      );
-
-    source =
-      source.replace(
-        /\$?end:math:inline\$?/gi,
-        "\\)"
-      );
-
-    source =
-      source.replace(
-        /\$?begin:math:text\$?/gi,
-        "\\("
-      );
-
-    source =
-      source.replace(
-        /\$?end:math:text\$?/gi,
-        "\\)"
-      );
-
-
-    /*
-     * Markdown display math
-     */
-
-    source =
-      source.replace(
-
-        /\$\$([\s\S]*?)\$\$/g,
-
-        function (
-          full,
-          math
-        ) {
-
-          return (
-            "\\[" +
-            math.trim() +
-            "\\]"
-          );
-
-        }
-
-      );
-
-
-    /*
-     * Markdown inline math
-     */
-
-    source =
-      source.replace(
-
-        /(^|[^\\$])\$([^$\n]+?)\$/g,
-
-        function (
-          full,
-          prefix,
-          math
-        ) {
-
-          return (
-            prefix +
-            "\\(" +
-            math.trim() +
-            "\\)"
-          );
-
-        }
-
-      );
-
-
-    /*
-     * Remove accidental spaces
-     * around delimiters.
-     */
-
-    source =
-      source.replace(
-        /\\\[\s+/g,
-        "\\["
-      );
-
-    source =
-      source.replace(
-        /\s+\\\]/g,
-        "\\]"
-      );
-
-    source =
-      source.replace(
-        /\\\(\s+/g,
-        "\\("
-      );
-
-    source =
-      source.replace(
-        /\s+\\\)/g,
-        "\\)"
-      );
-
-
-    /*
-     * Sometimes a model returns
-     * escaped delimiters twice.
-     */
-
-    source =
-      source.replace(
-        /\\\\\[/g,
-        "\\["
-      );
-
-    source =
-      source.replace(
-        /\\\\\]/g,
-        "\\]"
-      );
-
-    source =
-      source.replace(
-        /\\\\\(/g,
-        "\\("
-      );
-
-    source =
-      source.replace(
-        /\\\\\)/g,
-        "\\)"
-      );
-
-
-    return source;
-
-  }
-
-
-  /* =========================
-     LATEX DETECTION
-     ========================= */
-
-  function looksLikeLatex(text) {
-
-    var value =
-      String(
-        text || ""
-      ).trim();
-
-    if (!value) {
-      return false;
-    }
-
-    /*
-     * Common LaTeX commands.
-     */
-
-    if (
-      /\\(?:frac|dfrac|tfrac|sqrt|pm|mp|times|cdot|div|leq|geq|neq|approx|equiv|infty|sum|prod|int|lim|sin|cos|tan|log|ln|theta|alpha|beta|gamma|delta|pi|left|right|begin|end|text|mathrm|mathbf|overline|underline|vec|hat|bar|Rightarrow|Leftarrow|rightarrow|leftarrow)\b/.test(
-        value
-      )
-    ) {
-      return true;
-    }
-
-    /*
-     * Strong mathematical patterns.
-     */
-
-    if (
-      /[A-Za-z0-9]\s*[=<>]\s*[A-Za-z0-9\\{(\[]/.test(
-        value
-      )
-    ) {
-      return true;
-    }
-
-    if (
-      /[A-Za-z]\s*\^\s*\{?[0-9A-Za-z+\-]+/.test(
-        value
-      )
-    ) {
-      return true;
-    }
-
-    if (
-      /[A-Za-z]\s*_\s*\{?[0-9A-Za-z+\-]+/.test(
-        value
-      )
-    ) {
-      return true;
-    }
-
-    return false;
-
-  }
-
-
-  /* =========================
-     CREATE DISPLAY MATH
-     ========================= */
-
-  function createDisplayMath(math) {
-
-    var div =
-      document.createElement(
-        "div"
-      );
-
-    div.className =
-      "display-math";
-
-    div.setAttribute(
-      "dir",
-      "ltr"
-    );
-
-    div.textContent =
-      "\\[" +
-      String(math)
-        .trim() +
-      "\\]";
-
-    return div;
-
-  }
-
-
-  /* =========================
-     CREATE INLINE MATH
-     ========================= */
-
-  function createInlineMath(math) {
-
-    var span =
-      document.createElement(
-        "span"
-      );
-
-    span.className =
-      "inline-math";
-
-    span.setAttribute(
-      "dir",
-      "ltr"
-    );
-
-    span.textContent =
-      "\\(" +
-      String(math)
-        .trim() +
-      "\\)";
-
-    return span;
-
-  }
-
-
-  /* =========================
-     APPEND INLINE CONTENT
-     ========================= */
-
-  function appendInlineContent(
-    parent,
-    line
+  while (
+    (
+      match =
+        displayRegex.exec(source)
+    ) !== null
   ) {
 
-    /*
-     * Handles explicit \( ... \)
-     * blocks inside Arabic text.
-     */
-
-    var inlineRegex =
-      /\\\(([\s\S]*?)\\\)/g;
-
-    var lastIndex =
-      0;
-
-    var match;
-
-    while (
-      (
-        match =
-          inlineRegex.exec(
-            line
-          )
-      ) !== null
-    ) {
-
-      var before =
-        line.slice(
-          lastIndex,
-          match.index
-        );
-
-      if (before) {
-
-        parent.appendChild(
-          document.createTextNode(
-            before
-          )
-        );
-
-      }
-
-      parent.appendChild(
-        createInlineMath(
-          match[1]
-        )
-      );
-
-      lastIndex =
-        inlineRegex.lastIndex;
-
-    }
-
-    var remaining =
-      line.slice(
-        lastIndex
-      );
-
-    if (remaining) {
-
-      parent.appendChild(
-        document.createTextNode(
-          remaining
-        )
-      );
-
-    }
-
-  }
-
-
-  /* =========================
-     APPEND TEXT LINE
-     ========================= */
-
-  function appendTextLine(line) {
-
-    var cleanLine =
-      String(
-        line || ""
-      ).trim();
-
-    if (!cleanLine) {
-
-      var empty =
-        document.createElement(
-          "div"
-        );
-
-      empty.className =
-        "empty-line";
-
-      answer.appendChild(
-        empty
-      );
-
-      return;
-
-    }
-
-
-    /*
-     * A line containing no Arabic
-     * but clearly looking like
-     * LaTeX is treated as a
-     * standalone equation.
-     */
-
-    var containsArabic =
-      /[\u0600-\u06FF]/.test(
-        cleanLine
-      );
-
-    if (
-      !containsArabic &&
-      looksLikeLatex(
-        cleanLine
-      )
-    ) {
-
-      answer.appendChild(
-        createDisplayMath(
-          cleanLine
-        )
-      );
-
-      return;
-
-    }
-
-
-    var div =
-      document.createElement(
-        "div"
-      );
-
-    div.className =
-      "text-line";
-
-    div.setAttribute(
-      "dir",
-      "rtl"
-    );
-
-    appendInlineContent(
-      div,
-      cleanLine
-    );
-
-    answer.appendChild(
-      div
-    );
-
-  }
-
-
-  /* =========================
-     APPEND TEXT BLOCK
-     ========================= */
-
-  function appendTextBlock(text) {
-
-    if (
-      text === null ||
-      text === undefined
-    ) {
-
-      return;
-
-    }
-
-    var lines =
-      String(text)
-        .split("\n");
-
-    lines.forEach(
-
-      function (line) {
-
-        appendTextLine(
-          line
-        );
-
-      }
-
-    );
-
-  }
-
-
-  /* =========================
-     TOKENIZE DISPLAY MATH
-
-     نفصل \[ ... \] أولاً
-     حتى لا يدخل النص العربي
-     داخل MathJax.
-     ========================= */
-
-  function parseAnswer(text) {
-
-    answer.innerHTML =
-      "";
-
-    var source =
-      normalizeResponse(
-        text
-      );
-
-    var displayRegex =
-      /\\\[([\s\S]*?)\\\]/g;
-
-    var lastIndex =
-      0;
-
-    var match;
-
-    while (
-      (
-        match =
-          displayRegex.exec(
-            source
-          )
-      ) !== null
-    ) {
-
-      var before =
-        source.slice(
-          lastIndex,
-          match.index
-        );
-
-      appendTextBlock(
-        before
-      );
-
-      var math =
-        match[1];
-
-      if (
-        math &&
-        math.trim()
-      ) {
-
-        answer.appendChild(
-          createDisplayMath(
-            math
-          )
-        );
-
-      }
-
-      lastIndex =
-        displayRegex.lastIndex;
-
-    }
-
-    var remaining =
+    var before =
       source.slice(
-        lastIndex
+        lastIndex,
+        match.index
       );
 
-    appendTextBlock(
-      remaining
-    );
+    appendTextBlock(before);
 
-  }
+    var math =
+      match[1];
 
+    if (
+      math &&
+      math.trim()
+    ) {
 
-  /* =========================
-     FALLBACK
-     ========================= */
-
-  function applyMathFallback() {
-
-    var mathBlocks =
-      answer.querySelectorAll(
-        ".display-math, .inline-math"
+      answer.appendChild(
+        createDisplayMath(math)
       );
-
-    mathBlocks.forEach(
-
-      function (element) {
-
-        element.classList.add(
-          "math-fallback"
-        );
-
-      }
-
-    );
-
-  }
-
-
-  /* =========================
-     RENDER MATH
-     ========================= */
-
-  async function renderMath() {
-
-    var loaded =
-      await loadMathJax();
-
-    if (!loaded) {
-
-      console.error(
-        "MathJax could not be loaded."
-      );
-
-      applyMathFallback();
-
-      return;
 
     }
+
+    lastIndex =
+      displayRegex.lastIndex;
+
+  }
+
+  appendTextBlock(
+    source.slice(lastIndex)
+  );
+
+}
+
+
+/* =========================
+   FALLBACK
+   ========================= */
+
+function applyMathFallback() {
+
+  var mathBlocks =
+    answer.querySelectorAll(
+      ".display-math[data-tex], .inline-math[data-tex]"
+    );
+
+  mathBlocks.forEach(
+
+    function (element) {
+
+      element.classList.add(
+        "math-fallback"
+      );
+
+      element.textContent =
+        element.dataset.tex || "";
+
+    }
+
+  );
+
+}
+
+
+/* =========================
+   FIT DISPLAY EQUATION
+
+   Long equations remain inside
+   the phone screen.
+   ========================= */
+
+function fitDisplayEquation(element) {
+
+  var svg =
+    element.querySelector("svg");
+
+  if (!svg) {
+    return;
+  }
+
+  /*
+   * Do not force the equation
+   * wider than its container.
+   */
+
+  svg.style.height = "auto";
+
+  svg.style.verticalAlign =
+    "middle";
+
+  /*
+   * MathJax SVG normally uses
+   * em dimensions. We allow the
+   * wrapper to scroll if an
+   * equation is genuinely long.
+   */
+
+  element.style.overflowX =
+    "auto";
+
+  element.style.overflowY =
+    "hidden";
+
+}
+
+
+/* =========================
+   RENDER MATH DIRECTLY TO SVG
+   ========================= */
+
+async function renderMath() {
+
+  var loaded =
+    await loadMathJax();
+
+  if (
+    !loaded ||
+    !window.MathJax ||
+    typeof window.MathJax.tex2svgPromise !==
+      "function"
+  ) {
+
+    console.error(
+      "MathJax SVG engine unavailable."
+    );
+
+    applyMathFallback();
+
+    return;
+
+  }
+
+
+  var mathElements =
+    answer.querySelectorAll(
+      ".display-math[data-tex], .inline-math[data-tex]"
+    );
+
+
+  for (
+    var i = 0;
+    i < mathElements.length;
+    i++
+  ) {
+
+    var element =
+      mathElements[i];
+
+    var tex =
+      element.dataset.tex || "";
+
+    var isDisplay =
+      element.dataset.display ===
+      "true";
+
+
+    if (!tex.trim()) {
+      continue;
+    }
+
 
     try {
 
       /*
-       * Clear any previous
-       * MathJax rendering state.
+       * Direct TeX -> SVG conversion.
+       *
+       * This avoids delimiter scanning
+       * and RTL/LTR conflicts.
        */
 
-      if (
-        typeof window.MathJax
-          .typesetClear ===
-        "function"
-      ) {
+      var rendered =
+        await window.MathJax
+          .tex2svgPromise(
 
-        window.MathJax
-          .typesetClear(
-            [answer]
+            tex,
+
+            {
+              display:
+                isDisplay
+            }
+
           );
+
+
+      element.innerHTML = "";
+
+      element.appendChild(
+        rendered
+      );
+
+
+      if (isDisplay) {
+
+        fitDisplayEquation(
+          element
+        );
+
+      } else {
+
+        var inlineSVG =
+          element.querySelector("svg");
+
+        if (inlineSVG) {
+
+          inlineSVG.style.height =
+            "auto";
+
+          inlineSVG.style.verticalAlign =
+            "middle";
+
+        }
 
       }
 
-      await window.MathJax
-        .typesetPromise(
-          [answer]
-        );
 
     } catch (error) {
 
       console.error(
-        "MathJax rendering error:",
+        "Math rendering failed:",
+        tex,
         error
       );
 
-      applyMathFallback();
+      element.classList.add(
+        "math-fallback"
+      );
+
+      element.textContent =
+        tex;
 
     }
 
   }
 
+}
 
-  /* =========================
-     SHOW ANSWER
-     ========================= */
 
-  async function showAnswer(text) {
+/* =========================
+   SHOW ANSWER
+   ========================= */
 
-    currentAnswerText =
-      String(
-        text || ""
-      );
+async function showAnswer(text) {
 
-    answer.classList.remove(
-      "error"
+  currentAnswerText =
+    String(text || "");
+
+  answer.classList.remove(
+    "error"
+  );
+
+  parseAnswer(
+    currentAnswerText
+  );
+
+  answerSection.style.display =
+    "block";
+
+  feedbackMessage.style.display =
+    "none";
+
+  loading.style.display =
+    "block";
+
+  loading.textContent =
+    "جاري تنسيق المعادلات...";
+
+  await renderMath();
+
+  loading.style.display =
+    "none";
+
+  scrollToAnswer();
+
+}
+
+
+/* =========================
+   ASK AI
+   ========================= */
+
+async function askAI() {
+
+  var question =
+    questionInput.value.trim();
+
+  var file =
+    imageInput.files &&
+    imageInput.files.length > 0
+      ? imageInput.files[0]
+      : null;
+
+
+  if (
+    !question &&
+    !file
+  ) {
+
+    alert(
+      "اكتب سؤالاً أو اختر صورة أولاً."
     );
 
-    parseAnswer(
-      currentAnswerText
-    );
+    return;
 
-    answerSection.style.display =
-      "block";
+  }
 
-    feedbackMessage.style.display =
-      "none";
 
-    loading.style.display =
-      "block";
+  askButton.disabled = true;
+
+  answerSection.style.display =
+    "none";
+
+  answer.innerHTML = "";
+
+  answer.classList.remove(
+    "error"
+  );
+
+  loading.style.display =
+    "block";
+
+  loading.textContent =
+    "جاري تحليل السؤال...";
+
+
+  try {
+
+    var imageData = null;
+
+
+    if (file) {
+
+      loading.textContent =
+        "جاري تجهيز الصورة...";
+
+      imageData =
+        await fileToDataURL(
+          file
+        );
+
+    }
+
 
     loading.textContent =
-      "جاري تنسيق المعادلات...";
-
-    await renderMath();
-
-    loading.style.display =
-      "none";
-
-    scrollToAnswer();
-
-  }
+      file
+        ? "جاري تحليل السؤال والصورة..."
+        : "جاري تحليل السؤال...";
 
 
-  /* =========================
-     ASK AI
-     ========================= */
+    var response =
+      await fetch(
 
-  async function askAI() {
+        API_URL,
 
-    var question =
-      questionInput.value
-        .trim();
+        {
 
-    var file =
-      imageInput.files &&
-      imageInput.files.length > 0
+          method: "POST",
 
-        ? imageInput.files[0]
+          headers: {
 
-        : null;
+            "Content-Type":
+              "application/json"
 
-    if (
-      !question &&
-      !file
-    ) {
+          },
 
-      alert(
-        "اكتب سؤالاً أو اختر صورة أولاً."
+          body:
+            JSON.stringify({
+
+              question:
+                question,
+
+              image:
+                imageData
+
+            })
+
+        }
+
       );
 
-      return;
+
+    var responseText =
+      await response.text();
+
+    var data;
+
+
+    try {
+
+      data =
+        JSON.parse(
+          responseText
+        );
+
+    } catch (error) {
+
+      throw new Error(
+        "الخادم أعاد استجابة غير صالحة."
+      );
 
     }
 
-    askButton.disabled =
-      true;
 
-    answerSection.style.display =
-      "none";
+    if (!response.ok) {
 
-    answer.innerHTML =
-      "";
+      throw new Error(
 
-    answer.classList.remove(
-      "error"
+        data.error ||
+        "حدث خطأ أثناء معالجة السؤال."
+
+      );
+
+    }
+
+
+    var finalAnswer =
+
+      data.answer ||
+
+      data.output ||
+
+      data.response;
+
+
+    if (!finalAnswer) {
+
+      throw new Error(
+        "تم الاتصال بالخادم ولكن لم تصل إجابة."
+      );
+
+    }
+
+
+    await showAnswer(
+      finalAnswer
     );
 
+
+  } catch (error) {
+
+    console.error(
+      "ONE STUDY ERROR:",
+      error
+    );
+
+
+    showError(
+
+      error &&
+      error.message
+
+        ? error.message
+
+        : "حدث خطأ غير معروف."
+
+    );
+
+
+  } finally {
+
     loading.style.display =
-      "block";
+      "none";
 
     loading.textContent =
       "جاري تحليل السؤال...";
 
-    try {
+    askButton.disabled =
+      false;
 
-      var imageData =
-        null;
+  }
 
-      if (file) {
+}
 
-        loading.textContent =
-          "جاري تجهيز الصورة...";
 
-        imageData =
-          await fileToDataURL(
-            file
-          );
+/* =========================
+   COPY ANSWER
+   ========================= */
 
-      }
+async function copyAnswer() {
 
-      loading.textContent =
-        file
+  if (!currentAnswerText) {
 
-          ? "جاري تحليل السؤال والصورة..."
+    showToast(
+      "لا توجد إجابة لنسخها"
+    );
 
-          : "جاري تحليل السؤال...";
-
-      var response =
-        await fetch(
-
-          API_URL,
-
-          {
-
-            method:
-              "POST",
-
-            headers: {
-
-              "Content-Type":
-                "application/json"
-
-            },
-
-            body:
-              JSON.stringify({
-
-                question:
-                  question,
-
-                image:
-                  imageData
-
-              })
-
-          }
-
-        );
-
-      var responseText =
-        await response.text();
-
-      var data;
-
-      try {
-
-        data =
-          JSON.parse(
-            responseText
-          );
-
-      } catch (error) {
-
-        throw new Error(
-          "الخادم أعاد استجابة غير صالحة."
-        );
-
-      }
-
-      if (
-        !response.ok
-      ) {
-
-        throw new Error(
-
-          data.error ||
-
-          "حدث خطأ أثناء معالجة السؤال."
-
-        );
-
-      }
-
-      var finalAnswer =
-
-        data.answer ||
-
-        data.output ||
-
-        data.response;
-
-      if (!finalAnswer) {
-
-        throw new Error(
-          "تم الاتصال بالخادم ولكن لم تصل إجابة."
-        );
-
-      }
-
-      await showAnswer(
-        finalAnswer
-      );
-
-    } catch (error) {
-
-      console.error(
-        "ONE STUDY ERROR:",
-        error
-      );
-
-      showError(
-
-        error &&
-        error.message
-
-          ? error.message
-
-          : "حدث خطأ غير معروف."
-
-      );
-
-    } finally {
-
-      loading.style.display =
-        "none";
-
-      loading.textContent =
-        "جاري تحليل السؤال...";
-
-      askButton.disabled =
-        false;
-
-    }
+    return;
 
   }
 
 
-  /* =========================
-     COPY ANSWER
-     ========================= */
-
-  async function copyAnswer() {
-
-    if (!currentAnswerText) {
-
-      showToast(
-        "لا توجد إجابة لنسخها"
-      );
-
-      return;
-
-    }
-
-    try {
-
-      if (
-        navigator.clipboard &&
-        navigator.clipboard.writeText
-      ) {
-
-        await navigator.clipboard
-          .writeText(
-            currentAnswerText
-          );
-
-        showToast(
-          "تم نسخ الإجابة"
-        );
-
-        return;
-
-      }
-
-      throw new Error(
-        "Clipboard unavailable"
-      );
-
-    } catch (error) {
-
-      var textArea =
-        document.createElement(
-          "textarea"
-        );
-
-      textArea.value =
-        currentAnswerText;
-
-      textArea.style.position =
-        "fixed";
-
-      textArea.style.opacity =
-        "0";
-
-      document.body.appendChild(
-        textArea
-      );
-
-      textArea.select();
-
-      try {
-
-        document.execCommand(
-          "copy"
-        );
-
-        showToast(
-          "تم نسخ الإجابة"
-        );
-
-      } catch (copyError) {
-
-        showToast(
-          "تعذر نسخ الإجابة"
-        );
-
-      }
-
-      textArea.remove();
-
-    }
-
-  }
-
-
-  /* =========================
-     SAVE ANSWER
-     ========================= */
-
-  function saveAnswer() {
-
-    if (!currentAnswerText) {
-
-      showToast(
-        "لا توجد إجابة لحفظها"
-      );
-
-      return;
-
-    }
-
-    try {
-
-      var content =
-        "ONE Study\n\n" +
-        currentAnswerText;
-
-      var blob =
-        new Blob(
-
-          [content],
-
-          {
-            type:
-              "text/plain;charset=utf-8"
-          }
-
-        );
-
-      var url =
-        URL.createObjectURL(
-          blob
-        );
-
-      var link =
-        document.createElement(
-          "a"
-        );
-
-      link.href =
-        url;
-
-      link.download =
-        "ONE-Study-answer.txt";
-
-      document.body.appendChild(
-        link
-      );
-
-      link.click();
-
-      link.remove();
-
-      setTimeout(
-
-        function () {
-
-          URL.revokeObjectURL(
-            url
-          );
-
-        },
-
-        1000
-
-      );
-
-      showToast(
-        "تم تجهيز الإجابة للحفظ"
-      );
-
-    } catch (error) {
-
-      console.error(
-        "Save error:",
-        error
-      );
-
-      showToast(
-        "تعذر حفظ الإجابة"
-      );
-
-    }
-
-  }
-
-
-  /* =========================
-     SHARE ANSWER
-     ========================= */
-
-  async function shareAnswer() {
-
-    if (!currentAnswerText) {
-
-      showToast(
-        "لا توجد إجابة لمشاركتها"
-      );
-
-      return;
-
-    }
-
-    try {
-
-      if (
-        navigator.share
-      ) {
-
-        await navigator.share({
-
-          title:
-            "ONE Study",
-
-          text:
-            currentAnswerText
-
-        });
-
-      } else {
-
-        await copyAnswer();
-
-        showToast(
-          "تم نسخ الإجابة للمشاركة"
-        );
-
-      }
-
-    } catch (error) {
-
-      if (
-        error &&
-        error.name ===
-        "AbortError"
-      ) {
-
-        return;
-
-      }
-
-      console.error(
-        "Share error:",
-        error
-      );
-
-      showToast(
-        "تعذر فتح المشاركة"
-      );
-
-    }
-
-  }
-
-
-  /* =========================
-     FEEDBACK
-     ========================= */
-
-  function setFeedback(value) {
-
-    feedbackMessage.style.display =
-      "block";
-
-    yesButton.disabled =
-      true;
-
-    noButton.disabled =
-      true;
+  try {
 
     if (
-      value === "yes"
+      navigator.clipboard &&
+      navigator.clipboard.writeText
     ) {
 
-      feedbackMessage.textContent =
-        "شكرًا لتقييمك 👍";
+      await navigator.clipboard
+        .writeText(
+          currentAnswerText
+        );
 
-    } else {
+      showToast(
+        "تم نسخ الإجابة"
+      );
 
-      feedbackMessage.textContent =
-        "شكرًا لتقييمك. سنعمل على تحسين الإجابات.";
+      return;
 
     }
+
+
+    throw new Error(
+      "Clipboard unavailable"
+    );
+
+
+  } catch (error) {
+
+    var textArea =
+      document.createElement(
+        "textarea"
+      );
+
+    textArea.value =
+      currentAnswerText;
+
+    textArea.style.position =
+      "fixed";
+
+    textArea.style.opacity =
+      "0";
+
+    document.body.appendChild(
+      textArea
+    );
+
+    textArea.select();
+
+
+    try {
+
+      document.execCommand(
+        "copy"
+      );
+
+      showToast(
+        "تم نسخ الإجابة"
+      );
+
+    } catch (copyError) {
+
+      showToast(
+        "تعذر نسخ الإجابة"
+      );
+
+    }
+
+
+    textArea.remove();
+
+  }
+
+}
+
+
+/* =========================
+   SAVE ANSWER
+   ========================= */
+
+function saveAnswer() {
+
+  if (!currentAnswerText) {
+
+    showToast(
+      "لا توجد إجابة لحفظها"
+    );
+
+    return;
+
+  }
+
+
+  try {
+
+    var content =
+      "ONE Study\n\n" +
+      currentAnswerText;
+
+
+    var blob =
+      new Blob(
+
+        [content],
+
+        {
+          type:
+            "text/plain;charset=utf-8"
+        }
+
+      );
+
+
+    var url =
+      URL.createObjectURL(
+        blob
+      );
+
+
+    var link =
+      document.createElement(
+        "a"
+      );
+
+
+    link.href =
+      url;
+
+    link.download =
+      "ONE-Study-answer.txt";
+
+
+    document.body.appendChild(
+      link
+    );
+
+    link.click();
+
+    link.remove();
+
 
     setTimeout(
 
       function () {
 
-        yesButton.disabled =
-          false;
-
-        noButton.disabled =
-          false;
+        URL.revokeObjectURL(
+          url
+        );
 
       },
 
-      700
+      1000
 
+    );
+
+
+    showToast(
+      "تم تجهيز الإجابة للحفظ"
+    );
+
+
+  } catch (error) {
+
+    console.error(
+      "Save error:",
+      error
+    );
+
+    showToast(
+      "تعذر حفظ الإجابة"
     );
 
   }
 
-
-  /* =========================
-     EVENTS
-     ========================= */
-
-  askButton.addEventListener(
-
-    "click",
-
-    function () {
-
-      askAI();
-
-    }
-
-  );
+}
 
 
-  copyAnswerButton.addEventListener(
+/* =========================
+   SHARE ANSWER
+   ========================= */
 
-    "click",
+async function shareAnswer() {
 
-    function () {
+  if (!currentAnswerText) {
 
-      copyAnswer();
-
-    }
-
-  );
-
-
-  saveAnswerButton.addEventListener(
-
-    "click",
-
-    function () {
-
-      saveAnswer();
-
-    }
-
-  );
-
-
-  shareAnswerButton.addEventListener(
-
-    "click",
-
-    function () {
-
-      shareAnswer();
-
-    }
-
-  );
-
-
-  yesButton.addEventListener(
-
-    "click",
-
-    function () {
-
-      setFeedback(
-        "yes"
-      );
-
-    }
-
-  );
-
-
-  noButton.addEventListener(
-
-    "click",
-
-    function () {
-
-      setFeedback(
-        "no"
-      );
-
-    }
-
-  );
-
-
-  /* =========================
-     PRELOAD MATHJAX
-     ========================= */
-
-  loadMathJax()
-    .then(
-
-      function (loaded) {
-
-        console.log(
-          "Math engine ready:",
-          loaded
-        );
-
-      }
-
-    )
-    .catch(
-
-      function (error) {
-
-        console.warn(
-          "Math preload error:",
-          error
-        );
-
-      }
-
+    showToast(
+      "لا توجد إجابة لمشاركتها"
     );
+
+    return;
+
+  }
+
+
+  try {
+
+    if (navigator.share) {
+
+      await navigator.share({
+
+        title:
+          "ONE Study",
+
+        text:
+          currentAnswerText
+
+      });
+
+    } else {
+
+      await copyAnswer();
+
+      showToast(
+        "تم نسخ الإجابة للمشاركة"
+      );
+
+    }
+
+
+  } catch (error) {
+
+    if (
+      error &&
+      error.name ===
+      "AbortError"
+    ) {
+      return;
+    }
+
+
+    console.error(
+      "Share error:",
+      error
+    );
+
+
+    showToast(
+      "تعذر فتح المشاركة"
+    );
+
+  }
+
+}
+
+
+/* =========================
+   FEEDBACK
+   ========================= */
+
+function setFeedback(value) {
+
+  feedbackMessage.style.display =
+    "block";
+
+  yesButton.disabled =
+    true;
+
+  noButton.disabled =
+    true;
+
+
+  if (value === "yes") {
+
+    feedbackMessage.textContent =
+      "شكرًا لتقييمك 👍";
+
+  } else {
+
+    feedbackMessage.textContent =
+      "شكرًا لتقييمك. سنعمل على تحسين الإجابات.";
+
+  }
+
+
+  setTimeout(
+
+    function () {
+
+      yesButton.disabled =
+        false;
+
+      noButton.disabled =
+        false;
+
+    },
+
+    700
+
+  );
+
+}
+
+
+/* =========================
+   EVENTS
+   ========================= */
+
+askButton.addEventListener(
+
+  "click",
+
+  function () {
+    askAI();
+  }
+
+);
+
+
+copyAnswerButton.addEventListener(
+
+  "click",
+
+  function () {
+    copyAnswer();
+  }
+
+);
+
+
+saveAnswerButton.addEventListener(
+
+  "click",
+
+  function () {
+    saveAnswer();
+  }
+
+);
+
+
+shareAnswerButton.addEventListener(
+
+  "click",
+
+  function () {
+    shareAnswer();
+  }
+
+);
+
+
+yesButton.addEventListener(
+
+  "click",
+
+  function () {
+
+    setFeedback(
+      "yes"
+    );
+
+  }
+
+);
+
+
+noButton.addEventListener(
+
+  "click",
+
+  function () {
+
+    setFeedback(
+      "no"
+    );
+
+  }
+
+);
+
+
+/* =========================
+   PRELOAD MATH ENGINE
+   ========================= */
+
+loadMathJax()
+
+  .then(
+
+    function (loaded) {
+
+      console.log(
+        "Math SVG engine ready:",
+        loaded
+      );
+
+    }
+
+  )
+
+  .catch(
+
+    function (error) {
+
+      console.warn(
+        "Math preload error:",
+        error
+      );
+
+    }
+
+  );
 
 
 })();
