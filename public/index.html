@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -11,19 +12,30 @@
 
   <title>ONE Study</title>
 
-  <!-- MathJax -->
+
+  <!-- =========================
+       MATHJAX SETTINGS
+       ========================= -->
+
   <script>
+
     window.MathJax = {
+
       tex: {
+
         inlineMath: [
           ["\\(", "\\)"]
         ],
+
         displayMath: [
           ["\\[", "\\]"]
-        ]
+        ],
+
+        processEscapes: true
       },
 
       options: {
+
         skipHtmlTags: [
           "script",
           "noscript",
@@ -32,9 +44,17 @@
           "pre",
           "code"
         ]
+
+      },
+
+      chtml: {
+        scale: 1
       }
+
     };
+
   </script>
+
 
   <script
     defer
@@ -42,17 +62,25 @@
   ></script>
 
 
+
   <style>
+
+    /* =========================
+       GENERAL
+       ========================= */
 
     * {
       box-sizing: border-box;
     }
 
+
     html {
       -webkit-text-size-adjust: 100%;
     }
 
+
     body {
+
       margin: 0;
 
       font-family:
@@ -63,7 +91,9 @@
         sans-serif;
 
       background: #f4f7fb;
+
       color: #172033;
+
     }
 
 
@@ -72,6 +102,7 @@
        ========================= */
 
     .header {
+
       background:
         linear-gradient(
           135deg,
@@ -85,19 +116,27 @@
         42px 20px 58px;
 
       text-align: center;
+
     }
 
 
     .logo {
+
       font-size: 38px;
+
       font-weight: 800;
+
       margin-bottom: 8px;
+
     }
 
 
     .subtitle {
+
       font-size: 17px;
+
       opacity: 0.9;
+
     }
 
 
@@ -106,6 +145,7 @@
        ========================= */
 
     .container {
+
       max-width: 700px;
 
       margin:
@@ -113,10 +153,12 @@
 
       padding:
         0 16px;
+
     }
 
 
     .card {
+
       background: white;
 
       border-radius: 24px;
@@ -126,16 +168,19 @@
       box-shadow:
         0 12px 35px
         rgba(0, 0, 0, 0.08);
+
     }
 
 
     h2 {
+
       margin:
         0 0 20px;
 
       font-size: 23px;
 
       text-align: right;
+
     }
 
 
@@ -144,6 +189,7 @@
        ========================= */
 
     textarea {
+
       width: 100%;
 
       min-height: 155px;
@@ -166,11 +212,18 @@
       direction: rtl;
 
       text-align: right;
+
     }
 
 
     textarea:focus {
+
       border-color: #2563eb;
+
+      box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.08);
+
     }
 
 
@@ -179,6 +232,7 @@
        ========================= */
 
     .image-box {
+
       margin-top: 17px;
 
       border:
@@ -191,26 +245,32 @@
       text-align: center;
 
       background: #f8fafc;
+
     }
 
 
     .image-title {
+
       font-size: 17px;
 
       font-weight: 700;
 
       margin-bottom: 14px;
+
     }
 
 
     input[type="file"] {
+
       width: 100%;
 
       font-size: 15px;
+
     }
 
 
     #preview {
+
       display: none;
 
       width: 100%;
@@ -224,10 +284,12 @@
       margin-top: 18px;
 
       background: white;
+
     }
 
 
     .image-status {
+
       display: none;
 
       margin-top: 12px;
@@ -237,6 +299,7 @@
       font-weight: 700;
 
       font-size: 15px;
+
     }
 
 
@@ -245,6 +308,7 @@
        ========================= */
 
     button {
+
       width: 100%;
 
       margin-top: 20px;
@@ -264,13 +328,28 @@
       color: white;
 
       cursor: pointer;
+
+      -webkit-tap-highlight-color:
+        transparent;
+
+    }
+
+
+    button:active {
+
+      transform: scale(0.995);
+
     }
 
 
     button:disabled {
+
       opacity: 0.55;
 
       cursor: not-allowed;
+
+      transform: none;
+
     }
 
 
@@ -279,6 +358,7 @@
        ========================= */
 
     .loading {
+
       display: none;
 
       text-align: center;
@@ -291,14 +371,16 @@
       font-size: 17px;
 
       font-weight: 600;
+
     }
 
 
     /* =========================
-       ANSWER
+       ANSWER BOX
        ========================= */
 
     .answer {
+
       display: none;
 
       margin-top: 20px;
@@ -316,41 +398,58 @@
 
       line-height: 2;
 
-      text-align: right;
-
       direction: rtl;
+
+      text-align: right;
 
       overflow-wrap: break-word;
 
       word-break: normal;
+
     }
 
 
-    .answer-line {
+    /* =========================
+       ARABIC TEXT
+       ========================= */
+
+    .text-line {
+
       display: block;
 
       width: 100%;
-
-      margin:
-        0 0 10px;
 
       direction: rtl;
 
       text-align: right;
 
       unicode-bidi: plaintext;
+
+      margin:
+        0 0 8px;
+
     }
 
 
-    .answer-line:last-child {
-      margin-bottom: 0;
+    /* =========================
+       EMPTY LINE
+       ========================= */
+
+    .empty-line {
+
+      height: 10px;
+
     }
 
 
-    /*
-     * الأسطر الرياضية الخالصة
-     */
-    .math-line {
+    /* =========================
+       DISPLAY MATH
+       ========================= */
+
+    .display-math {
+
+      width: 100%;
+
       direction: ltr;
 
       text-align: center;
@@ -360,39 +459,83 @@
       margin:
         14px 0;
 
+      padding:
+        5px 0;
+
       overflow-x: auto;
 
       overflow-y: hidden;
 
+      -webkit-overflow-scrolling:
+        touch;
+
+    }
+
+
+    /* =========================
+       MATHJAX
+       ========================= */
+
+    .answer mjx-container {
+
+      direction: ltr !important;
+
+      unicode-bidi: isolate;
+
+      max-width: 100%;
+
+    }
+
+
+    .answer
+    mjx-container[display="true"] {
+
+      display: block !important;
+
+      direction: ltr !important;
+
+      text-align: center !important;
+
+      margin:
+        10px auto !important;
+
+      overflow-x: auto;
+
+      overflow-y: hidden;
+
+      max-width: 100%;
+
       padding:
-        4px 2px;
+        3px 0;
+
     }
 
 
     /*
-     * MathJax
+     * Inline math inside Arabic
      */
-    .answer mjx-container {
-      max-width: 100%;
-    }
 
+    .text-line
+    mjx-container {
 
-    .answer mjx-container[display="true"] {
-      overflow-x: auto;
+      direction: ltr !important;
 
-      overflow-y: hidden;
+      unicode-bidi: isolate;
+
+      display: inline-block !important;
 
       margin:
-        14px 0 !important;
+        0 3px !important;
 
-      padding:
-        4px 0;
-
-      text-align: center !important;
     }
 
 
+    /* =========================
+       ERROR
+       ========================= */
+
     .answer.error {
+
       background: #fff1f2;
 
       border-color: #fecdd3;
@@ -402,6 +545,9 @@
       direction: rtl;
 
       text-align: right;
+
+      white-space: pre-wrap;
+
     }
 
 
@@ -410,6 +556,7 @@
        ========================= */
 
     .note {
+
       font-size: 14px;
 
       color: #64748b;
@@ -417,6 +564,7 @@
       margin-top: 14px;
 
       text-align: center;
+
     }
 
 
@@ -427,32 +575,51 @@
     @media (max-width: 600px) {
 
       .header {
+
         padding:
           38px 16px 55px;
+
       }
 
 
       .logo {
+
         font-size: 36px;
+
       }
 
 
       .card {
+
         padding: 20px;
+
       }
 
 
       h2 {
+
         font-size: 22px;
+
       }
 
 
       .answer {
-        padding: 18px;
+
+        padding:
+          19px 16px;
 
         font-size: 17px;
 
         line-height: 2;
+
+      }
+
+
+      .display-math {
+
+        margin:
+          12px 0;
+
       }
 
     }
@@ -460,6 +627,7 @@
   </style>
 
 </head>
+
 
 
 <body>
@@ -482,6 +650,7 @@
   </div>
 
 
+
   <!-- =========================
        MAIN
        ========================= -->
@@ -502,9 +671,13 @@
       ></textarea>
 
 
-      <!-- IMAGE -->
+
+      <!-- =========================
+           IMAGE
+           ========================= -->
 
       <div class="image-box">
+
 
         <div class="image-title">
           📷 صوّر أو اختر صورة للسؤال
@@ -532,10 +705,14 @@
           alt="معاينة صورة السؤال"
         >
 
+
       </div>
 
 
-      <!-- BUTTON -->
+
+      <!-- =========================
+           ASK BUTTON
+           ========================= -->
 
       <button
         id="askButton"
@@ -545,7 +722,10 @@
       </button>
 
 
-      <!-- LOADING -->
+
+      <!-- =========================
+           LOADING
+           ========================= -->
 
       <div
         id="loading"
@@ -555,12 +735,16 @@
       </div>
 
 
-      <!-- ANSWER -->
+
+      <!-- =========================
+           ANSWER
+           ========================= -->
 
       <div
         id="answer"
         class="answer"
       ></div>
+
 
 
       <div class="note">
@@ -573,6 +757,7 @@
   </div>
 
 
+
 <script>
 
 (function () {
@@ -581,11 +766,15 @@
 
 
   /* =========================
-     ELEMENTS
+     SETTINGS
      ========================= */
 
   var API_URL = "/ask";
 
+
+  /* =========================
+     ELEMENTS
+     ========================= */
 
   var questionInput =
     document.getElementById(
@@ -630,10 +819,11 @@
 
 
   /* =========================
-     IMAGE TO BASE64
+     IMAGE -> BASE64
      ========================= */
 
   async function fileToDataURL(file) {
+
 
     var buffer =
       await file.arrayBuffer();
@@ -645,7 +835,8 @@
       );
 
 
-    var binary = "";
+    var binary =
+      "";
 
 
     var chunkSize =
@@ -658,13 +849,17 @@
       i += chunkSize
     ) {
 
+
       var chunk =
         bytes.subarray(
+
           i,
+
           Math.min(
             i + chunkSize,
             bytes.length
           )
+
         );
 
 
@@ -699,11 +894,13 @@
 
 
   /* =========================
-     IMAGE PREVIEW
+     IMAGE SELECTION
      ========================= */
 
   imageInput.addEventListener(
+
     "change",
+
     function () {
 
 
@@ -736,9 +933,7 @@
       }
 
 
-      /*
-       * التأكد من أنه ملف صورة
-       */
+      /* FILE TYPE */
 
       if (
         file.type &&
@@ -746,6 +941,7 @@
           "image/"
         ) !== 0
       ) {
+
 
         imageInput.value =
           "";
@@ -761,9 +957,7 @@
       }
 
 
-      /*
-       * الحد الأقصى 10MB
-       */
+      /* MAX SIZE = 10MB */
 
       var maxSize =
         10 *
@@ -775,6 +969,7 @@
         file.size >
         maxSize
       ) {
+
 
         imageInput.value =
           "";
@@ -794,9 +989,7 @@
         "block";
 
 
-      /*
-       * معاينة الصورة
-       */
+      /* PREVIEW */
 
       if (
         window.URL &&
@@ -819,6 +1012,7 @@
               window.URL.revokeObjectURL
             ) {
 
+
               window.URL.revokeObjectURL(
                 imageURL
               );
@@ -838,434 +1032,12 @@
       }
 
     }
+
   );
 
 
   /* =========================
-     ERROR
-     ========================= */
-
-  function showError(message) {
-
-
-    answer.innerHTML =
-      "";
-
-
-    answer.classList.add(
-      "error"
-    );
-
-
-    var errorText =
-      document.createElement(
-        "div"
-      );
-
-
-    errorText.textContent =
-      "تعذر الحصول على الإجابة:\n" +
-      message;
-
-
-    errorText.style.whiteSpace =
-      "pre-wrap";
-
-
-    answer.appendChild(
-      errorText
-    );
-
-
-    answer.style.display =
-      "block";
-
-
-    scrollToAnswer();
-
-  }
-
-
-  /* =========================
-     DETECT MATH
-     ========================= */
-
-  function looksLikeMath(line) {
-
-
-    var text =
-      line.trim();
-
-
-    if (!text) {
-
-      return false;
-
-    }
-
-
-    /*
-     * السطر يعتبر رياضياً إذا
-     * كان أغلبه أرقام ورموز
-     * أو يحتوي على معادلة واضحة.
-     */
-
-    var hasEquation =
-      /[=±√^]/.test(
-        text
-      );
-
-
-    var hasMathVariable =
-      /(?:^|\s)[a-zA-Z]\s*[=(+\-]/.test(
-        text
-      );
-
-
-    return (
-      hasEquation ||
-      hasMathVariable
-    );
-
-  }
-
-
-  /* =========================
-     CONVERT COMMON MATH
-     TO LATEX
-     ========================= */
-
-  function convertMath(text) {
-
-
-    var result =
-      String(text);
-
-
-    /*
-     * الجذور
-     *
-     * √2
-     * يصبح
-     * \sqrt{2}
-     */
-
-    result =
-      result.replace(
-        /√\s*\(?([0-9a-zA-Z]+)\)?/g,
-        "\\sqrt{$1}"
-      );
-
-
-    /*
-     * القوى البسيطة
-     *
-     * x^2
-     * x^3
-     */
-
-    result =
-      result.replace(
-        /([a-zA-Z0-9\)])\^([0-9]+)/g,
-        "$1^{$2}"
-      );
-
-
-    /*
-     * علامة الضرب
-     */
-
-    result =
-      result.replace(
-        /×/g,
-        "\\times "
-      );
-
-
-    /*
-     * علامة لا يساوي
-     */
-
-    result =
-      result.replace(
-        /≠/g,
-        "\\ne "
-      );
-
-
-    /*
-     * أصغر أو يساوي
-     */
-
-    result =
-      result.replace(
-        /≤/g,
-        "\\le "
-      );
-
-
-    /*
-     * أكبر أو يساوي
-     */
-
-    result =
-      result.replace(
-        /≥/g,
-        "\\ge "
-      );
-
-
-    /*
-     * السهم
-     */
-
-    result =
-      result.replace(
-        /⇒/g,
-        "\\Rightarrow "
-      );
-
-
-    /*
-     * زائد أو ناقص
-     */
-
-    result =
-      result.replace(
-        /±/g,
-        "\\pm "
-      );
-
-
-    return result;
-
-  }
-
-
-  /* =========================
-     CREATE NORMAL LINE
-     ========================= */
-
-  function createNormalLine(
-    text
-  ) {
-
-
-    var div =
-      document.createElement(
-        "div"
-      );
-
-
-    div.className =
-      "answer-line";
-
-
-    div.setAttribute(
-      "dir",
-      "auto"
-    );
-
-
-    div.style.unicodeBidi =
-      "plaintext";
-
-
-    div.textContent =
-      text;
-
-
-    return div;
-
-  }
-
-
-  /* =========================
-     CREATE MATH LINE
-     ========================= */
-
-  function createMathLine(
-    text
-  ) {
-
-
-    var div =
-      document.createElement(
-        "div"
-      );
-
-
-    div.className =
-      "math-line";
-
-
-    div.setAttribute(
-      "dir",
-      "ltr"
-    );
-
-
-    var mathText =
-      convertMath(
-        text
-      );
-
-
-    div.textContent =
-      "\\[" +
-      mathText +
-      "\\]";
-
-
-    return div;
-
-  }
-
-
-  /* =========================
-     SHOW ANSWER
-     ========================= */
-
-  function showAnswer(text) {
-
-
-    answer.classList.remove(
-      "error"
-    );
-
-
-    answer.innerHTML =
-      "";
-
-
-    var lines =
-      String(text)
-        .replace(/\r/g, "")
-        .split("\n");
-
-
-    lines.forEach(
-      function (line) {
-
-
-        var cleanLine =
-          line.trim();
-
-
-        /*
-         * سطر فارغ
-         */
-
-        if (
-          cleanLine === ""
-        ) {
-
-
-          var space =
-            document.createElement(
-              "div"
-            );
-
-
-          space.style.height =
-            "12px";
-
-
-          answer.appendChild(
-            space
-          );
-
-
-          return;
-
-        }
-
-
-        /*
-         * السطر الرياضي
-         */
-
-        if (
-          looksLikeMath(
-            cleanLine
-          )
-        ) {
-
-
-          answer.appendChild(
-            createMathLine(
-              cleanLine
-            )
-          );
-
-
-        } else {
-
-
-          answer.appendChild(
-            createNormalLine(
-              cleanLine
-            )
-          );
-
-        }
-
-      }
-    );
-
-
-    answer.style.display =
-      "block";
-
-
-    /*
-     * تشغيل MathJax
-     * بعد إدخال الإجابة
-     */
-
-    renderMath();
-
-
-    scrollToAnswer();
-
-  }
-
-
-  /* =========================
-     RENDER MATHJAX
-     ========================= */
-
-  function renderMath() {
-
-
-    if (
-      window.MathJax &&
-      window.MathJax.typesetPromise
-    ) {
-
-
-      window.MathJax
-        .typesetPromise(
-          [answer]
-        )
-        .catch(
-          function (error) {
-
-            console.error(
-              "MathJax error:",
-              error
-            );
-
-          }
-        );
-
-    }
-
-  }
-
-
-  /* =========================
-     SCROLL
+     SCROLL TO ANSWER
      ========================= */
 
   function scrollToAnswer() {
@@ -1285,12 +1057,434 @@
       });
 
 
-    } catch (e) {
+    } catch (error) {
 
 
       answer.scrollIntoView();
 
     }
+
+  }
+
+
+  /* =========================
+     ERROR
+     ========================= */
+
+  function showError(message) {
+
+
+    answer.innerHTML =
+      "";
+
+
+    answer.classList.add(
+      "error"
+    );
+
+
+    answer.textContent =
+      "تعذر الحصول على الإجابة:\n" +
+      message;
+
+
+    answer.style.display =
+      "block";
+
+
+    scrollToAnswer();
+
+  }
+
+
+  /* =========================
+     CREATE TEXT LINE
+     ========================= */
+
+  function createTextLine(text) {
+
+
+    var div =
+      document.createElement(
+        "div"
+      );
+
+
+    div.className =
+      "text-line";
+
+
+    div.setAttribute(
+      "dir",
+      "rtl"
+    );
+
+
+    /*
+     * مهم:
+     *
+     * نستخدم textContent
+     * وليس innerHTML
+     *
+     * حتى لا يتم تنفيذ
+     * أي HTML يأتي من الإجابة.
+     */
+
+    div.textContent =
+      text;
+
+
+    return div;
+
+  }
+
+
+  /* =========================
+     CREATE DISPLAY MATH
+     ========================= */
+
+  function createDisplayMath(math) {
+
+
+    var div =
+      document.createElement(
+        "div"
+      );
+
+
+    div.className =
+      "display-math";
+
+
+    div.setAttribute(
+      "dir",
+      "ltr"
+    );
+
+
+    /*
+     * نعيد محددات MathJax
+     */
+
+    div.textContent =
+      "\\[" +
+      math +
+      "\\]";
+
+
+    return div;
+
+  }
+
+
+  /* =========================
+     PARSE ANSWER
+     ========================= */
+
+  function parseAnswer(text) {
+
+
+    answer.innerHTML =
+      "";
+
+
+    var source =
+      String(
+        text || ""
+      );
+
+
+    /*
+     * توحيد أسطر النص
+     */
+
+    source =
+      source
+        .replace(
+          /\r\n/g,
+          "\n"
+        )
+        .replace(
+          /\r/g,
+          "\n"
+        );
+
+
+    /*
+     * نبحث فقط عن:
+     *
+     * \[
+     * equation
+     * \]
+     *
+     * ولا نحاول اكتشاف
+     * الرياضيات بأنفسنا.
+     */
+
+    var displayMathRegex =
+      /\\\[([\s\S]*?)\\\]/g;
+
+
+    var lastIndex =
+      0;
+
+
+    var match;
+
+
+    while (
+      (
+        match =
+          displayMathRegex.exec(
+            source
+          )
+      ) !== null
+    ) {
+
+
+      /*
+       * النص العربي
+       * قبل المعادلة
+       */
+
+      var before =
+        source.slice(
+          lastIndex,
+          match.index
+        );
+
+
+      appendTextBlock(
+        before
+      );
+
+
+      /*
+       * المعادلة
+       */
+
+      var math =
+        match[1].trim();
+
+
+      if (math) {
+
+
+        answer.appendChild(
+          createDisplayMath(
+            math
+          )
+        );
+
+      }
+
+
+      lastIndex =
+        displayMathRegex.lastIndex;
+
+    }
+
+
+    /*
+     * بقية النص بعد
+     * آخر معادلة
+     */
+
+    var remaining =
+      source.slice(
+        lastIndex
+      );
+
+
+    appendTextBlock(
+      remaining
+    );
+
+  }
+
+
+  /* =========================
+     APPEND TEXT BLOCK
+     ========================= */
+
+  function appendTextBlock(text) {
+
+
+    if (
+      text === null ||
+      text === undefined
+    ) {
+
+      return;
+
+    }
+
+
+    var lines =
+      String(text)
+        .split("\n");
+
+
+    lines.forEach(
+
+      function (line) {
+
+
+        var cleanLine =
+          line.trim();
+
+
+        /*
+         * EMPTY LINE
+         */
+
+        if (!cleanLine) {
+
+
+          var empty =
+            document.createElement(
+              "div"
+            );
+
+
+          empty.className =
+            "empty-line";
+
+
+          answer.appendChild(
+            empty
+          );
+
+
+          return;
+
+        }
+
+
+        /*
+         * NORMAL ARABIC TEXT
+         */
+
+        answer.appendChild(
+          createTextLine(
+            cleanLine
+          )
+        );
+
+      }
+
+    );
+
+  }
+
+
+  /* =========================
+     RENDER MATHJAX
+     ========================= */
+
+  function renderMath() {
+
+
+    if (
+      window.MathJax &&
+      window.MathJax.typesetPromise
+    ) {
+
+
+      /*
+       * تنظيف أي معالجة سابقة
+       */
+
+      if (
+        window.MathJax.typesetClear
+      ) {
+
+
+        try {
+
+
+          window.MathJax.typesetClear(
+            [answer]
+          );
+
+
+        } catch (error) {
+
+
+          console.log(
+            "MathJax clear:",
+            error
+          );
+
+        }
+
+      }
+
+
+      /*
+       * معالجة الإجابة الجديدة
+       */
+
+      return window.MathJax
+        .typesetPromise(
+          [answer]
+        )
+        .catch(
+
+          function (error) {
+
+
+            console.error(
+              "MathJax error:",
+              error
+            );
+
+          }
+
+        );
+
+    }
+
+
+    return Promise.resolve();
+
+  }
+
+
+  /* =========================
+     SHOW ANSWER
+     ========================= */
+
+  async function showAnswer(text) {
+
+
+    answer.classList.remove(
+      "error"
+    );
+
+
+    /*
+     * فصل النص والمعادلات
+     */
+
+    parseAnswer(
+      text
+    );
+
+
+    answer.style.display =
+      "block";
+
+
+    /*
+     * MathJax يعالج فقط
+     * المعادلات المحددة
+     */
+
+    await renderMath();
+
+
+    scrollToAnswer();
 
   }
 
@@ -1303,7 +1497,8 @@
 
 
     var question =
-      questionInput.value.trim();
+      questionInput.value
+        .trim();
 
 
     var file =
@@ -1315,9 +1510,9 @@
         : null;
 
 
-    /*
-     * لا يوجد سؤال أو صورة
-     */
+    /* =========================
+       VALIDATION
+       ========================= */
 
     if (
       !question &&
@@ -1335,9 +1530,9 @@
     }
 
 
-    /*
-     * بداية التحميل
-     */
+    /* =========================
+       START
+       ========================= */
 
     askButton.disabled =
       true;
@@ -1360,6 +1555,10 @@
       "block";
 
 
+    loading.textContent =
+      "جاري تحليل السؤال...";
+
+
     try {
 
 
@@ -1367,9 +1566,9 @@
         null;
 
 
-      /*
-       * تجهيز الصورة
-       */
+      /* =========================
+         IMAGE
+         ========================= */
 
       if (file) {
 
@@ -1388,13 +1587,15 @@
 
       loading.textContent =
         file
+
           ? "جاري تحليل السؤال والصورة..."
+
           : "جاري تحليل السؤال...";
 
 
-      /*
-       * إرسال السؤال إلى الخادم
-       */
+      /* =========================
+         FETCH
+         ========================= */
 
       var response =
         await fetch(
@@ -1431,9 +1632,9 @@
         );
 
 
-      /*
-       * قراءة استجابة الخادم
-       */
+      /* =========================
+         RESPONSE
+         ========================= */
 
       var responseText =
         await response.text();
@@ -1451,7 +1652,7 @@
           );
 
 
-      } catch (e) {
+      } catch (error) {
 
 
         throw new Error(
@@ -1461,9 +1662,9 @@
       }
 
 
-      /*
-       * خطأ من الخادم
-       */
+      /* =========================
+         SERVER ERROR
+         ========================= */
 
       if (
         !response.ok
@@ -1481,9 +1682,9 @@
       }
 
 
-      /*
-       * استخراج الإجابة
-       */
+      /* =========================
+         ANSWER
+         ========================= */
 
       var finalAnswer =
 
@@ -1506,11 +1707,11 @@
       }
 
 
-      /*
-       * عرض الإجابة
-       */
+      /* =========================
+         DISPLAY
+         ========================= */
 
-      showAnswer(
+      await showAnswer(
         finalAnswer
       );
 
@@ -1539,6 +1740,10 @@
     } finally {
 
 
+      /* =========================
+         FINISH
+         ========================= */
+
       loading.style.display =
         "none";
 
@@ -1556,7 +1761,7 @@
 
 
   /* =========================
-     BUTTON
+     BUTTON EVENT
      ========================= */
 
   askButton.addEventListener(
@@ -1564,6 +1769,7 @@
     "click",
 
     function () {
+
 
       askAI();
 
