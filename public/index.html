@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
@@ -9,32 +12,9 @@
 
   <title>ONE Study</title>
 
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [["\\(", "\\)"]],
-        displayMath: [["\\[", "\\]"]],
-        processEscapes: true
-      },
-      options: {
-        skipHtmlTags: [
-          "script",
-          "noscript",
-          "style",
-          "textarea",
-          "pre",
-          "code"
-        ]
-      }
-    };
-  </script>
-
-  <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-  ></script>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -45,375 +25,943 @@
 
     body {
       margin: 0;
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
+        Tahoma,
         Arial,
         sans-serif;
+
       background: #f4f7fb;
       color: #172033;
     }
 
+
+    /* =========================
+       HEADER
+       ========================= */
+
     .header {
-      background: linear-gradient(135deg, #2563eb, #4f46e5);
-      color: white;
-      padding: 42px 20px 58px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #2563eb,
+          #4338ca
+        );
+
+      color: #ffffff;
+
+      padding:
+        42px 20px 58px;
+
       text-align: center;
     }
 
     .logo {
-      font-size: 38px;
-      font-weight: 800;
+      font-size: 40px;
+      font-weight: 850;
+      letter-spacing: -0.5px;
       margin-bottom: 8px;
     }
 
     .subtitle {
-      font-size: 17px;
-      opacity: 0.92;
+      font-size: 18px;
+      font-weight: 500;
+      opacity: 0.95;
     }
 
+
+    /* =========================
+       MAIN
+       ========================= */
+
     .container {
-      max-width: 700px;
-      margin: -32px auto 40px;
-      padding: 0 16px;
+
+      max-width: 720px;
+
+      margin:
+        -32px auto 40px;
+
+      padding:
+        0 16px;
     }
 
     .card {
-      background: white;
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+
+      background: #ffffff;
+
+      border-radius: 26px;
+
+      padding: 26px;
+
+      box-shadow:
+        0 12px 35px
+        rgba(15, 23, 42, 0.09);
     }
 
+
+    /* =========================
+       QUESTION
+       ========================= */
+
     h2 {
-      margin: 0 0 18px;
-      font-size: 23px;
+
+      margin:
+        0 0 20px;
+
+      font-size: 25px;
+
+      line-height: 1.5;
+
+      font-weight: 800;
+
+      color: #172033;
+
       text-align: right;
     }
 
     textarea {
+
       width: 100%;
-      min-height: 155px;
-      border: 1px solid #dbe2ea;
-      border-radius: 16px;
-      padding: 16px;
-      font-size: 17px;
+
+      min-height: 170px;
+
+      border:
+        1.5px solid #d6deea;
+
+      border-radius: 18px;
+
+      padding: 18px;
+
+      font-size: 18px;
+
+      line-height: 1.8;
+
       resize: vertical;
+
       outline: none;
+
       font-family: inherit;
+
       direction: rtl;
+
       text-align: right;
-      background: white;
+
+      background: #ffffff;
+
       color: #172033;
     }
 
-    textarea:focus {
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+    textarea::placeholder {
+      color: #8a94a6;
     }
 
+    textarea:focus {
+
+      border-color: #2563eb;
+
+      box-shadow:
+        0 0 0 4px
+        rgba(37, 99, 235, 0.08);
+    }
+
+
+    /* =========================
+       QUESTION TOOLS
+       ========================= */
+
     .question-tools {
+
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 10px;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 12px;
+
+      margin-top: 14px;
     }
 
     .tool-button {
+
       margin: 0;
-      padding: 13px 10px;
-      border-radius: 13px;
-      font-size: 15px;
-      background: #eef2ff;
-      color: #1e40af;
-      border: 1px solid #dbeafe;
-    }
 
-    .attachment-section {
-      margin-top: 18px;
-      display: grid;
-      gap: 14px;
-    }
+      min-height: 58px;
 
-    .attachment-box {
-      border: 2px dashed #cbd5e1;
+      padding:
+        13px 12px;
+
+      border:
+        1.5px solid #dbe5f5;
+
       border-radius: 16px;
-      padding: 18px;
-      background: #f8fafc;
-      text-align: center;
-    }
 
-    .attachment-title {
+      background: #f7f9ff;
+
+      color: #174ea6;
+
       font-size: 17px;
+
       font-weight: 750;
-      margin-bottom: 12px;
-    }
 
-    .hidden-input {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .picker-button {
-      display: block;
-      width: 100%;
-      border: 0;
-      border-radius: 14px;
-      padding: 14px;
-      background: #e8efff;
-      color: #1d4ed8;
-      font-size: 16px;
-      font-weight: 700;
       cursor: pointer;
+
+      font-family: inherit;
     }
 
-    .preview-card {
+    .tool-button:active {
+      background: #eef3ff;
+    }
+
+
+    /* =========================
+       IMAGE
+       ========================= */
+
+    .image-box {
+
+      margin-top: 20px;
+
+      border:
+        2px dashed #cbd5e1;
+
+      border-radius: 20px;
+
+      padding: 22px 18px;
+
+      text-align: center;
+
+      background: #fafcff;
+    }
+
+    .image-title {
+
+      font-size: 19px;
+
+      font-weight: 800;
+
+      color: #172033;
+
+      margin-bottom: 16px;
+    }
+
+    .file-label {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 100%;
+
+      min-height: 62px;
+
+      border-radius: 16px;
+
+      background: #eef4ff;
+
+      color: #1856b8;
+
+      font-size: 18px;
+
+      font-weight: 800;
+
+      cursor: pointer;
+
+      padding:
+        12px 16px;
+
+      -webkit-tap-highlight-color:
+        transparent;
+    }
+
+    #imageInput {
       display: none;
+    }
+
+    .image-status {
+
+      display: none;
+
       margin-top: 14px;
+
+      color: #147a3e;
+
+      font-size: 16px;
+
+      font-weight: 750;
+    }
+
+    .preview-wrap {
+
+      display: none;
+
+      margin-top: 16px;
+
+      padding: 10px;
+
+      border:
+        1px solid #e1e7f0;
+
+      border-radius: 16px;
+
+      background: #ffffff;
     }
 
     #preview {
+
+      display: block;
+
       width: 100%;
-      max-height: 380px;
+
+      max-height: 420px;
+
       object-fit: contain;
-      border-radius: 14px;
-      background: white;
-      border: 1px solid #e2e8f0;
-    }
 
-    .preview-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .small-button {
-      margin: 0;
-      padding: 11px;
       border-radius: 12px;
-      font-size: 14px;
+
+      background: #ffffff;
     }
 
-    .change-button {
-      background: #2563eb;
-    }
+    .image-actions {
 
-    .remove-button {
-      background: #e11d48;
-    }
+      display: grid;
 
-    .file-card {
-      display: none;
-      margin-top: 14px;
-      padding: 14px;
-      border-radius: 14px;
-      background: white;
-      border: 1px solid #e2e8f0;
-      text-align: right;
-    }
+      grid-template-columns:
+        1fr 1fr;
 
-    .file-name {
-      font-weight: 750;
-      overflow-wrap: anywhere;
-    }
+      gap: 10px;
 
-    .file-details {
-      margin-top: 5px;
-      color: #64748b;
-      font-size: 13px;
-    }
-
-    #askButton {
-      width: 100%;
-      margin-top: 20px;
-      border: 0;
-      border-radius: 16px;
-      padding: 17px;
-      font-size: 20px;
-      font-weight: 750;
-      background: #2563eb;
-      color: white;
-      cursor: pointer;
-    }
-
-    #askButton:disabled {
-      opacity: 0.55;
-      cursor: not-allowed;
-    }
-
-    .loading {
-      display: none;
-      text-align: center;
-      padding: 22px 10px;
-      color: #475569;
-      font-size: 17px;
-      font-weight: 650;
-    }
-
-    .answer {
-      display: none;
-      margin-top: 20px;
-      background: #eef4ff;
-      border: 1px solid #dbeafe;
-      border-radius: 18px;
-      padding: 22px;
-      font-size: 18px;
-      line-height: 2;
-      direction: rtl;
-      text-align: right;
-      overflow-wrap: break-word;
-    }
-
-    .answer.error {
-      background: #fff1f2;
-      border-color: #fecdd3;
-      color: #9f1239;
-      white-space: pre-wrap;
-    }
-
-    .answer-line {
-      direction: rtl;
-      text-align: right;
-      margin-bottom: 7px;
-    }
-
-    .display-math {
-      direction: ltr;
-      unicode-bidi: isolate;
-      text-align: center;
-      overflow-x: auto;
-      padding: 7px 2px;
-      margin: 10px 0;
-    }
-
-    .inline-math {
-      display: inline-block;
-      direction: ltr;
-      unicode-bidi: isolate;
-      margin: 0 2px;
-    }
-
-    .answer mjx-container {
-      direction: ltr !important;
-      unicode-bidi: isolate !important;
-      max-width: 100%;
-    }
-
-    .answer-actions {
-      display: none;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 9px;
       margin-top: 12px;
     }
 
-    .answer-action-button {
-      margin: 0;
-      padding: 13px 7px;
-      font-size: 14px;
+    .small-button {
+
+      border:
+        1px solid #dbe5f5;
+
       border-radius: 13px;
+
+      min-height: 48px;
+
+      font-family: inherit;
+
+      font-size: 15px;
+
+      font-weight: 750;
+
+      cursor: pointer;
     }
 
-    #copyAnswerButton {
-      background: #0f766e;
+    .change-image {
+
+      background: #eef4ff;
+
+      color: #1856b8;
     }
 
-    #saveAnswerButton {
-      background: #7c3aed;
+    .remove-image {
+
+      background: #fff5f5;
+
+      color: #b42318;
+
+      border-color: #f5d0d0;
     }
 
-    #shareAnswerButton {
-      background: #0369a1;
+
+    /* =========================
+       SOLVE BUTTON
+       ========================= */
+
+    .solve-button {
+
+      width: 100%;
+
+      margin-top: 22px;
+
+      min-height: 66px;
+
+      border: 0;
+
+      border-radius: 18px;
+
+      padding:
+        16px 20px;
+
+      background: #2563eb;
+
+      color: #ffffff;
+
+      font-family: inherit;
+
+      font-size: 21px;
+
+      font-weight: 850;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 7px 18px
+        rgba(37, 99, 235, 0.16);
+
+      -webkit-tap-highlight-color:
+        transparent;
     }
+
+    .solve-button:active {
+      transform: scale(0.995);
+    }
+
+    .solve-button:disabled {
+
+      opacity: 0.55;
+
+      cursor: not-allowed;
+
+      transform: none;
+    }
+
+
+    /* =========================
+       LOADING
+       ========================= */
+
+    .loading {
+
+      display: none;
+
+      text-align: center;
+
+      padding:
+        24px 10px 8px;
+
+      color: #475569;
+
+      font-size: 17px;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       ANSWER AREA
+       ========================= */
+
+    .answer-section {
+
+      display: none;
+
+      margin-top: 24px;
+    }
+
+    .answer-title {
+
+      margin-bottom: 12px;
+
+      color: #172033;
+
+      font-size: 21px;
+
+      font-weight: 850;
+    }
+
+    .answer {
+
+      display: block;
+
+      background: #f7f9ff;
+
+      border:
+        1px solid #dce6f7;
+
+      border-radius: 20px;
+
+      padding: 22px;
+
+      font-size: 18px;
+
+      line-height: 2;
+
+      direction: rtl;
+
+      text-align: right;
+
+      color: #172033;
+
+      overflow-wrap: break-word;
+
+      word-break: normal;
+    }
+
+    .text-line {
+
+      display: block;
+
+      width: 100%;
+
+      direction: rtl;
+
+      text-align: right;
+
+      unicode-bidi: isolate;
+
+      margin:
+        0 0 8px;
+    }
+
+    .empty-line {
+
+      width: 100%;
+
+      height: 10px;
+    }
+
+
+    /* =========================
+       MATH
+       ========================= */
+
+    .display-math {
+
+      width: 100%;
+
+      direction: ltr;
+
+      unicode-bidi: isolate;
+
+      text-align: center;
+
+      margin:
+        14px 0;
+
+      padding:
+        8px 4px;
+
+      overflow-x: auto;
+
+      overflow-y: hidden;
+
+      -webkit-overflow-scrolling:
+        touch;
+    }
+
+    .inline-math {
+
+      display: inline-block;
+
+      direction: ltr;
+
+      unicode-bidi: isolate;
+
+      white-space: nowrap;
+
+      vertical-align: baseline;
+
+      margin:
+        0 3px;
+    }
+
+    .answer mjx-container {
+
+      direction: ltr !important;
+
+      unicode-bidi: isolate !important;
+
+      max-width: 100%;
+    }
+
+    .display-math
+    mjx-container[display="true"] {
+
+      direction: ltr !important;
+
+      text-align: center !important;
+
+      margin:
+        6px auto !important;
+
+      overflow-x: auto;
+
+      overflow-y: hidden;
+
+      max-width: 100%;
+    }
+
+    .inline-math
+    mjx-container {
+
+      display: inline-block !important;
+
+      direction: ltr !important;
+
+      margin:
+        0 !important;
+    }
+
+    .math-fallback {
+
+      direction: ltr;
+
+      unicode-bidi: isolate;
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+    }
+
+
+    /* =========================
+       ANSWER ACTIONS
+       ========================= */
+
+    .answer-actions {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 10px;
+
+      margin-top: 16px;
+    }
+
+    .answer-action {
+
+      min-height: 56px;
+
+      border:
+        1.5px solid #cddbf2;
+
+      border-radius: 15px;
+
+      background: #ffffff;
+
+      color: #174ea6;
+
+      font-family: inherit;
+
+      font-size: 16px;
+
+      font-weight: 800;
+
+      cursor: pointer;
+
+      padding:
+        10px 8px;
+
+      -webkit-tap-highlight-color:
+        transparent;
+    }
+
+    .answer-action:active {
+      background: #f0f5ff;
+    }
+
+
+    /* =========================
+       FEEDBACK
+       ========================= */
 
     .feedback {
-      display: none;
-      margin-top: 16px;
-      padding: 15px;
-      border: 1px solid #e2e8f0;
-      border-radius: 15px;
-      background: #f8fafc;
-      text-align: center;
+
+      margin-top: 22px;
+
+      padding: 22px;
+
+      border:
+        1px solid #e0e6ef;
+
+      border-radius: 20px;
+
+      background: #fafbfc;
     }
 
     .feedback-title {
-      font-weight: 700;
-      margin-bottom: 10px;
+
+      margin-bottom: 17px;
+
+      text-align: center;
+
+      color: #172033;
+
+      font-size: 21px;
+
+      font-weight: 850;
     }
 
-    .feedback-actions {
+    .feedback-buttons {
+
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 9px;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 12px;
+    }
+
+    .feedback-button {
+
+      min-height: 58px;
+
+      border: 0;
+
+      border-radius: 15px;
+
+      color: #ffffff;
+
+      font-family: inherit;
+
+      font-size: 18px;
+
+      font-weight: 850;
+
+      cursor: pointer;
+
+      -webkit-tap-highlight-color:
+        transparent;
     }
 
     .yes-button {
-      background: #15803d;
+      background: #16803d;
     }
 
     .no-button {
-      background: #be123c;
+      background: #c9363e;
     }
 
     .feedback-message {
+
       display: none;
-      margin-top: 9px;
+
+      margin-top: 14px;
+
+      text-align: center;
+
       color: #475569;
-      font-size: 14px;
+
+      font-size: 15px;
+
+      font-weight: 700;
     }
+
+
+    /* =========================
+       ERROR
+       ========================= */
+
+    .answer.error {
+
+      background: #fff5f5;
+
+      border-color: #f3c7ca;
+
+      color: #991b1b;
+
+      direction: rtl;
+
+      text-align: right;
+
+      white-space: pre-wrap;
+    }
+
+
+    /* =========================
+       NOTE
+       ========================= */
 
     .note {
-      font-size: 14px;
-      color: #64748b;
-      margin-top: 14px;
+
+      margin-top: 22px;
+
+      color: #667085;
+
       text-align: center;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+      font-weight: 500;
     }
 
+
+    /* =========================
+       TOAST
+       ========================= */
+
+    .toast {
+
+      position: fixed;
+
+      left: 50%;
+
+      bottom: 28px;
+
+      transform:
+        translateX(-50%)
+        translateY(20px);
+
+      background: #172033;
+
+      color: #ffffff;
+
+      padding:
+        12px 18px;
+
+      border-radius: 13px;
+
+      font-size: 15px;
+
+      font-weight: 700;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+
+      z-index: 9999;
+
+      text-align: center;
+
+      max-width:
+        calc(100% - 32px);
+    }
+
+    .toast.show {
+
+      opacity: 1;
+
+      transform:
+        translateX(-50%)
+        translateY(0);
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
     @media (max-width: 600px) {
+
       .header {
-        padding: 38px 16px 55px;
+
+        padding:
+          38px 16px 55px;
       }
 
       .logo {
-        font-size: 36px;
+        font-size: 38px;
       }
 
-      .card {
-        padding: 20px;
-      }
-
-      .answer {
-        padding: 18px 16px;
+      .subtitle {
         font-size: 17px;
       }
 
-      .answer-actions {
-        grid-template-columns: 1fr;
+      .container {
+        padding: 0 12px;
       }
+
+      .card {
+        padding: 20px 16px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+
+      textarea {
+        font-size: 17px;
+      }
+
+      .answer {
+
+        padding:
+          19px 16px;
+
+        font-size: 17px;
+
+        line-height: 2;
+      }
+
+      .answer-actions {
+
+        grid-template-columns:
+          1fr;
+      }
+
+      .answer-action {
+
+        min-height: 55px;
+
+        font-size: 17px;
+      }
+
+      .feedback {
+        padding: 18px 14px;
+      }
+
+      .feedback-title {
+        font-size: 20px;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+
   <div class="header">
-    <div class="logo">ONE Study</div>
-    <div class="subtitle">مساعدك الدراسي بالذكاء الاصطناعي</div>
+
+    <div class="logo">
+      ONE Study
+    </div>
+
+    <div class="subtitle">
+      مساعدك الدراسي بالذكاء الاصطناعي
+    </div>
+
   </div>
 
+
+  <!-- =========================
+       MAIN
+       ========================= -->
+
   <div class="container">
+
     <div class="card">
 
-      <h2>ما السؤال الذي تريد حله؟</h2>
+
+      <h2>
+        ما السؤال الذي تريد حله؟
+      </h2>
+
 
       <textarea
         id="question"
         placeholder="اكتب السؤال هنا أو الصقه..."
       ></textarea>
+
+
+      <!-- QUESTION TOOLS -->
 
       <div class="question-tools">
 
@@ -426,130 +974,73 @@
         </button>
 
         <button
-          id="clearQuestionButton"
+          id="clearButton"
           class="tool-button"
           type="button"
         >
-          ✖ مسح السؤال
+          ✕ مسح السؤال
         </button>
 
       </div>
 
-      <div class="attachment-section">
 
-        <!-- IMAGE -->
+      <!-- =========================
+           IMAGE
+           ========================= -->
 
-        <div class="attachment-box">
+      <div class="image-box">
 
-          <div class="attachment-title">
-            🖼️ صورة السؤال
-          </div>
-
-          <input
-            id="imageInput"
-            class="hidden-input"
-            type="file"
-            accept="image/*"
-          >
-
-          <label
-            for="imageInput"
-            class="picker-button"
-          >
-            اختيار صورة من الاستديو
-          </label>
-
-          <div
-            id="imagePreviewCard"
-            class="preview-card"
-          >
-
-            <img
-              id="preview"
-              alt="معاينة صورة السؤال"
-            >
-
-            <div class="preview-actions">
-
-              <button
-                id="changeImageButton"
-                class="small-button change-button"
-                type="button"
-              >
-                🔄 تغيير
-              </button>
-
-              <button
-                id="removeImageButton"
-                class="small-button remove-button"
-                type="button"
-              >
-                🗑️ حذف
-              </button>
-
-            </div>
-
-          </div>
-
+        <div class="image-title">
+          🖼️ صورة السؤال
         </div>
 
+        <label
+          class="file-label"
+          for="imageInput"
+        >
+          اختيار صورة من الاستديو
+        </label>
 
-        <!-- FILE -->
+        <input
+          id="imageInput"
+          type="file"
+          accept="image/*"
+        >
 
-        <div class="attachment-box">
+        <div
+          id="imageStatus"
+          class="image-status"
+        >
+          ✓ تم اختيار الصورة
+        </div>
 
-          <div class="attachment-title">
-            📎 إرفاق ملف
-          </div>
+        <div
+          id="previewWrap"
+          class="preview-wrap"
+        >
 
-          <input
-            id="fileInput"
-            class="hidden-input"
-            type="file"
-            accept=".pdf,.txt,.doc,.docx,.ppt,.pptx,.rtf"
+          <img
+            id="preview"
+            alt="معاينة صورة السؤال"
           >
 
-          <label
-            for="fileInput"
-            class="picker-button"
-          >
-            اختيار ملف من الجهاز
-          </label>
+          <div class="image-actions">
 
-          <div
-            id="fileCard"
-            class="file-card"
-          >
+            <button
+              id="changeImageButton"
+              class="small-button change-image"
+              type="button"
+            >
+              تغيير الصورة
+            </button>
 
-            <div
-              id="fileName"
-              class="file-name"
-            ></div>
-
-            <div
-              id="fileDetails"
-              class="file-details"
-            ></div>
-
-            <div class="preview-actions">
-
-              <button
-                id="changeFileButton"
-                class="small-button change-button"
-                type="button"
-              >
-                🔄 تغيير
-              </button>
-
-              <button
-                id="removeFileButton"
-                class="small-button remove-button"
-                type="button"
-              >
-                🗑️ حذف
-              </button>
-
-            </div>
+            <button
+              id="removeImageButton"
+              class="small-button remove-image"
+              type="button"
+            >
+              حذف الصورة
+            </button>
 
           </div>
 
@@ -558,8 +1049,13 @@
       </div>
 
 
+      <!-- =========================
+           SOLVE
+           ========================= -->
+
       <button
         id="askButton"
+        class="solve-button"
         type="button"
       >
         حل السؤال
@@ -574,77 +1070,90 @@
       </div>
 
 
-      <div
-        id="answer"
-        class="answer"
-      ></div>
-
+      <!-- =========================
+           ANSWER
+           ========================= -->
 
       <div
-        id="answerActions"
-        class="answer-actions"
+        id="answerSection"
+        class="answer-section"
       >
 
-        <button
-          id="copyAnswerButton"
-          class="answer-action-button"
-          type="button"
-        >
-          📋 نسخ الإجابة
-        </button>
-
-        <button
-          id="saveAnswerButton"
-          class="answer-action-button"
-          type="button"
-        >
-          💾 حفظ الإجابة
-        </button>
-
-        <button
-          id="shareAnswerButton"
-          class="answer-action-button"
-          type="button"
-        >
-          📤 مشاركة
-        </button>
-
-      </div>
-
-
-      <div
-        id="feedback"
-        class="feedback"
-      >
-
-        <div class="feedback-title">
-          هل كانت الإجابة مفيدة؟
-        </div>
-
-        <div class="feedback-actions">
-
-          <button
-            id="yesButton"
-            class="small-button yes-button"
-            type="button"
-          >
-            👍 نعم
-          </button>
-
-          <button
-            id="noButton"
-            class="small-button no-button"
-            type="button"
-          >
-            👎 لا
-          </button>
-
+        <div class="answer-title">
+          الحل
         </div>
 
         <div
-          id="feedbackMessage"
-          class="feedback-message"
+          id="answer"
+          class="answer"
         ></div>
+
+
+        <!-- ANSWER ACTIONS -->
+
+        <div class="answer-actions">
+
+          <button
+            id="copyAnswerButton"
+            class="answer-action"
+            type="button"
+          >
+            📋 نسخ الإجابة
+          </button>
+
+          <button
+            id="saveAnswerButton"
+            class="answer-action"
+            type="button"
+          >
+            💾 حفظ الإجابة
+          </button>
+
+          <button
+            id="shareAnswerButton"
+            class="answer-action"
+            type="button"
+          >
+            📤 مشاركة
+          </button>
+
+        </div>
+
+
+        <!-- FEEDBACK -->
+
+        <div class="feedback">
+
+          <div class="feedback-title">
+            هل كانت الإجابة مفيدة؟
+          </div>
+
+          <div class="feedback-buttons">
+
+            <button
+              id="yesButton"
+              class="feedback-button yes-button"
+              type="button"
+            >
+              👍 نعم
+            </button>
+
+            <button
+              id="noButton"
+              class="feedback-button no-button"
+              type="button"
+            >
+              👎 لا
+            </button>
+
+          </div>
+
+          <div
+            id="feedbackMessage"
+            class="feedback-message"
+          ></div>
+
+        </div>
 
       </div>
 
@@ -653,8 +1162,16 @@
         راجع الإجابات المهمة وتأكد منها من مصادرك الدراسية.
       </div>
 
+
     </div>
+
   </div>
+
+
+  <div
+    id="toast"
+    class="toast"
+  ></div>
 
 
 <script>
@@ -663,88 +1180,339 @@
 
   "use strict";
 
+
+  /* =========================
+     SETTINGS
+     ========================= */
+
   var API_URL = "/ask";
 
-  var questionInput =
-    document.getElementById("question");
-
-  var pasteButton =
-    document.getElementById("pasteButton");
-
-  var clearQuestionButton =
-    document.getElementById("clearQuestionButton");
-
-  var imageInput =
-    document.getElementById("imageInput");
-
-  var imagePreviewCard =
-    document.getElementById("imagePreviewCard");
-
-  var preview =
-    document.getElementById("preview");
-
-  var changeImageButton =
-    document.getElementById("changeImageButton");
-
-  var removeImageButton =
-    document.getElementById("removeImageButton");
-
-  var fileInput =
-    document.getElementById("fileInput");
-
-  var fileCard =
-    document.getElementById("fileCard");
-
-  var fileName =
-    document.getElementById("fileName");
-
-  var fileDetails =
-    document.getElementById("fileDetails");
-
-  var changeFileButton =
-    document.getElementById("changeFileButton");
-
-  var removeFileButton =
-    document.getElementById("removeFileButton");
-
-  var askButton =
-    document.getElementById("askButton");
-
-  var loading =
-    document.getElementById("loading");
-
-  var answer =
-    document.getElementById("answer");
-
-  var answerActions =
-    document.getElementById("answerActions");
-
-  var copyAnswerButton =
-    document.getElementById("copyAnswerButton");
-
-  var saveAnswerButton =
-    document.getElementById("saveAnswerButton");
-
-  var shareAnswerButton =
-    document.getElementById("shareAnswerButton");
-
-  var feedback =
-    document.getElementById("feedback");
-
-  var yesButton =
-    document.getElementById("yesButton");
-
-  var noButton =
-    document.getElementById("noButton");
-
-  var feedbackMessage =
-    document.getElementById("feedbackMessage");
+  var mathJaxPromise = null;
 
   var currentAnswerText = "";
 
+  var toastTimer = null;
+
 
   /* =========================
-     FILE HELPERS
+     ELEMENTS
+     ========================= */
+
+  var questionInput =
+    document.getElementById(
+      "question"
+    );
+
+  var imageInput =
+    document.getElementById(
+      "imageInput"
+    );
+
+  var imageStatus =
+    document.getElementById(
+      "imageStatus"
+    );
+
+  var previewWrap =
+    document.getElementById(
+      "previewWrap"
+    );
+
+  var preview =
+    document.getElementById(
+      "preview"
+    );
+
+  var pasteButton =
+    document.getElementById(
+      "pasteButton"
+    );
+
+  var clearButton =
+    document.getElementById(
+      "clearButton"
+    );
+
+  var changeImageButton =
+    document.getElementById(
+      "changeImageButton"
+    );
+
+  var removeImageButton =
+    document.getElementById(
+      "removeImageButton"
+    );
+
+  var askButton =
+    document.getElementById(
+      "askButton"
+    );
+
+  var loading =
+    document.getElementById(
+      "loading"
+    );
+
+  var answerSection =
+    document.getElementById(
+      "answerSection"
+    );
+
+  var answer =
+    document.getElementById(
+      "answer"
+    );
+
+  var copyAnswerButton =
+    document.getElementById(
+      "copyAnswerButton"
+    );
+
+  var saveAnswerButton =
+    document.getElementById(
+      "saveAnswerButton"
+    );
+
+  var shareAnswerButton =
+    document.getElementById(
+      "shareAnswerButton"
+    );
+
+  var yesButton =
+    document.getElementById(
+      "yesButton"
+    );
+
+  var noButton =
+    document.getElementById(
+      "noButton"
+    );
+
+  var feedbackMessage =
+    document.getElementById(
+      "feedbackMessage"
+    );
+
+  var toast =
+    document.getElementById(
+      "toast"
+    );
+
+
+  /* =========================
+     TOAST
+     ========================= */
+
+  function showToast(message) {
+
+    toast.textContent = message;
+
+    toast.classList.add(
+      "show"
+    );
+
+    if (toastTimer) {
+      clearTimeout(
+        toastTimer
+      );
+    }
+
+    toastTimer =
+      setTimeout(
+
+        function () {
+
+          toast.classList.remove(
+            "show"
+          );
+
+        },
+
+        2200
+
+      );
+
+  }
+
+
+  /* =========================
+     MATHJAX CONFIG
+     ========================= */
+
+  function configureMathJax() {
+
+    window.MathJax = {
+
+      tex: {
+
+        inlineMath: [
+          ["\\(", "\\)"]
+        ],
+
+        displayMath: [
+          ["\\[", "\\]"]
+        ],
+
+        processEscapes: true
+
+      },
+
+      options: {
+
+        skipHtmlTags: [
+          "script",
+          "noscript",
+          "style",
+          "textarea",
+          "pre",
+          "code"
+        ]
+
+      },
+
+      chtml: {
+        scale: 1
+      },
+
+      startup: {
+        typeset: false
+      }
+
+    };
+
+  }
+
+
+  function loadScript(url) {
+
+    return new Promise(
+
+      function (
+        resolve,
+        reject
+      ) {
+
+        var script =
+          document.createElement(
+            "script"
+          );
+
+        script.src = url;
+
+        script.async = true;
+
+        script.onload =
+          function () {
+            resolve();
+          };
+
+        script.onerror =
+          function () {
+
+            script.remove();
+
+            reject(
+              new Error(
+                "فشل تحميل مكتبة الرياضيات."
+              )
+            );
+
+          };
+
+        document.head.appendChild(
+          script
+        );
+
+      }
+
+    );
+
+  }
+
+
+  async function loadMathJax() {
+
+    if (
+      window.MathJax &&
+      window.MathJax.typesetPromise
+    ) {
+      return true;
+    }
+
+    if (mathJaxPromise) {
+      return mathJaxPromise;
+    }
+
+    mathJaxPromise =
+      (async function () {
+
+        var sources = [
+
+          "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js",
+
+          "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js",
+
+          "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"
+
+        ];
+
+        for (
+          var i = 0;
+          i < sources.length;
+          i++
+        ) {
+
+          try {
+
+            configureMathJax();
+
+            await loadScript(
+              sources[i]
+            );
+
+            if (
+              window.MathJax &&
+              window.MathJax.startup &&
+              window.MathJax.startup.promise
+            ) {
+
+              await window.MathJax
+                .startup
+                .promise;
+
+            }
+
+            if (
+              window.MathJax &&
+              window.MathJax.typesetPromise
+            ) {
+
+              return true;
+
+            }
+
+          } catch (error) {
+
+            console.warn(
+              "MathJax source failed:",
+              error
+            );
+
+          }
+
+        }
+
+        return false;
+
+      })();
+
+    return mathJaxPromise;
+
+  }
+
+
+  /* =========================
+     IMAGE TO BASE64
      ========================= */
 
   async function fileToDataURL(file) {
@@ -753,7 +1521,9 @@
       await file.arrayBuffer();
 
     var bytes =
-      new Uint8Array(buffer);
+      new Uint8Array(
+        buffer
+      );
 
     var binary = "";
 
@@ -768,11 +1538,14 @@
 
       var chunk =
         bytes.subarray(
+
           i,
+
           Math.min(
             i + chunkSize,
             bytes.length
           )
+
         );
 
       binary +=
@@ -784,15 +1557,17 @@
     }
 
     var base64 =
-      btoa(binary);
+      btoa(
+        binary
+      );
 
-    var mime =
+    var mimeType =
       file.type ||
-      "application/octet-stream";
+      "image/jpeg";
 
     return (
       "data:" +
-      mime +
+      mimeType +
       ";base64," +
       base64
     );
@@ -800,39 +1575,156 @@
   }
 
 
-  async function fileToBase64(file) {
+  /* =========================
+     IMAGE
+     ========================= */
 
-    var dataURL =
-      await fileToDataURL(file);
+  function clearImage() {
 
-    var commaIndex =
-      dataURL.indexOf(",");
+    imageInput.value = "";
 
-    return dataURL.slice(
-      commaIndex + 1
+    imageStatus.style.display =
+      "none";
+
+    previewWrap.style.display =
+      "none";
+
+    preview.removeAttribute(
+      "src"
     );
 
   }
 
 
-  function formatBytes(bytes) {
+  imageInput.addEventListener(
 
-    if (bytes < 1024) {
-      return bytes + " B";
+    "change",
+
+    function () {
+
+      var file =
+        imageInput.files &&
+        imageInput.files.length > 0
+
+          ? imageInput.files[0]
+
+          : null;
+
+      if (!file) {
+
+        clearImage();
+
+        return;
+
+      }
+
+      if (
+        file.type &&
+        file.type.indexOf(
+          "image/"
+        ) !== 0
+      ) {
+
+        clearImage();
+
+        alert(
+          "الملف المختار ليس صورة."
+        );
+
+        return;
+
+      }
+
+      var maxSize =
+        10 *
+        1024 *
+        1024;
+
+      if (
+        file.size >
+        maxSize
+      ) {
+
+        clearImage();
+
+        alert(
+          "حجم الصورة كبير جداً. اختر صورة أصغر من 10 MB."
+        );
+
+        return;
+
+      }
+
+      imageStatus.style.display =
+        "block";
+
+      if (
+        window.URL &&
+        window.URL.createObjectURL
+      ) {
+
+        var imageURL =
+          window.URL.createObjectURL(
+            file
+          );
+
+        preview.onload =
+          function () {
+
+            if (
+              window.URL &&
+              window.URL.revokeObjectURL
+            ) {
+
+              window.URL.revokeObjectURL(
+                imageURL
+              );
+
+            }
+
+          };
+
+        preview.src =
+          imageURL;
+
+        previewWrap.style.display =
+          "block";
+
+      }
+
     }
 
-    if (bytes < 1024 * 1024) {
-      return (
-        bytes / 1024
-      ).toFixed(1) + " KB";
+  );
+
+
+  changeImageButton.addEventListener(
+
+    "click",
+
+    function () {
+
+      imageInput.click();
+
     }
 
-    return (
-      bytes /
-      (1024 * 1024)
-    ).toFixed(1) + " MB";
+  );
 
-  }
+
+  removeImageButton.addEventListener(
+
+    "click",
+
+    function () {
+
+      clearImage();
+
+      showToast(
+        "تم حذف الصورة"
+      );
+
+    }
+
+  );
 
 
   /* =========================
@@ -840,7 +1732,9 @@
      ========================= */
 
   pasteButton.addEventListener(
+
     "click",
+
     async function () {
 
       try {
@@ -854,251 +1748,147 @@
             await navigator.clipboard
               .readText();
 
-          if (text) {
+          if (!text) {
 
-            questionInput.value =
-              text;
-
-            questionInput.focus();
+            showToast(
+              "لا يوجد نص للصق"
+            );
 
             return;
 
           }
 
+          questionInput.value =
+            text;
+
+          questionInput.focus();
+
+          showToast(
+            "تم لصق النص"
+          );
+
+        } else {
+
+          questionInput.focus();
+
+          showToast(
+            "اضغط مطولاً داخل مربع السؤال ثم اختر لصق"
+          );
+
         }
-
-        alert(
-          "اضغط مطولاً داخل مربع السؤال ثم اختر «لصق»."
-        );
-
-        questionInput.focus();
 
       } catch (error) {
 
-        alert(
-          "اسمح بالوصول للحافظة أو استخدم الضغط المطول ثم «لصق»."
-        );
-
         questionInput.focus();
+
+        showToast(
+          "اضغط مطولاً داخل مربع السؤال ثم اختر لصق"
+        );
 
       }
 
     }
+
   );
 
 
-  clearQuestionButton.addEventListener(
+  /* =========================
+     CLEAR QUESTION
+     ========================= */
+
+  clearButton.addEventListener(
+
     "click",
+
     function () {
 
-      questionInput.value =
-        "";
+      questionInput.value = "";
 
       questionInput.focus();
 
+      showToast(
+        "تم مسح السؤال"
+      );
+
     }
+
   );
 
 
   /* =========================
-     IMAGE
+     SCROLL
      ========================= */
 
-  imageInput.addEventListener(
-    "change",
-    function () {
+  function scrollToAnswer() {
 
-      var file =
-        imageInput.files &&
-        imageInput.files.length
+    try {
 
-          ? imageInput.files[0]
-          : null;
+      answerSection.scrollIntoView({
 
-      if (!file) {
-        return;
-      }
+        behavior:
+          "smooth",
 
-      if (
-        file.type &&
-        !file.type.startsWith("image/")
-      ) {
+        block:
+          "start"
 
-        imageInput.value =
-          "";
+      });
 
-        alert(
-          "اختر ملف صورة فقط."
-        );
+    } catch (error) {
 
-        return;
-
-      }
-
-      var maxImageSize =
-        10 * 1024 * 1024;
-
-      if (
-        file.size >
-        maxImageSize
-      ) {
-
-        imageInput.value =
-          "";
-
-        alert(
-          "الصورة أكبر من 10 MB."
-        );
-
-        return;
-
-      }
-
-      var url =
-        URL.createObjectURL(file);
-
-      preview.onload =
-        function () {
-
-          URL.revokeObjectURL(url);
-
-        };
-
-      preview.src =
-        url;
-
-      imagePreviewCard.style.display =
-        "block";
+      answerSection.scrollIntoView();
 
     }
-  );
 
-
-  changeImageButton.addEventListener(
-    "click",
-    function () {
-
-      imageInput.click();
-
-    }
-  );
-
-
-  removeImageButton.addEventListener(
-    "click",
-    function () {
-
-      imageInput.value =
-        "";
-
-      preview.removeAttribute("src");
-
-      imagePreviewCard.style.display =
-        "none";
-
-    }
-  );
+  }
 
 
   /* =========================
-     FILE
+     ERROR
      ========================= */
 
-  fileInput.addEventListener(
-    "change",
-    function () {
+  function showError(message) {
 
-      var file =
-        fileInput.files &&
-        fileInput.files.length
+    currentAnswerText = "";
 
-          ? fileInput.files[0]
-          : null;
+    answer.innerHTML = "";
 
-      if (!file) {
-        return;
-      }
+    answer.classList.add(
+      "error"
+    );
 
-      var maxFileSize =
-        8 * 1024 * 1024;
+    answer.textContent =
+      "تعذر الحصول على الإجابة:\n" +
+      message;
 
-      if (
-        file.size >
-        maxFileSize
-      ) {
+    answerSection.style.display =
+      "block";
 
-        fileInput.value =
-          "";
+    scrollToAnswer();
 
-        alert(
-          "حجم الملف كبير. الحد الحالي 8 MB."
-        );
-
-        return;
-
-      }
-
-      fileName.textContent =
-        "📄 " + file.name;
-
-      fileDetails.textContent =
-        formatBytes(file.size) +
-        (
-          file.type
-            ? " • " + file.type
-            : ""
-        );
-
-      fileCard.style.display =
-        "block";
-
-    }
-  );
-
-
-  changeFileButton.addEventListener(
-    "click",
-    function () {
-
-      fileInput.click();
-
-    }
-  );
-
-
-  removeFileButton.addEventListener(
-    "click",
-    function () {
-
-      fileInput.value =
-        "";
-
-      fileName.textContent =
-        "";
-
-      fileDetails.textContent =
-        "";
-
-      fileCard.style.display =
-        "none";
-
-    }
-  );
+  }
 
 
   /* =========================
-     ANSWER FORMAT
+     NORMALIZE RESPONSE
      ========================= */
 
   function normalizeResponse(text) {
 
     var source =
-      String(text || "");
+      String(
+        text || ""
+      );
 
     source =
       source
-        .replace(/\r\n/g, "\n")
-        .replace(/\r/g, "\n");
+        .replace(
+          /\r\n/g,
+          "\n"
+        )
+        .replace(
+          /\r/g,
+          "\n"
+        );
 
     source =
       source.replace(
@@ -1136,9 +1926,14 @@
         "\\)"
       );
 
+
+    /* Standard LaTeX markers */
+
     source =
       source.replace(
+
         /\$\$([\s\S]*?)\$\$/g,
+
         function (_, math) {
 
           return (
@@ -1148,11 +1943,14 @@
           );
 
         }
+
       );
 
     source =
       source.replace(
-        /\$([^$\n]+?)\$/g,
+
+        /\$([^\n]+?)\$/g,
+
         function (_, math) {
 
           return (
@@ -1162,6 +1960,34 @@
           );
 
         }
+
+      );
+
+
+    /* Clean spaces */
+
+    source =
+      source.replace(
+        /\\\[\s+/g,
+        "\\["
+      );
+
+    source =
+      source.replace(
+        /\s+\\\]/g,
+        "\\]"
+      );
+
+    source =
+      source.replace(
+        /\\\(\s+/g,
+        "\\("
+      );
+
+    source =
+      source.replace(
+        /\s+\\\)/g,
+        "\\)"
       );
 
     return source;
@@ -1169,10 +1995,16 @@
   }
 
 
+  /* =========================
+     CREATE DISPLAY MATH
+     ========================= */
+
   function createDisplayMath(math) {
 
     var div =
-      document.createElement("div");
+      document.createElement(
+        "div"
+      );
 
     div.className =
       "display-math";
@@ -1192,23 +2024,67 @@
   }
 
 
-  function appendInlineContent(
-    container,
-    line
-  ) {
+  /* =========================
+     CREATE INLINE MATH
+     ========================= */
 
-    var regex =
+  function createInlineMath(math) {
+
+    var span =
+      document.createElement(
+        "span"
+      );
+
+    span.className =
+      "inline-math";
+
+    span.setAttribute(
+      "dir",
+      "ltr"
+    );
+
+    span.textContent =
+      "\\(" +
+      math.trim() +
+      "\\)";
+
+    return span;
+
+  }
+
+
+  /* =========================
+     TEXT + INLINE MATH
+     ========================= */
+
+  function appendMixedTextLine(line) {
+
+    var div =
+      document.createElement(
+        "div"
+      );
+
+    div.className =
+      "text-line";
+
+    div.setAttribute(
+      "dir",
+      "rtl"
+    );
+
+    var inlineRegex =
       /\\\(([\s\S]*?)\\\)/g;
 
-    var lastIndex =
-      0;
+    var lastIndex = 0;
 
     var match;
 
     while (
       (
         match =
-          regex.exec(line)
+          inlineRegex.exec(
+            line
+          )
       ) !== null
     ) {
 
@@ -1220,7 +2096,7 @@
 
       if (before) {
 
-        container.appendChild(
+        div.appendChild(
           document.createTextNode(
             before
           )
@@ -1228,39 +2104,25 @@
 
       }
 
-      var span =
-        document.createElement(
-          "span"
-        );
-
-      span.className =
-        "inline-math";
-
-      span.setAttribute(
-        "dir",
-        "ltr"
-      );
-
-      span.textContent =
-        "\\(" +
-        match[1].trim() +
-        "\\)";
-
-      container.appendChild(
-        span
+      div.appendChild(
+        createInlineMath(
+          match[1]
+        )
       );
 
       lastIndex =
-        regex.lastIndex;
+        inlineRegex.lastIndex;
 
     }
 
     var remaining =
-      line.slice(lastIndex);
+      line.slice(
+        lastIndex
+      );
 
     if (remaining) {
 
-      container.appendChild(
+      div.appendChild(
         document.createTextNode(
           remaining
         )
@@ -1268,147 +2130,222 @@
 
     }
 
+    answer.appendChild(
+      div
+    );
+
   }
 
 
+  /* =========================
+     APPEND TEXT
+     ========================= */
+
   function appendTextBlock(text) {
 
-    String(text)
-      .split("\n")
-      .forEach(
-        function (line) {
+    if (
+      text === null ||
+      text === undefined
+    ) {
+      return;
+    }
 
-          if (!line.trim()) {
+    var lines =
+      String(text)
+        .split("\n");
 
-            var spacer =
-              document.createElement(
-                "div"
-              );
+    lines.forEach(
 
-            spacer.style.height =
-              "8px";
+      function (line) {
 
-            answer.appendChild(
-              spacer
-            );
+        var cleanLine =
+          line.trim();
 
-            return;
+        if (!cleanLine) {
 
-          }
-
-          var div =
+          var empty =
             document.createElement(
               "div"
             );
 
-          div.className =
-            "answer-line";
+          empty.className =
+            "empty-line";
 
-          div.setAttribute(
-            "dir",
-            "rtl"
+          answer.appendChild(
+            empty
           );
 
-          appendInlineContent(
-            div,
-            line
-          );
-
-          answer.appendChild(div);
+          return;
 
         }
-      );
+
+        appendMixedTextLine(
+          cleanLine
+        );
+
+      }
+
+    );
 
   }
 
 
+  /* =========================
+     PARSE ANSWER
+     ========================= */
+
   function parseAnswer(text) {
 
-    answer.innerHTML =
-      "";
+    answer.innerHTML = "";
 
     var source =
-      normalizeResponse(text);
+      normalizeResponse(
+        text
+      );
 
-    var regex =
+    var displayRegex =
       /\\\[([\s\S]*?)\\\]/g;
 
-    var lastIndex =
-      0;
+    var lastIndex = 0;
 
     var match;
 
     while (
       (
         match =
-          regex.exec(source)
+          displayRegex.exec(
+            source
+          )
       ) !== null
     ) {
 
-      appendTextBlock(
+      var before =
         source.slice(
           lastIndex,
           match.index
-        )
+        );
+
+      appendTextBlock(
+        before
       );
 
-      answer.appendChild(
-        createDisplayMath(
-          match[1]
-        )
-      );
+      var math =
+        match[1];
+
+      if (
+        math &&
+        math.trim()
+      ) {
+
+        answer.appendChild(
+          createDisplayMath(
+            math
+          )
+        );
+
+      }
 
       lastIndex =
-        regex.lastIndex;
+        displayRegex.lastIndex;
 
     }
 
+    var remaining =
+      source.slice(
+        lastIndex
+      );
+
     appendTextBlock(
-      source.slice(lastIndex)
+      remaining
     );
 
   }
 
 
+  /* =========================
+     MATH FALLBACK
+     ========================= */
+
+  function applyMathFallback() {
+
+    var mathBlocks =
+      answer.querySelectorAll(
+        ".display-math, .inline-math"
+      );
+
+    mathBlocks.forEach(
+
+      function (element) {
+
+        element.classList.add(
+          "math-fallback"
+        );
+
+      }
+
+    );
+
+  }
+
+
+  /* =========================
+     RENDER MATH
+     ========================= */
+
   async function renderMath() {
+
+    var loaded =
+      await loadMathJax();
+
+    if (!loaded) {
+
+      applyMathFallback();
+
+      return;
+
+    }
 
     try {
 
       if (
-        window.MathJax &&
-        window.MathJax.typesetPromise
+        window.MathJax.typesetClear
       ) {
 
-        if (
-          window.MathJax.typesetClear
-        ) {
-
-          window.MathJax
-            .typesetClear([answer]);
-
-        }
-
-        await window.MathJax
-          .typesetPromise([answer]);
+        window.MathJax.typesetClear(
+          [answer]
+        );
 
       }
+
+      await window.MathJax
+        .typesetPromise(
+          [answer]
+        );
 
     } catch (error) {
 
       console.error(
-        "MathJax:",
+        "MathJax rendering error:",
         error
       );
+
+      applyMathFallback();
 
     }
 
   }
 
 
+  /* =========================
+     SHOW ANSWER
+     ========================= */
+
   async function showAnswer(text) {
 
     currentAnswerText =
-      String(text || "");
+      String(
+        text || ""
+      );
 
     answer.classList.remove(
       "error"
@@ -1418,340 +2355,53 @@
       currentAnswerText
     );
 
-    answer.style.display =
-      "block";
-
-    answerActions.style.display =
-      "grid";
-
-    feedback.style.display =
+    answerSection.style.display =
       "block";
 
     feedbackMessage.style.display =
       "none";
+
+    loading.style.display =
+      "block";
+
+    loading.textContent =
+      "جاري تنسيق المعادلات...";
 
     await renderMath();
 
-    try {
-
-      answer.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-    } catch (error) {
-
-      answer.scrollIntoView();
-
-    }
-
-  }
-
-
-  function showError(message) {
-
-    currentAnswerText =
-      "";
-
-    answer.classList.add(
-      "error"
-    );
-
-    answer.textContent =
-      "تعذر الحصول على الإجابة:\n" +
-      message;
-
-    answer.style.display =
-      "block";
-
-    answerActions.style.display =
+    loading.style.display =
       "none";
 
-    feedback.style.display =
-      "none";
+    scrollToAnswer();
 
   }
 
 
   /* =========================
-     COPY
-     ========================= */
-
-  async function copyText(text) {
-
-    if (
-      navigator.clipboard &&
-      navigator.clipboard.writeText
-    ) {
-
-      await navigator.clipboard
-        .writeText(text);
-
-      return;
-
-    }
-
-    var temp =
-      document.createElement(
-        "textarea"
-      );
-
-    temp.value =
-      text;
-
-    temp.style.position =
-      "fixed";
-
-    temp.style.opacity =
-      "0";
-
-    document.body.appendChild(
-      temp
-    );
-
-    temp.select();
-
-    document.execCommand(
-      "copy"
-    );
-
-    temp.remove();
-
-  }
-
-
-  copyAnswerButton.addEventListener(
-    "click",
-    async function () {
-
-      if (!currentAnswerText) {
-        return;
-      }
-
-      try {
-
-        await copyText(
-          currentAnswerText
-        );
-
-        var original =
-          copyAnswerButton.textContent;
-
-        copyAnswerButton.textContent =
-          "✓ تم النسخ";
-
-        setTimeout(
-          function () {
-
-            copyAnswerButton.textContent =
-              original;
-
-          },
-          1500
-        );
-
-      } catch (error) {
-
-        alert(
-          "تعذر النسخ تلقائياً."
-        );
-
-      }
-
-    }
-  );
-
-
-  /* =========================
-     SAVE
-     ========================= */
-
-  saveAnswerButton.addEventListener(
-    "click",
-    function () {
-
-      if (!currentAnswerText) {
-        return;
-      }
-
-      var content =
-        "ONE Study\n\n" +
-        currentAnswerText +
-        "\n";
-
-      var blob =
-        new Blob(
-          [content],
-          {
-            type:
-              "text/plain;charset=utf-8"
-          }
-        );
-
-      var url =
-        URL.createObjectURL(blob);
-
-      var link =
-        document.createElement("a");
-
-      link.href =
-        url;
-
-      link.download =
-        "ONE-Study-Answer.txt";
-
-      document.body.appendChild(
-        link
-      );
-
-      link.click();
-
-      link.remove();
-
-      setTimeout(
-        function () {
-
-          URL.revokeObjectURL(
-            url
-          );
-
-        },
-        1000
-      );
-
-    }
-  );
-
-
-  /* =========================
-     SHARE
-     ========================= */
-
-  shareAnswerButton.addEventListener(
-    "click",
-    async function () {
-
-      if (!currentAnswerText) {
-        return;
-      }
-
-      try {
-
-        if (navigator.share) {
-
-          await navigator.share({
-            title:
-              "إجابة ONE Study",
-
-            text:
-              currentAnswerText
-          });
-
-        } else {
-
-          await copyText(
-            currentAnswerText
-          );
-
-          alert(
-            "المشاركة غير مدعومة هنا، لذلك تم نسخ الإجابة."
-          );
-
-        }
-
-      } catch (error) {
-
-        if (
-          error &&
-          error.name ===
-            "AbortError"
-        ) {
-
-          return;
-
-        }
-
-        console.error(
-          "Share:",
-          error
-        );
-
-      }
-
-    }
-  );
-
-
-  /* =========================
-     YES / NO
-     ========================= */
-
-  function setFeedback(text) {
-
-    feedbackMessage.textContent =
-      text;
-
-    feedbackMessage.style.display =
-      "block";
-
-  }
-
-
-  yesButton.addEventListener(
-    "click",
-    function () {
-
-      setFeedback(
-        "شكراً، تم تسجيل اختيارك: نعم ✓"
-      );
-
-    }
-  );
-
-
-  noButton.addEventListener(
-    "click",
-    function () {
-
-      setFeedback(
-        "تم تسجيل اختيارك: لا. يمكنك تعديل السؤال وإعادة المحاولة."
-      );
-
-    }
-  );
-
-
-  /* =========================
-     ASK
+     ASK AI
      ========================= */
 
   async function askAI() {
 
     var question =
-      questionInput.value.trim();
+      questionInput.value
+        .trim();
 
-    var imageFile =
+    var file =
       imageInput.files &&
-      imageInput.files.length
+      imageInput.files.length > 0
 
         ? imageInput.files[0]
-        : null;
 
-    var attachedFile =
-      fileInput.files &&
-      fileInput.files.length
-
-        ? fileInput.files[0]
         : null;
 
     if (
       !question &&
-      !imageFile &&
-      !attachedFile
+      !file
     ) {
 
       alert(
-        "اكتب سؤالاً أو اختر صورة أو أرفق ملفاً."
+        "اكتب سؤالاً أو اختر صورة أولاً."
       );
 
       return;
@@ -1761,89 +2411,74 @@
     askButton.disabled =
       true;
 
-    answer.style.display =
+    answerSection.style.display =
       "none";
 
-    answerActions.style.display =
-      "none";
+    answer.innerHTML = "";
 
-    feedback.style.display =
-      "none";
+    answer.classList.remove(
+      "error"
+    );
 
     loading.style.display =
       "block";
 
     loading.textContent =
-      "جاري تجهيز الطلب...";
+      "جاري تحليل السؤال...";
 
     try {
 
-      var imageData =
-        null;
+      var imageData = null;
 
-      var fileData =
-        null;
-
-      if (imageFile) {
+      if (file) {
 
         loading.textContent =
           "جاري تجهيز الصورة...";
 
         imageData =
           await fileToDataURL(
-            imageFile
+            file
           );
 
       }
 
-      if (attachedFile) {
-
-        loading.textContent =
-          "جاري تجهيز الملف...";
-
-        fileData = {
-          name:
-            attachedFile.name,
-
-          type:
-            attachedFile.type ||
-            "application/octet-stream",
-
-          data:
-            await fileToBase64(
-              attachedFile
-            )
-        };
-
-      }
-
       loading.textContent =
-        "جاري تحليل السؤال...";
+        file
+
+          ? "جاري تحليل السؤال والصورة..."
+
+          : "جاري تحليل السؤال...";
 
       var response =
         await fetch(
+
           API_URL,
+
           {
+
             method:
               "POST",
 
             headers: {
+
               "Content-Type":
                 "application/json"
+
             },
 
             body:
               JSON.stringify({
+
                 question:
                   question,
 
                 image:
-                  imageData,
+                  imageData
 
-                file:
-                  fileData
               })
+
           }
+
         );
 
       var responseText =
@@ -1866,24 +2501,32 @@
 
       }
 
-      if (!response.ok) {
+      if (
+        !response.ok
+      ) {
 
         throw new Error(
+
           data.error ||
-          "حدث خطأ أثناء معالجة الطلب."
+
+          "حدث خطأ أثناء معالجة السؤال."
+
         );
 
       }
 
       var finalAnswer =
+
         data.answer ||
+
         data.output ||
+
         data.response;
 
       if (!finalAnswer) {
 
         throw new Error(
-          "لم تصل إجابة من الخادم."
+          "تم الاتصال بالخادم ولكن لم تصل إجابة."
         );
 
       }
@@ -1900,11 +2543,14 @@
       );
 
       showError(
+
         error &&
         error.message
 
           ? error.message
+
           : "حدث خطأ غير معروف."
+
       );
 
     } finally {
@@ -1923,14 +2569,377 @@
   }
 
 
+  /* =========================
+     COPY ANSWER
+     ========================= */
+
+  async function copyAnswer() {
+
+    if (!currentAnswerText) {
+
+      showToast(
+        "لا توجد إجابة لنسخها"
+      );
+
+      return;
+
+    }
+
+    try {
+
+      if (
+        navigator.clipboard &&
+        navigator.clipboard.writeText
+      ) {
+
+        await navigator.clipboard
+          .writeText(
+            currentAnswerText
+          );
+
+        showToast(
+          "تم نسخ الإجابة"
+        );
+
+        return;
+
+      }
+
+      throw new Error(
+        "Clipboard unavailable"
+      );
+
+    } catch (error) {
+
+      var textArea =
+        document.createElement(
+          "textarea"
+        );
+
+      textArea.value =
+        currentAnswerText;
+
+      textArea.style.position =
+        "fixed";
+
+      textArea.style.opacity =
+        "0";
+
+      document.body.appendChild(
+        textArea
+      );
+
+      textArea.select();
+
+      try {
+
+        document.execCommand(
+          "copy"
+        );
+
+        showToast(
+          "تم نسخ الإجابة"
+        );
+
+      } catch (copyError) {
+
+        showToast(
+          "تعذر نسخ الإجابة"
+        );
+
+      }
+
+      textArea.remove();
+
+    }
+
+  }
+
+
+  /* =========================
+     SAVE ANSWER
+     ========================= */
+
+  function saveAnswer() {
+
+    if (!currentAnswerText) {
+
+      showToast(
+        "لا توجد إجابة لحفظها"
+      );
+
+      return;
+
+    }
+
+    try {
+
+      var content =
+        "ONE Study\n\n" +
+        currentAnswerText;
+
+      var blob =
+        new Blob(
+
+          [content],
+
+          {
+            type:
+              "text/plain;charset=utf-8"
+          }
+
+        );
+
+      var url =
+        URL.createObjectURL(
+          blob
+        );
+
+      var link =
+        document.createElement(
+          "a"
+        );
+
+      link.href = url;
+
+      link.download =
+        "ONE-Study-answer.txt";
+
+      document.body.appendChild(
+        link
+      );
+
+      link.click();
+
+      link.remove();
+
+      setTimeout(
+
+        function () {
+
+          URL.revokeObjectURL(
+            url
+          );
+
+        },
+
+        1000
+
+      );
+
+      showToast(
+        "تم تجهيز الإجابة للحفظ"
+      );
+
+    } catch (error) {
+
+      showToast(
+        "تعذر حفظ الإجابة"
+      );
+
+    }
+
+  }
+
+
+  /* =========================
+     SHARE ANSWER
+     ========================= */
+
+  async function shareAnswer() {
+
+    if (!currentAnswerText) {
+
+      showToast(
+        "لا توجد إجابة لمشاركتها"
+      );
+
+      return;
+
+    }
+
+    try {
+
+      if (
+        navigator.share
+      ) {
+
+        await navigator.share({
+
+          title:
+            "ONE Study",
+
+          text:
+            currentAnswerText
+
+        });
+
+      } else {
+
+        await copyAnswer();
+
+        showToast(
+          "تم نسخ الإجابة للمشاركة"
+        );
+
+      }
+
+    } catch (error) {
+
+      if (
+        error &&
+        error.name ===
+        "AbortError"
+      ) {
+
+        return;
+
+      }
+
+      showToast(
+        "تعذر فتح المشاركة"
+      );
+
+    }
+
+  }
+
+
+  /* =========================
+     FEEDBACK
+     ========================= */
+
+  function setFeedback(value) {
+
+    feedbackMessage.style.display =
+      "block";
+
+    if (
+      value === "yes"
+    ) {
+
+      feedbackMessage.textContent =
+        "شكرًا لتقييمك 👍";
+
+    } else {
+
+      feedbackMessage.textContent =
+        "شكرًا لتقييمك. سنعمل على تحسين الإجابات.";
+
+    }
+
+  }
+
+
+  /* =========================
+     EVENTS
+     ========================= */
+
   askButton.addEventListener(
+
     "click",
-    askAI
+
+    function () {
+
+      askAI();
+
+    }
+
   );
+
+
+  copyAnswerButton.addEventListener(
+
+    "click",
+
+    function () {
+
+      copyAnswer();
+
+    }
+
+  );
+
+
+  saveAnswerButton.addEventListener(
+
+    "click",
+
+    function () {
+
+      saveAnswer();
+
+    }
+
+  );
+
+
+  shareAnswerButton.addEventListener(
+
+    "click",
+
+    function () {
+
+      shareAnswer();
+
+    }
+
+  );
+
+
+  yesButton.addEventListener(
+
+    "click",
+
+    function () {
+
+      setFeedback(
+        "yes"
+      );
+
+    }
+
+  );
+
+
+  noButton.addEventListener(
+
+    "click",
+
+    function () {
+
+      setFeedback(
+        "no"
+      );
+
+    }
+
+  );
+
+
+  /* =========================
+     PRELOAD MATH
+     ========================= */
+
+  loadMathJax()
+    .then(
+
+      function (loaded) {
+
+        console.log(
+          "Math engine ready:",
+          loaded
+        );
+
+      }
+
+    );
 
 })();
 
 </script>
 
+
 </body>
+
 </html>
