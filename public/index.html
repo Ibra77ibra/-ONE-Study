@@ -143,22 +143,24 @@
       font-weight: 600;
     }
 
-    .answer {
-      display: none;
-      margin-top: 20px;
-      background: #eef4ff;
-      border: 1px solid #dbeafe;
-      border-radius: 16px;
-      padding: 20px;
-      line-height: 1.9;
-      font-size: 17px;
-      white-space: pre-wrap;
-      text-align: right;
-      direction: rtl;
-      unicode-bidi: plaintext;
-      overflow-wrap: anywhere;
-    }
-
+.answer {
+  display: none;
+  margin-top: 20px;
+  background: #eef4ff;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  padding: 20px;
+  line-height: 2;
+  font-size: 17px;
+  white-space: pre-wrap;
+  text-align: right;
+  direction: rtl;
+  unicode-bidi: plaintext;
+  overflow-wrap: break-word;
+  word-break: normal;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+    
     .answer.error {
       background: #fff1f2;
       border-color: #fecdd3;
@@ -492,30 +494,56 @@
    */
   function showAnswer(text) {
 
-    answer.classList.remove(
-      "error"
+  answer.classList.remove(
+    "error"
+  );
+
+  answer.innerHTML = "";
+
+  var lines =
+    String(text).split("\n");
+
+  lines.forEach(function (line) {
+
+    var div =
+      document.createElement("div");
+
+    div.textContent =
+      line;
+
+    div.setAttribute(
+      "dir",
+      "auto"
     );
 
-    answer.textContent =
-      text;
+    div.style.unicodeBidi =
+      "plaintext";
 
-    answer.style.display =
-      "block";
-
-    try {
-
-      answer.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-    } catch (e) {
-
-      answer.scrollIntoView();
-
+    if (line.trim() === "") {
+      div.innerHTML = "&nbsp;";
     }
+
+    answer.appendChild(div);
+
+  });
+
+  answer.style.display =
+    "block";
+
+  try {
+
+    answer.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+  } catch (e) {
+
+    answer.scrollIntoView();
+
   }
 
+}
 
   /*
    * حل السؤال
