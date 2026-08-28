@@ -13,61 +13,7 @@
   <title>ONE Study</title>
 
 
-  <!-- ==========================================
-       MATHJAX CONFIGURATION
-       ========================================== -->
-
-  <script>
-
-    window.MathJax = {
-
-      tex: {
-
-        inlineMath: [
-          ["\\(", "\\)"]
-        ],
-
-        displayMath: [
-          ["\\[", "\\]"]
-        ],
-
-        processEscapes: true
-
-      },
-
-      options: {
-
-        skipHtmlTags: [
-          "script",
-          "noscript",
-          "style",
-          "textarea",
-          "pre",
-          "code"
-        ]
-
-      },
-
-      chtml: {
-        scale: 1
-      }
-
-    };
-
-  </script>
-
-
-  <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-  ></script>
-
-
   <style>
-
-    /* ==========================================
-       GENERAL
-       ========================================== */
 
     * {
       box-sizing: border-box;
@@ -97,9 +43,9 @@
     }
 
 
-    /* ==========================================
+    /* =========================
        HEADER
-       ========================================== */
+       ========================= */
 
     .header {
 
@@ -140,9 +86,9 @@
     }
 
 
-    /* ==========================================
+    /* =========================
        CONTAINER
-       ========================================== */
+       ========================= */
 
     .container {
 
@@ -184,9 +130,9 @@
     }
 
 
-    /* ==========================================
-       QUESTION INPUT
-       ========================================== */
+    /* =========================
+       QUESTION
+       ========================= */
 
     textarea {
 
@@ -231,9 +177,9 @@
     }
 
 
-    /* ==========================================
+    /* =========================
        IMAGE BOX
-       ========================================== */
+       ========================= */
 
     .image-box {
 
@@ -307,9 +253,9 @@
     }
 
 
-    /* ==========================================
+    /* =========================
        BUTTON
-       ========================================== */
+       ========================= */
 
     button {
 
@@ -357,9 +303,9 @@
     }
 
 
-    /* ==========================================
+    /* =========================
        LOADING
-       ========================================== */
+       ========================= */
 
     .loading {
 
@@ -379,9 +325,9 @@
     }
 
 
-    /* ==========================================
-       ANSWER BOX
-       ========================================== */
+    /* =========================
+       ANSWER
+       ========================= */
 
     .answer {
 
@@ -413,9 +359,9 @@
     }
 
 
-    /* ==========================================
-       NORMAL ARABIC LINE
-       ========================================== */
+    /* =========================
+       ARABIC TEXT
+       ========================= */
 
     .text-line {
 
@@ -435,13 +381,11 @@
     }
 
 
-    /* ==========================================
+    /* =========================
        EMPTY LINE
-       ========================================== */
+       ========================= */
 
     .empty-line {
-
-      display: block;
 
       width: 100%;
 
@@ -450,27 +394,25 @@
     }
 
 
-    /* ==========================================
+    /* =========================
        DISPLAY MATH
-       ========================================== */
+       ========================= */
 
     .display-math {
-
-      display: block;
 
       width: 100%;
 
       direction: ltr;
 
-      text-align: center;
-
       unicode-bidi: isolate;
+
+      text-align: center;
 
       margin:
         14px 0;
 
       padding:
-        7px 4px;
+        8px 4px;
 
       overflow-x: auto;
 
@@ -482,9 +424,9 @@
     }
 
 
-    /* ==========================================
+    /* =========================
        INLINE MATH
-       ========================================== */
+       ========================= */
 
     .inline-math {
 
@@ -496,17 +438,17 @@
 
       white-space: nowrap;
 
+      vertical-align: baseline;
+
       margin:
         0 3px;
-
-      vertical-align: baseline;
 
     }
 
 
-    /* ==========================================
-       MATHJAX
-       ========================================== */
+    /* =========================
+       MATHJAX OUTPUT
+       ========================= */
 
     .answer mjx-container {
 
@@ -520,31 +462,20 @@
 
 
     .display-math
-    mjx-container {
-
-      direction: ltr !important;
-
-      unicode-bidi: isolate !important;
-
-    }
-
-
-    .display-math
     mjx-container[display="true"] {
 
-      display: block !important;
-
-      width: max-content;
-
-      min-width: 100%;
+      direction: ltr !important;
 
       text-align: center !important;
 
       margin:
-        8px auto !important;
+        6px auto !important;
 
-      padding:
-        2px 0;
+      overflow-x: auto;
+
+      overflow-y: hidden;
+
+      max-width: 100%;
 
     }
 
@@ -556,17 +487,48 @@
 
       direction: ltr !important;
 
-      unicode-bidi: isolate !important;
-
       margin:
         0 !important;
 
     }
 
 
-    /* ==========================================
+    /* =========================
+       MATH ERROR FALLBACK
+       ========================= */
+
+    .math-fallback {
+
+      direction: ltr;
+
+      text-align: center;
+
+      unicode-bidi: isolate;
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+      font-size: 16px;
+
+      background: rgba(
+        255,
+        255,
+        255,
+        0.55
+      );
+
+      border-radius: 10px;
+
+      padding: 8px;
+
+    }
+
+
+    /* =========================
        ERROR
-       ========================================== */
+       ========================= */
 
     .answer.error {
 
@@ -585,9 +547,9 @@
     }
 
 
-    /* ==========================================
+    /* =========================
        NOTE
-       ========================================== */
+       ========================= */
 
     .note {
 
@@ -602,9 +564,9 @@
     }
 
 
-    /* ==========================================
+    /* =========================
        MOBILE
-       ========================================== */
+       ========================= */
 
     @media (max-width: 600px) {
 
@@ -654,9 +616,6 @@
         margin:
           12px 0;
 
-        padding:
-          5px 2px;
-
       }
 
     }
@@ -669,9 +628,9 @@
 <body>
 
 
-  <!-- ==========================================
+  <!-- =========================
        HEADER
-       ========================================== -->
+       ========================= -->
 
   <div class="header">
 
@@ -686,9 +645,9 @@
   </div>
 
 
-  <!-- ==========================================
+  <!-- =========================
        MAIN
-       ========================================== -->
+       ========================= -->
 
   <div class="container">
 
@@ -706,9 +665,7 @@
       ></textarea>
 
 
-      <!-- ======================================
-           IMAGE
-           ====================================== -->
+      <!-- IMAGE -->
 
       <div class="image-box">
 
@@ -743,9 +700,7 @@
       </div>
 
 
-      <!-- ======================================
-           BUTTON
-           ====================================== -->
+      <!-- BUTTON -->
 
       <button
         id="askButton"
@@ -755,9 +710,7 @@
       </button>
 
 
-      <!-- ======================================
-           LOADING
-           ====================================== -->
+      <!-- LOADING -->
 
       <div
         id="loading"
@@ -767,9 +720,7 @@
       </div>
 
 
-      <!-- ======================================
-           ANSWER
-           ====================================== -->
+      <!-- ANSWER -->
 
       <div
         id="answer"
@@ -794,17 +745,21 @@
   "use strict";
 
 
-  /* ==========================================
+  /* =========================
      SETTINGS
-     ========================================== */
+     ========================= */
 
   var API_URL =
     "/ask";
 
 
-  /* ==========================================
+  var mathJaxPromise =
+    null;
+
+
+  /* =========================
      ELEMENTS
-     ========================================== */
+     ========================= */
 
   var questionInput =
     document.getElementById(
@@ -848,9 +803,251 @@
     );
 
 
-  /* ==========================================
+  /* =========================
+     MATHJAX CONFIGURATION
+     ========================= */
+
+  function configureMathJax() {
+
+
+    window.MathJax = {
+
+      tex: {
+
+        inlineMath: [
+          ["\\(", "\\)"]
+        ],
+
+        displayMath: [
+          ["\\[", "\\]"]
+        ],
+
+        processEscapes: true
+
+      },
+
+
+      options: {
+
+        skipHtmlTags: [
+          "script",
+          "noscript",
+          "style",
+          "textarea",
+          "pre",
+          "code"
+        ]
+
+      },
+
+
+      chtml: {
+
+        scale: 1
+
+      },
+
+
+      startup: {
+
+        typeset: false
+
+      }
+
+    };
+
+  }
+
+
+  /* =========================
+     LOAD ONE SCRIPT
+     ========================= */
+
+  function loadScript(url) {
+
+
+    return new Promise(
+
+      function (
+        resolve,
+        reject
+      ) {
+
+
+        var script =
+          document.createElement(
+            "script"
+          );
+
+
+        script.src =
+          url;
+
+
+        script.async =
+          true;
+
+
+        script.onload =
+          function () {
+
+            resolve();
+
+          };
+
+
+        script.onerror =
+          function () {
+
+            script.remove();
+
+            reject(
+              new Error(
+                "فشل تحميل مكتبة الرياضيات."
+              )
+            );
+
+          };
+
+
+        document.head.appendChild(
+          script
+        );
+
+      }
+
+    );
+
+  }
+
+
+  /* =========================
+     LOAD MATHJAX WITH FALLBACKS
+     ========================= */
+
+  async function loadMathJax() {
+
+
+    if (
+      window.MathJax &&
+      window.MathJax.typesetPromise
+    ) {
+
+      return true;
+
+    }
+
+
+    if (
+      mathJaxPromise
+    ) {
+
+      return mathJaxPromise;
+
+    }
+
+
+    mathJaxPromise =
+      (async function () {
+
+
+        /*
+         * أكثر من مصدر احتياطي
+         * حتى لا يعتمد التطبيق
+         * على CDN واحد.
+         */
+
+        var sources = [
+
+          "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js",
+
+          "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js",
+
+          "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"
+
+        ];
+
+
+        for (
+          var i = 0;
+          i < sources.length;
+          i++
+        ) {
+
+
+          try {
+
+
+            configureMathJax();
+
+
+            await loadScript(
+              sources[i]
+            );
+
+
+            /*
+             * انتظار اكتمال Startup
+             */
+
+            if (
+              window.MathJax &&
+              window.MathJax.startup &&
+              window.MathJax.startup.promise
+            ) {
+
+
+              await window.MathJax
+                .startup
+                .promise;
+
+            }
+
+
+            if (
+              window.MathJax &&
+              window.MathJax.typesetPromise
+            ) {
+
+
+              console.log(
+                "MathJax loaded:",
+                sources[i]
+              );
+
+
+              return true;
+
+            }
+
+
+          } catch (error) {
+
+
+            console.warn(
+              "MathJax source failed:",
+              sources[i],
+              error
+            );
+
+          }
+
+        }
+
+
+        return false;
+
+      })();
+
+
+    return mathJaxPromise;
+
+  }
+
+
+  /* =========================
      IMAGE TO BASE64
-     ========================================== */
+     ========================= */
 
   async function fileToDataURL(file) {
 
@@ -923,9 +1120,9 @@
   }
 
 
-  /* ==========================================
+  /* =========================
      IMAGE SELECTION
-     ========================================== */
+     ========================= */
 
   imageInput.addEventListener(
 
@@ -963,8 +1160,6 @@
       }
 
 
-      /* IMAGE TYPE */
-
       if (
         file.type &&
         file.type.indexOf(
@@ -986,8 +1181,6 @@
 
       }
 
-
-      /* MAXIMUM SIZE */
 
       var maxSize =
         10 *
@@ -1018,8 +1211,6 @@
       imageStatus.style.display =
         "block";
 
-
-      /* PREVIEW */
 
       if (
         window.URL &&
@@ -1066,9 +1257,9 @@
   );
 
 
-  /* ==========================================
+  /* =========================
      SCROLL
-     ========================================== */
+     ========================= */
 
   function scrollToAnswer() {
 
@@ -1097,9 +1288,9 @@
   }
 
 
-  /* ==========================================
+  /* =========================
      ERROR
-     ========================================== */
+     ========================= */
 
   function showError(message) {
 
@@ -1127,9 +1318,12 @@
   }
 
 
-  /* ==========================================
+  /* =========================
      NORMALIZE RESPONSE
-     ========================================== */
+
+     هذه أهم دالة في النسخة
+     الجديدة.
+     ========================= */
 
   function normalizeResponse(text) {
 
@@ -1139,10 +1333,6 @@
         text || ""
       );
 
-
-    /*
-     * توحيد نهايات الأسطر
-     */
 
     source =
       source
@@ -1157,52 +1347,112 @@
 
 
     /*
-     * الحالة التي ظهرت فعلياً
-     * في الاختبار:
+     * DISPLAY
      *
-     * $begin:math:display$
-     * equation
-     * $end:math:display$
-     *
-     * نحولها إلى:
-     *
-     * \[
-     * equation
-     * \]
+     * يدعم وجود أو عدم وجود
+     * علامة $ في البداية والنهاية
      */
 
     source =
       source.replace(
-        /\$begin:math:display\$/gi,
+
+        /\$?begin:math:display\$?/gi,
+
+        "\\["
+
+      );
+
+
+    source =
+      source.replace(
+
+        /\$?end:math:display\$?/gi,
+
+        "\\]"
+
+      );
+
+
+    /*
+     * INLINE
+     */
+
+    source =
+      source.replace(
+
+        /\$?begin:math:inline\$?/gi,
+
+        "\\("
+
+      );
+
+
+    source =
+      source.replace(
+
+        /\$?end:math:inline\$?/gi,
+
+        "\\)"
+
+      );
+
+
+    /*
+     * TEXT
+     *
+     * هذه الصيغة ظهرت فعلياً
+     * في الاختبار الأخير.
+     */
+
+    source =
+      source.replace(
+
+        /\$?begin:math:text\$?/gi,
+
+        "\\("
+
+      );
+
+
+    source =
+      source.replace(
+
+        /\$?end:math:text\$?/gi,
+
+        "\\)"
+
+      );
+
+
+    /*
+     * إزالة بعض المسافات
+     * حول المحددات
+     */
+
+    source =
+      source.replace(
+        /\\\[\s+/g,
         "\\["
       );
 
 
     source =
       source.replace(
-        /\$end:math:display\$/gi,
+        /\s+\\\]/g,
         "\\]"
       );
 
 
-    /*
-     * دعم inline إذا ظهر:
-     *
-     * $begin:math:inline$
-     * ...
-     * $end:math:inline$
-     */
-
     source =
       source.replace(
-        /\$begin:math:inline\$/gi,
+        /\\\(\s+/g,
         "\\("
       );
 
 
     source =
       source.replace(
-        /\$end:math:inline\$/gi,
+        /\s+\\\)/g,
         "\\)"
       );
 
@@ -1212,9 +1462,9 @@
   }
 
 
-  /* ==========================================
+  /* =========================
      CREATE DISPLAY MATH
-     ========================================== */
+     ========================= */
 
   function createDisplayMath(math) {
 
@@ -1235,12 +1485,6 @@
     );
 
 
-    /*
-     * مهم جداً:
-     * math هنا فقط محتوى LaTeX
-     * بدون أي نص عربي.
-     */
-
     div.textContent =
       "\\[" +
       math.trim() +
@@ -1252,9 +1496,9 @@
   }
 
 
-  /* ==========================================
+  /* =========================
      CREATE INLINE MATH
-     ========================================== */
+     ========================= */
 
   function createInlineMath(math) {
 
@@ -1286,13 +1530,9 @@
   }
 
 
-  /* ==========================================
-     APPEND MIXED TEXT LINE
-
-     هذه الدالة تتعامل مع:
-     العربية + \( math \)
-     في السطر نفسه
-     ========================================== */
+  /* =========================
+     TEXT + INLINE MATH
+     ========================= */
 
   function appendMixedTextLine(line) {
 
@@ -1312,12 +1552,6 @@
       "rtl"
     );
 
-
-    /*
-     * نبحث فقط عن inline math:
-     *
-     * \( ... \)
-     */
 
     var inlineRegex =
       /\\\(([\s\S]*?)\\\)/g;
@@ -1340,11 +1574,6 @@
     ) {
 
 
-      /*
-       * النص العربي
-       * قبل المعادلة
-       */
-
       var before =
         line.slice(
           lastIndex,
@@ -1364,17 +1593,9 @@
       }
 
 
-      /*
-       * المعادلة الصغيرة
-       */
-
-      var inlineMath =
-        match[1];
-
-
       div.appendChild(
         createInlineMath(
-          inlineMath
+          match[1]
         )
       );
 
@@ -1384,10 +1605,6 @@
 
     }
 
-
-    /*
-     * بقية النص
-     */
 
     var remaining =
       line.slice(
@@ -1414,9 +1631,9 @@
   }
 
 
-  /* ==========================================
-     APPEND TEXT BLOCK
-     ========================================== */
+  /* =========================
+     APPEND TEXT
+     ========================= */
 
   function appendTextBlock(text) {
 
@@ -1445,10 +1662,6 @@
           line.trim();
 
 
-        /*
-         * EMPTY LINE
-         */
-
         if (!cleanLine) {
 
 
@@ -1472,10 +1685,6 @@
         }
 
 
-        /*
-         * ARABIC + INLINE MATH
-         */
-
         appendMixedTextLine(
           cleanLine
         );
@@ -1487,9 +1696,9 @@
   }
 
 
-  /* ==========================================
+  /* =========================
      PARSE ANSWER
-     ========================================== */
+     ========================= */
 
   function parseAnswer(text) {
 
@@ -1498,11 +1707,6 @@
       "";
 
 
-    /*
-     * أولاً نعالج جميع
-     * صيغ delimiters المحتملة
-     */
-
     var source =
       normalizeResponse(
         text
@@ -1510,11 +1714,11 @@
 
 
     /*
-     * الآن لدينا تنسيق موحد:
+     * نلتقط فقط المعادلات
+     * المستقلة.
      *
-     * \[
-     * equation
-     * \]
+     * النص العربي لا يدخل
+     * MathJax.
      */
 
     var displayRegex =
@@ -1538,10 +1742,6 @@
     ) {
 
 
-      /*
-       * النص الموجود قبل المعادلة
-       */
-
       var before =
         source.slice(
           lastIndex,
@@ -1553,10 +1753,6 @@
         before
       );
 
-
-      /*
-       * محتوى المعادلة
-       */
 
       var math =
         match[1];
@@ -1583,10 +1779,6 @@
     }
 
 
-    /*
-     * النص بعد آخر معادلة
-     */
-
     var remaining =
       source.slice(
         lastIndex
@@ -1600,82 +1792,28 @@
   }
 
 
-  /* ==========================================
-     WAIT FOR MATHJAX
+  /* =========================
+     FALLBACK IF MATHJAX
+     DOES NOT LOAD
+     ========================= */
 
-     في بعض الأجهزة قد يتم الحصول
-     على الإجابة قبل اكتمال تحميل
-     مكتبة MathJax.
-     ========================================== */
-
-  function waitForMathJax() {
+  function applyMathFallback() {
 
 
-    return new Promise(
-
-      function (resolve) {
-
-
-        var attempts =
-          0;
+    var mathBlocks =
+      answer.querySelectorAll(
+        ".display-math, .inline-math"
+      );
 
 
-        var maxAttempts =
-          50;
+    mathBlocks.forEach(
+
+      function (element) {
 
 
-        var timer =
-          setInterval(
-
-            function () {
-
-
-              attempts++;
-
-
-              if (
-                window.MathJax &&
-                window.MathJax.typesetPromise
-              ) {
-
-
-                clearInterval(
-                  timer
-                );
-
-
-                resolve(
-                  true
-                );
-
-
-                return;
-
-              }
-
-
-              if (
-                attempts >=
-                maxAttempts
-              ) {
-
-
-                clearInterval(
-                  timer
-                );
-
-
-                resolve(
-                  false
-                );
-
-              }
-
-            },
-
-            100
-
-          );
+        element.classList.add(
+          "math-fallback"
+        );
 
       }
 
@@ -1684,23 +1822,26 @@
   }
 
 
-  /* ==========================================
+  /* =========================
      RENDER MATH
-     ========================================== */
+     ========================= */
 
   async function renderMath() {
 
 
-    var ready =
-      await waitForMathJax();
+    var loaded =
+      await loadMathJax();
 
 
-    if (!ready) {
+    if (!loaded) {
 
 
       console.error(
-        "MathJax did not load."
+        "All MathJax sources failed."
       );
+
+
+      applyMathFallback();
 
 
       return;
@@ -1710,10 +1851,6 @@
 
     try {
 
-
-      /*
-       * تنظيف المعالجة السابقة
-       */
 
       if (
         window.MathJax.typesetClear
@@ -1727,11 +1864,6 @@
       }
 
 
-      /*
-       * تحويل LaTeX
-       * إلى معادلات مرئية
-       */
-
       await window.MathJax
         .typesetPromise(
           [answer]
@@ -1742,18 +1874,21 @@
 
 
       console.error(
-        "MathJax error:",
+        "MathJax rendering error:",
         error
       );
+
+
+      applyMathFallback();
 
     }
 
   }
 
 
-  /* ==========================================
+  /* =========================
      SHOW ANSWER
-     ========================================== */
+     ========================= */
 
   async function showAnswer(text) {
 
@@ -1762,14 +1897,6 @@
       "error"
     );
 
-
-    /*
-     * تقسيم الإجابة إلى:
-     *
-     * نص عربي
-     * معادلات مستقلة
-     * معادلات inline
-     */
 
     parseAnswer(
       text
@@ -1781,24 +1908,33 @@
 
 
     /*
-     * تشغيل MathJax
+     * ظهور النص العربي مباشرة،
+     * ثم معالجة الرياضيات.
      */
+
+    loading.style.display =
+      "block";
+
+
+    loading.textContent =
+      "جاري تنسيق المعادلات...";
+
 
     await renderMath();
 
 
-    /*
-     * الانتقال إلى الإجابة
-     */
+    loading.style.display =
+      "none";
+
 
     scrollToAnswer();
 
   }
 
 
-  /* ==========================================
+  /* =========================
      ASK AI
-     ========================================== */
+     ========================= */
 
   async function askAI() {
 
@@ -1817,10 +1953,6 @@
         : null;
 
 
-    /* ======================================
-       VALIDATION
-       ====================================== */
-
     if (
       !question &&
       !file
@@ -1836,10 +1968,6 @@
 
     }
 
-
-    /* ======================================
-       START
-       ====================================== */
 
     askButton.disabled =
       true;
@@ -1873,10 +2001,6 @@
         null;
 
 
-      /* ====================================
-         IMAGE
-         ==================================== */
-
       if (file) {
 
 
@@ -1899,10 +2023,6 @@
 
           : "جاري تحليل السؤال...";
 
-
-      /* ====================================
-         REQUEST
-         ==================================== */
 
       var response =
         await fetch(
@@ -1939,10 +2059,6 @@
         );
 
 
-      /* ====================================
-         READ RESPONSE
-         ==================================== */
-
       var responseText =
         await response.text();
 
@@ -1969,10 +2085,6 @@
       }
 
 
-      /* ====================================
-         SERVER ERROR
-         ==================================== */
-
       if (
         !response.ok
       ) {
@@ -1989,10 +2101,6 @@
       }
 
 
-      /* ====================================
-         GET ANSWER
-         ==================================== */
-
       var finalAnswer =
 
         data.answer ||
@@ -2002,9 +2110,7 @@
         data.response;
 
 
-      if (
-        !finalAnswer
-      ) {
+      if (!finalAnswer) {
 
 
         throw new Error(
@@ -2013,10 +2119,6 @@
 
       }
 
-
-      /* ====================================
-         SHOW
-         ==================================== */
 
       await showAnswer(
         finalAnswer
@@ -2047,10 +2149,6 @@
     } finally {
 
 
-      /* ====================================
-         FINISH
-         ==================================== */
-
       loading.style.display =
         "none";
 
@@ -2067,9 +2165,9 @@
   }
 
 
-  /* ==========================================
-     BUTTON EVENT
-     ========================================== */
+  /* =========================
+     BUTTON
+     ========================= */
 
   askButton.addEventListener(
 
@@ -2084,6 +2182,29 @@
 
   );
 
+
+  /* =========================
+     PRELOAD MATHJAX
+
+     يبدأ تحميل MathJax
+     بمجرد فتح الصفحة حتى يكون
+     جاهزاً قبل وصول الإجابة.
+     ========================= */
+
+  loadMathJax()
+    .then(
+
+      function (loaded) {
+
+
+        console.log(
+          "Math engine ready:",
+          loaded
+        );
+
+      }
+
+    );
 
 })();
 
